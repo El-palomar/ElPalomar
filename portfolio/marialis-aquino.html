@@ -2,45 +2,118 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio de Marialis Aquino</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
-      background-color: #f9f9f9;
-      color: #333;
+    /* Reset de márgenes y padding para tener un control más preciso */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    /* Diseño general del body */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Título principal */
     h1 {
       color: #336699;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+
+    /* Estilo para los encabezados secundarios */
+    h2 {
+      color: #4CAF50;
+      margin-top: 20px;
+      font-size: 1.8rem;
+    }
+
+    /* Estilo para los párrafos */
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para listas */
+    ul {
+      margin-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Estilo de enlaces */
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Estilo para el contenedor principal (centrar el contenido) */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsividad */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Hola, soy Marialis Aquino</h1>
+  <div class="container">
+    <h1>Hola, soy Marialis Aquino</h1>
 
-  <p>Soy estudiante de la Tecnicatura en Desarrollo de Software en el ISPC. En es mi portfolio personal dentro del proyecto <strong>El Palomar</strong>.</p>
+    <p>Soy estudiante de la Tecnicatura en Desarrollo de Software en el ISPC. Este es mi portfolio personal dentro del proyecto <strong>El Palomar</strong>.</p>
 
-  <h2>Mi rol en el equipo</h2>
-  <p>Actualmente cumplo el rol de <strong>Scrum Master</strong> en nuestro equipo. Me encargo principalmente de facilitar la organización y el seguimiento del proyecto.</p>
+    <h2>Mi rol en el equipo</h2>
+    <p>Actualmente cumplo el rol de <strong>Scrum Master</strong> en nuestro equipo. Me encargo principalmente de facilitar la organización y el seguimiento del proyecto.</p>
 
-  <h2>Tareas realizadas</h2>
-  <ul>
-    <li>Organización y coordinación de las reuniones del equipo</li>
-    <li>Colaboración en la planificación y seguimiento del Sprint</li>
-    <li>Apoyo general al equipo para asegurar que cada miembro pueda avanzar con sus tareas</li>
-  </ul>
+    <h2>Tareas realizadas</h2>
+    <ul>
+      <li>Organización y coordinación de las reuniones del equipo</li>
+      <li>Colaboración en la planificación y seguimiento del Sprint</li>
+      <li>Apoyo general al equipo para asegurar que cada miembro pueda avanzar con sus tareas</li>
+    </ul>
 
-  <h2>Herramientas utilizadas</h2>
-  <ul>
-    <li>Git y GitHub (para revisar el trabajo del equipo y participar en el flujo de trabajo)</li>
-    <li>Visual Studio Code</li>
-    <li>Discord (para reuniones y comunicación del equipo)</li>
-    <li>Herramientas colaborativas como tableros de Issues en GitHub</li>
-  </ul>
+    <h2>Herramientas utilizadas</h2>
+    <ul>
+      <li>Git y GitHub (para revisar el trabajo del equipo y participar en el flujo de trabajo)</li>
+      <li>Visual Studio Code</li>
+      <li>Discord (para reuniones y comunicación del equipo)</li>
+      <li>Herramientas colaborativas como tableros de Issues en GitHub</li>
+    </ul>
 
-  <h2>Lo que aprendí</h2>
-  <p>Esta experiencia me está permitiendo desarrollar habilidades de organización, comunicación y trabajo en equipo. También estoy aprendiendo a manejar herramientas de control de versiones y a participar en el desarrollo de un proyecto de software desde su planificación.</p>
+    <h2>Lo que aprendí</h2>
+    <p>Esta experiencia me está permitiendo desarrollar habilidades de organización, comunicación y trabajo en equipo. También llevo a la práctica manejar herramientas de control de versiones y a participar en el desarrollo de un proyecto de software desde su planificación.</p>
+  </div>
 
 </body>
 </html>
+
