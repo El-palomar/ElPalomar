@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -26,8 +26,6 @@ body {
 .sidebar h2 {
   color: #ecf0f1; /* más claro que white */
 }
-
-
 
 .sidebar ul {
   list-style: none;
@@ -59,7 +57,7 @@ header {
   background: linear-gradient(90deg, #3498db, #2980b9);
   color: white;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -104,7 +102,15 @@ section {
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn-editar {
+  background-color: darkorange;
+}
+
+.btn-cancelar {
+  background-color: rgb(252, 74, 65);
 }
 
 .actividad-img {
@@ -189,9 +195,3 @@ footer small {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
-
-
