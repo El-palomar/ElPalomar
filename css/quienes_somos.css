@@ -1,0 +1,80 @@
+#quienes-somos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+
+#imagen-qs img {
+  width: 400px;
+  height: auto;
+}
+
+#texto-qs {
+  max-width: 600px;
+  font-size: 20px;
+  color: #333333;
+}
+
+#texto-qs h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #0a3d62;
+}
+
+#texto-qs p {
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  #quienes-somos {
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  #imagen-qs img {
+    width: 180px;
+  }
+
+  #texto-qs {
+    font-size: 15px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  #quienes-somos {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 15px;
+  }
+
+  #imagen-qs img {
+    width: 160px;
+  }
+
+  #texto-qs {
+    font-size: 14px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  #quienes-somos {
+    padding: 20px 10px;
+  }
+
+  #imagen-qs img {
+    width: 140px;
+  }
+
+  #texto-qs {
+    font-size: 13px;
+  }
+}
