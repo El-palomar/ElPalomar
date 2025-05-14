@@ -33,12 +33,12 @@ nav #nav-right ul {
     align-items: center;
     gap: 1rem;
 }
-nav #nav-right ul a{
+nav #nav-right ul li a:not(#login-button a){
     text-decoration: none;
     color: black;
 }
 
-nav #nav-right ul a:not(#login-button):hover {
+nav #nav-right ul li a:not(#login-button a):hover {
     animation:ease-in;
     font-weight: 600;
     text-decoration: underline;
@@ -52,8 +52,12 @@ nav #nav-right ul a:not(#login-button):hover {
     border-radius: 10px;
 }
 
-#login-button li {
+#login-button a{
+    display: flex;
+    width: 100%;
+    height: 100%;
     color: white;
+    text-decoration: none;
 }
 
 #login-button:hover{

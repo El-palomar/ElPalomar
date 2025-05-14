@@ -1,7 +1,12 @@
 @import "./navbar.css";
 @import "./footer.css";
-@import "./header.css";
+@import "./main.css";
 @import "./beneficios.css";
+@import "./quienes_somos.css";
+
+html{
+    scroll-behavior: smooth;
+}
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -19,8 +24,4 @@ body {
 #nav-text-btn-qs {
   display: inline-block;
   background-color: #ffffff;
-}
-
-#header-text-btn-qs {
-  display: inline-block;
 }
