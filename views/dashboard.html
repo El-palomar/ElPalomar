@@ -5,24 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - SiSEP</title>
     <link rel="stylesheet" href="css/dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/35195391d2.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- Encabezado -->
-    <header>
-      <h1>¡Listo para empezar? Mira las actividades que tenemos para ti.</h1>
-      <p class="subtitulo-header">
-        Explorá, inscribite y comenzá a moverte con nosotros.
-      </p>
+    <header class="header-dashboard">
+      <div class="logo-container">
+        <img
+          src="/assets/images/logo_navbar.png"
+          alt="Logo SISEP"
+          class="logo-header"
+        />
+      </div>
+      <div class="header-texto">
+        <h1>Listo? Mira las actividades que tenemos para ti.</h1>
+        <p class="subtitulo-header">
+          Explorá, inscribite y comenzá a moverte con nosotros.
+        </p>
+      </div>
     </header>
 
     <!-- Menú lateral -->
     <aside class="sidebar" role="complementary">
       <h2>Mi Dashboard</h2>
-      <!-- Aquí agregamos el título Mi Dashboard -->
       <nav aria-label="Menú principal">
         <ul>
           <li><a href="#">🏠 Inicio</a></li>
           <li><a href="#">📅 Cronograma</a></li>
+          <li><a href="#">🔓 Cerrar Sesión</a></li>
           <li><a href="#">⚙️ Configuración</a></li>
         </ul>
       </nav>
@@ -98,15 +111,11 @@
         <article class="actividad-inscrita">
           <h3>Fútbol</h3>
           <p>Inscrito para la actividad.</p>
-          <button class="btn-editar">Editar</button>
-          <button class="btn-cancelar">Cancelar</button>
         </article>
 
         <article class="actividad-inscrita">
           <h3>Natación</h3>
           <p>Inscrito para la actividad.</p>
-          <button class="btn-editar">Editar</button>
-          <button class="btn-cancelar">Cancelar</button>
         </article>
       </section>
     </main>
@@ -115,6 +124,12 @@
     <footer>
       <p>SiSEP - Sistema de Gestión para Clubes Deportivos</p>
       <small>Versión 1.0</small>
+      <div class="footer-redes">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
     </footer>
   </body>
 </html>
