@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -53,12 +53,12 @@ body {
 /* === HEADER === */
 .header-dashboard {
   margin-left: 220px;
-  padding: 40px 30px ;
+  padding: 40px 30px;
   background: linear-gradient(90deg, #3498db, #2980b9);
   color: white;
   position: relative;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Logo arriba a la derecha */
@@ -122,7 +122,7 @@ section {
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -172,6 +172,18 @@ button {
 button:hover {
   background-color: #1e8449;
   transform: scale(1.02);
+}
+
+.btn-editar,
+.btn-editar:hover {
+  background-color: darkorange;
+  transform: none;
+}
+
+.btn-cancelar,
+.btn-cancelar:hover {
+  background-color: rgb(252, 74, 65);
+  transform: none;
 }
 
 /* === FOOTER === */
@@ -241,4 +253,3 @@ footer small {
     padding-top: 0;
   }
 }
-
