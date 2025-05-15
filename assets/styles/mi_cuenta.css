@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.header-mi-cuenta {
+  background-color: #004080;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-header {
+  height: 60px;
+}
+
+.header-texto h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+main.mi-cuenta {
+  max-width: 600px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.datos-personales h2 {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-guardar {
+  margin-top: 25px;
+  padding: 12px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-guardar:hover {
+  background-color: #0066cc;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  background-color: #ddd;
+}
+
+.footer-redes a {
+  margin: 0 8px;
+  color: black;
+  font-size: 20px;
+}
