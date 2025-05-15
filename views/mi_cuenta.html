@@ -2,73 +2,40 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Cuenta - SiSEP</title>
-    <link rel="stylesheet" href="../assets/styles/mi-cuenta.css" />
-    <script
-      src="https://kit.fontawesome.com/35195391d2.js"
-      crossorigin="anonymous"
-    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mi Cuenta</title>
+    <link rel="stylesheet" href="../assets/styles/mi_cuenta.css" />
+    <script src="https://kit.fontawesome.com/35195391d2.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- Encabezado -->
-    <header class="header-mi-cuenta">
-      <div class="logo-container">
-        <img
-          src="../assets/images/logo_navbar.png"
-          alt="Logo SISEP"
-          class="logo-header"
-        />
-      </div>
-      <div class="header-texto">
-        <h1>👤 Mi cuenta</h1>
-        <p>Visualizá y editá tus datos personales</p>
-      </div>
-    </header>
+    <div class="fondo-transparente"></div>
 
-    <!-- Contenido principal -->
-    <main class="mi-cuenta">
-      <section class="datos-personales">
-        <h2>👤 Mis datos personales</h2>
-        <form>
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" value="Marialis Aquino" />
+    <main class="card-cuenta">
+      <h1>👤 Mi Cuenta</h1>
 
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" value="marialis@example.com" />
+      <section class="seccion">
+        <h2>Datos personales</h2>
+        <div class="botones">
+          <button>Editar</button>
+          <button>Eliminar</button>
+        </div>
+      </section>
 
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" value="1234567890" />
+      <section class="seccion">
+        <h2>Membresía</h2>
+      </section>
 
-          <label for="tipo">Tipo de socio</label>
-          <select id="tipo">
-            <option selected>Socio regular</option>
-            <option>Socio premium</option>
-            <option>Socio familiar</option>
-          </select>
+      <section class="seccion">
+        <h2>Historial</h2>
+      </section>
 
-          <label for="password">Cambiar contraseña</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Nueva contraseña"
-          />
+      <section class="seccion">
+        <h2>Seguridad</h2>
+      </section>
 
-          <button type="submit" class="btn-guardar">Guardar cambios</button>
-        </form>
+      <section class="seccion">
+        <h2>Ayuda</h2>
       </section>
     </main>
-
-    <!-- Pie de página -->
-    <footer>
-      <p>SiSEP - Sistema de Gestión para Clubes Deportivos</p>
-      <small>Versión 1.0</small>
-      <div class="footer-redes">
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-      </div>
-    </footer>
   </body>
 </html>

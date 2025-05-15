@@ -1,82 +1,70 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  background-color: #f0f0f0;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.header-mi-cuenta {
-  background-color: #004080;
-  color: white;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.fondo-transparente {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    url('../assets/images/futbol.jpg') no-repeat top left,
+    url('../assets/images/natacion.jpg') no-repeat top right,
+    url('../assets/images/volley.jpg') no-repeat bottom left,
+    url('../assets/images/basket.jpg') no-repeat bottom right;
+  background-size: 50% 50%;
+  opacity: 0.15;
+  filter: blur(2px);
 }
 
-.logo-header {
-  height: 60px;
+.card-cuenta {
+  background-color: white;
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
 }
 
-.header-texto h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-main.mi-cuenta {
-  max-width: 600px;
-  margin: 30px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #ccc;
-}
-
-.datos-personales h2 {
-  margin-bottom: 20px;
-}
-
-form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.btn-guardar {
-  margin-top: 25px;
-  padding: 12px;
-  background-color: #004080;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.btn-guardar:hover {
-  background-color: #0066cc;
-}
-
-footer {
-  margin-top: 40px;
+.card-cuenta h1 {
   text-align: center;
-  padding: 20px;
-  background-color: #ddd;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #004080;
 }
 
-.footer-redes a {
-  margin: 0 8px;
-  color: black;
-  font-size: 20px;
+.seccion {
+  margin-bottom: 25px;
+}
+
+.seccion h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #222;
+}
+
+.botones {
+  display: flex;
+  gap: 10px;
+}
+
+.botones button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #004080;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botones button:hover {
+  background-color: #0066cc;
 }
