@@ -125,7 +125,11 @@ section {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.actividad-inscrita{
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem
+}
 /* Animación al hacer hover */
 .actividad:hover {
   transform: translateY(-5px);
@@ -219,6 +223,13 @@ footer small {
   font-size: 12px;
   color: #7f8c8d;
 }
+
+/* === ICON === */
+.icon{
+  margin-right: 0.5rem;
+}
+
+
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
