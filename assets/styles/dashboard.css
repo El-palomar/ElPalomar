@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -24,10 +24,8 @@ body {
 }
 
 .sidebar h2 {
-  color: #ecf0f1; /* más claro que white */
+  color: #ecf0f1;
 }
-
-
 
 .sidebar ul {
   list-style: none;
@@ -53,26 +51,45 @@ body {
 }
 
 /* === HEADER === */
-header {
+.header-dashboard {
   margin-left: 220px;
   padding: 40px 30px;
   background: linear-gradient(90deg, #3498db, #2980b9);
   color: white;
+  position: relative;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
+/* Logo arriba a la derecha */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.logo-header {
+  max-height: 130px;
+  width: auto;
+  animation: flyLoop 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Contenido centrado vertical y horizontal */
+.header-texto {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-dashboard h1 {
   font-size: 30px;
   font-weight: 600;
   line-height: 1.5;
-  max-width: 900px;
-  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .subtitulo-header {
   font-size: 16px;
-  margin-top: 10px;
   color: #dfeeff;
 }
 
@@ -98,13 +115,25 @@ section {
   gap: 20px;
 }
 
+/* === ACTIVIDADES === */
 .actividad,
 .actividad-inscrita {
   background-color: white;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.actividad-inscrita{
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem
+}
+/* Animación al hacer hover */
+.actividad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .actividad-img {
@@ -132,6 +161,7 @@ p {
   color: #555;
 }
 
+/* === BOTONES === */
 button {
   background-color: #27ae60;
   color: white;
@@ -140,14 +170,42 @@ button {
   border-radius: 6px;
   cursor: pointer;
   margin-top: 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #219150;
+  background-color: #1e8449;
+  transform: scale(1.02);
+}
+
+.btn-editar,
+.btn-editar:hover {
+  background-color: darkorange;
+  transform: none;
+}
+
+.btn-cancelar,
+.btn-cancelar:hover {
+  background-color: rgb(252, 74, 65);
+  transform: none;
 }
 
 /* === FOOTER === */
+.footer-redes {
+  margin-top: 10px;
+}
+
+.footer-redes a {
+  margin: 0 8px;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.footer-redes a:hover {
+  color: hsl(211, 79%, 9%);
+}
+
 footer {
   margin-left: 220px;
   text-align: center;
@@ -165,6 +223,13 @@ footer small {
   font-size: 12px;
   color: #7f8c8d;
 }
+
+/* === ICON === */
+.icon{
+  margin-right: 0.5rem;
+}
+
+
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
@@ -188,10 +253,14 @@ footer small {
   .grid-actividades {
     grid-template-columns: 1fr;
   }
+
+  .logo-container {
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .header-texto {
+    padding-top: 0;
+  }
 }
-
-
-
-
-
-
