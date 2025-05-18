@@ -1,0 +1,79 @@
+#beneficios{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    box-sizing: border-box;
+    padding:var(--margin-principal);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#beneficios h2{
+    font-size: var(--titulos);
+    color: var(--color-principal);
+}
+
+#beneficios-card-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 2rem;
+}
+.card-beneficios{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f9fafb;
+    padding: 4rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 300ms ease;
+
+  }
+.card-beneficios:hover{
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-0.25rem);
+}
+
+.card-beneficios p,.card-beneficios h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.card-beneficios h3{
+    margin-top: 1rem;
+}
+
+
+.button-cta{
+    padding: 1rem 2rem;
+    background-color: var(--color-principal);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button-cta:hover{
+    background-color: #1061b27a;
+}
+
+#beneficios-cta{
+    text-align: center;
+    width: 100%;
+    margin: 1rem;
+}
+#beneficios-cta p{
+    font-size: 1.3rem;
+}
+
+#beneficios-cta button{
+    width: 40%;
+}
