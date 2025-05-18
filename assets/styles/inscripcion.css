@@ -1,0 +1,74 @@
+.inscripcion-actividades {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.inscripcion-actividades h2 {
+  text-align: center;
+  color: #333;
+}
+
+.actividad {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.actividad h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.lista-horarios {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-horarios li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cupos {
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.cupos-disponibles {
+  color: green;
+}
+
+.cupos-agotados {
+  color: red;
+}
+
+.acciones-inscripcion {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-cancelar,
+.btn-guardar {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-cancelar {
+  background-color: #ccc;
+}
+
+.btn-guardar {
+  background-color: #28a745;
+  color: white;
+}
