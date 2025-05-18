@@ -125,10 +125,10 @@ section {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.actividad-inscrita{
+.actividad-inscrita {
   display: flex;
   flex-direction: column;
-  gap:0.5rem
+  gap: 0.5rem;
 }
 /* Animación al hacer hover */
 .actividad:hover {
@@ -177,17 +177,14 @@ button:hover {
   background-color: #1e8449;
   transform: scale(1.02);
 }
-
 .btn-editar,
 .btn-editar:hover {
   background-color: darkorange;
-  transform: none;
 }
 
 .btn-cancelar,
 .btn-cancelar:hover {
   background-color: rgb(252, 74, 65);
-  transform: none;
 }
 
 /* === FOOTER === */
@@ -225,11 +222,9 @@ footer small {
 }
 
 /* === ICON === */
-.icon{
+.icon {
   margin-right: 0.5rem;
 }
-
-
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
