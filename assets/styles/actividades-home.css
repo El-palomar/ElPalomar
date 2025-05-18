@@ -1,0 +1,82 @@
+#actividades-home{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    box-sizing: border-box;
+    padding:var(--margin-principal);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+#actividades-home h2{
+    font-size: var(--titulos);
+}
+
+#actividades-home-card-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-actividades-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.75rem;
+    height: 400px;
+    overflow: hidden;
+}
+.card-actividades-home-img{
+    width: 100%;
+    height: 50%;
+}
+.card-actividades-home-text{
+    padding: 0.5rem 2rem;
+    color: black;
+}
+.card-actividades-home-img img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius:0.75rem;
+    border-top-right-radius:0.75rem;
+    object-fit: cover;
+    transition: all .2s ease-in-out; 
+}
+
+
+.card-actividades-home-text a{
+    background-color: var(--color-principal);
+    border: none;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+}
+
+.card-actividades-home-text a:hover{
+     background-color: #1061b2a4;
+     font-weight: 600;
+}
+
+.card-actividades-home-text h3{
+    color: var(--color-principal);
+    font-size: 1.2rem;
+}
+
+.card-actividades-home-img:hover img{
+    transform: scale(1.1);
+}

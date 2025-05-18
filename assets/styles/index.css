@@ -3,6 +3,7 @@
 @import "./main.css";
 @import "./beneficios.css";
 @import "./quienes_somos.css";
+@import "./actividades-home.css";
 
 html {
   scroll-behavior: smooth;
