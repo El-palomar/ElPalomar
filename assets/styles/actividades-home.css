@@ -20,7 +20,7 @@
 #actividades-home-card-container{
     width: 100%;
     display: grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -79,4 +79,10 @@
 
 .card-actividades-home-img:hover img{
     transform: scale(1.1);
+}
+
+@media screen and (max-width:480px) {   
+    #actividades-home-card-container{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
