@@ -1,0 +1,117 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.inscripcion-actividades {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.actividad {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.actividad h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.lista-horarios {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-horarios li {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-horarios li:first-child {
+  border-top: none;
+}
+
+.cupos {
+  margin-top: 5px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 8px;
+  width: fit-content;
+  font-size: 14px;
+}
+
+.cupos-disponibles {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.cupos-agotados {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.acciones-inscripcion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-cancelar,
+.btn-guardar {
+  flex: 1 1 45%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: #ccc;
+}
+
+.btn-guardar {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* 📱 RESPONSIVE MOBILE */
+@media screen and (max-width: 600px) {
+  .lista-horarios li {
+    font-size: 14px;
+  }
+
+  .actividad {
+    padding: 12px;
+  }
+
+  .btn-cancelar,
+  .btn-guardar {
+    flex: 1 1 100%;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .actividad h3 {
+    font-size: 18px;
+  }
+}
