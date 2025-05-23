@@ -1,7 +1,8 @@
 /* Paleta y fuentes */
 :root {
-  --color-principal: #32d5bf;
-  --color-secundario: #e79797;
+  --color-principal: #2341aa;
+  --color-secundario: #192552;
+  --color-acento: #223a86;
   --color-fondo: #ffffff;
   --color-texto: #333333;
   --gris-suave: #f2f2f2;
@@ -17,9 +18,9 @@ body {
 
 /* Encabezado */
 header {
-  background-color: var(--color-principal);
+  background: linear-gradient(135deg, var(--color-principal), var(--color-acento));
   color: white;
-  padding: 2rem;
+  padding: 3rem 1rem;
   text-align: center;
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
@@ -27,16 +28,16 @@ header {
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
 }
 
 header .lead {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-top: 1rem;
 }
 
-/* Imagen superior derecha */
+/* Imagen tipo avatar superior derecha */
 .imagen-portfolio {
   position: absolute;
   top: 20px;
@@ -48,18 +49,21 @@ header .lead {
 
 .imagen-portfolio img {
   width: 100%;
+  max-width: 110px;
+  height: auto;
   border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 4px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Títulos de secciones */
+/* Secciones generales */
 .section-title {
   color: var(--color-principal);
   font-weight: 600;
   border-bottom: 2px solid var(--color-principal);
   padding-bottom: 0.4rem;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Listas */
@@ -73,12 +77,14 @@ ul li {
 
 /* Contacto */
 #contacto a {
-  color: var(--color-secundario);
+  color: var(--color-acento);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 #contacto a:hover {
   text-decoration: underline;
+  color: var(--color-principal);
 }
 
 /* Footer */
@@ -87,4 +93,26 @@ footer {
   color: #777;
   font-size: 0.9rem;
   border-top: 1px solid #ddd;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .imagen-portfolio {
+    position: static;
+    margin: 0 auto 1rem;
+    display: block;
+    text-align: center;
+  }
+
+  header {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header .lead {
+    font-size: 1rem;
+  }
 }
