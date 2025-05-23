@@ -1,0 +1,90 @@
+/* Paleta y fuentes */
+:root {
+  --color-principal: #32d5bf;
+  --color-secundario: #e79797;
+  --color-fondo: #ffffff;
+  --color-texto: #333333;
+  --gris-suave: #f2f2f2;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--gris-suave);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0;
+}
+
+/* Encabezado */
+header {
+  background-color: var(--color-principal);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+header .lead {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Imagen superior derecha */
+.imagen-portfolio {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 110px;
+  height: auto;
+  z-index: 10;
+}
+
+.imagen-portfolio img {
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos de secciones */
+.section-title {
+  color: var(--color-principal);
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-principal);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Listas */
+ul {
+  padding-left: 1.2rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Contacto */
+#contacto a {
+  color: var(--color-secundario);
+  text-decoration: none;
+}
+
+#contacto a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #f8f8f8;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+}
