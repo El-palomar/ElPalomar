@@ -1,0 +1,84 @@
+main{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/pexels-julia-larson-6455777.jpg");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#main-text{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 0 2rem;
+}
+#main-text h1{
+    font-size: var(--titulos);
+}
+#main-text h1, #main-text p{
+    font-weight: 100;
+}
+
+#main-text div{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap:1.5rem;
+    margin-top: 1rem;
+}
+#main-text div button{
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color:white;
+    cursor: pointer;
+    font-weight:800 ;
+}
+
+#main-text-btn-qs{
+    background-color: var(--color-principal);
+    border:none;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+}
+#main-text-btn-login{
+    background-color: transparent;
+    border:1px solid white;
+     padding: 1rem 2rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+}
+#main-text-btn-qs:hover{
+    background-color: #1061b2a4;
+}
+
+#main-text-btn-login:hover{
+    background-color: rgba(255, 255, 255, 0.137);
+}
+
+
+@media screen and (max-width:768px){
+    #main-text{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #main-text div{
+        justify-content: center;
+    }
+    #main-text-btn-qs,#main-text-btn-login{
+        width: 50%;
+    }
+}
