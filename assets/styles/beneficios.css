@@ -19,7 +19,7 @@
 #beneficios-card-container{
     width: 100%;
     display: grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 .card-beneficios{
@@ -76,4 +76,10 @@
 
 #beneficios-cta button{
     width: 40%;
+}
+
+@media screen and (max-width:480px) {
+    #beneficios-card-container{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
