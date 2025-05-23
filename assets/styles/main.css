@@ -65,3 +65,20 @@ main{
 #main-text-btn-login:hover{
     background-color: rgba(255, 255, 255, 0.137);
 }
+
+
+@media screen and (max-width:768px){
+    #main-text{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #main-text div{
+        justify-content: center;
+    }
+    #main-text-btn-qs,#main-text-btn-login{
+        width: 50%;
+    }
+}
