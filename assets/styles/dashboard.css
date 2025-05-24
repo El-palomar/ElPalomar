@@ -223,7 +223,7 @@ button:hover {
 footer {
   margin-left: 220px;
   text-align: center;
-  padding: 20px 20px;
+  padding: 10px 20px;
   background-color: #c3c8c9;
   color: #2c3e50;
   font-size: 14px;
@@ -247,7 +247,7 @@ footer small {
 }
 
 .footer-redes {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .footer-redes a {
