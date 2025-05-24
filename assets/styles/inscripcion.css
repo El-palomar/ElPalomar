@@ -92,6 +92,48 @@ h2 {
   color: white;
 }
 
+/* === FOOTER === */
+footer {
+  margin-left: 220px;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #c3c8c9;
+  color: #2c3e50;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  margin-top: auto;
+}
+
+.footer-logo {
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  height: 60px;
+}
+
+footer small {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.footer-redes {
+  margin-top: 20px;
+}
+
+.footer-redes a {
+  margin: 0 8px;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.footer-redes a:hover {
+  color: hsl(211, 79%, 9%);
+}
+
 /* 📱 RESPONSIVE MOBILE */
 @media screen and (max-width: 600px) {
   .lista-horarios li {
