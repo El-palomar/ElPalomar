@@ -1,128 +1,166 @@
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  padding: 0;
-  font-family: "Arial", sans-serif;
-  position: relative;
-  background-color: #f0f0f0;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-end; /* Mueve la card a la derecha */
-  align-items: center;
-  overflow: hidden;
-  padding-right: 5vw; /* Espacio derecho (ajustable) */
+  background-color: #f4f4f4;
+  color: #2c3e50;
+  animation: fadeIn 0.6s ease-in;
 }
 
-.fondo-transparente {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(
-      circle at 30% 80%,
-      rgba(0, 0, 0, 0) 25%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
-    url("../images/fondonegro.jpg") no-repeat center 20%;
-  background-size: cover;
-  filter: blur(1.5px);
-  pointer-events: none;
-}
-
-/* Card principal */
-.card-cuenta {
-  background: linear-gradient(160deg, #1c2e4a, #2a3e5e);
-  max-width: 500px;
-  width: 90%;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-
-  /* animación */
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes fadeInUp {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Pseudo header */
-.card-cuenta > h1 {
-  background-color: #0b1f33; /* azul bien oscuro */
-  color: white;
-  margin: 0;
-  padding: 20px;
-  font-size: 26px;
+header {
   text-align: center;
-  border-bottom: 4px solid #04013c;
-  font-weight: 700;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  color: white;
+  padding: 20px 20px 10px;
 }
 
-/* Secciones internas */
+.subtitulo-header {
+  font-size: 1rem;
+  color: #e0f7f4;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.volver-dashboard {
+  margin: 20px;
+}
+
+.volver-dashboard a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volver-dashboard a:hover {
+  color: #1c3e5c;
+}
+
+.card-cuenta {
+  background-color: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 600px;
+  transition: transform .3s ease, box-shadow 0.3s ease;
+}
+
+.card-cuenta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-cuenta h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
 .seccion {
-  margin: 20px 30px;
-  padding: 15px 20px;
-  background-color: #25395a; /* azul oscuro */
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 25px;
+  padding: 10px 0;
+  border-left: 4px solid #f9f9f9;
+  padding-left: 12px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .seccion:hover {
-  background-color: #34507a;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  background-color: #c2dcec;
 }
 
 .seccion h2 {
-  margin: 0;
-  font-size: 20px;
-  color: #ffffff;
-  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Botones en datos personales */
 .botones {
-  margin-top: 10px;
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 10px;
 }
+
+/* Botones iguales y más bajos */
+.boton-link,
+.botones button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  width: 100px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover en ambos botones */
+.boton-link:hover,
+.botones button:hover {
+  background-color: #34495e;
+  transform: scale(1.05);
+}
+
+/* Si querés que el botón eliminar sea rojo, descomentá esto:
 
 .botones button {
-  flex: 1;
-  padding: 10px 0;
-  background-color: #0b1f33;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-.boton-link {
-  display: inline-block;
-  padding: 10px 0;
-  background-color: #0b1f33;
-  color: white;
-  text-align: center;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  flex: 1;
-  text-decoration: none; /* Quitar subrayado */
-  transition: background-color 0.3s ease;
-}
-
-.boton-link:hover {
-  background-color: #2c3e50;
+  background-color: #e74c3c;
 }
 
 .botones button:hover {
-  background-color: #2c3e50;
+  background-color: #c0392b;
+}
+
+*/
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #c3c8c9;
+  color: #2c3e50;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+}
+
+.footer-redes {
+  margin-top: 20px;
+}
+
+.footer-redes a {
+  margin: 0 8px;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.footer-redes a:hover {
+  color: #2c3e50;
 }
