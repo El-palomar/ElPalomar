@@ -1,15 +1,27 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   background-color: #f4f4f4;
   color: #2c3e50;
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 header {
   text-align: center;
-  background-color: #00BFA6;
+  background: linear-gradient(90deg, #3498db, #2980b9);
   color: white;
-  padding: 30px 20px 10px;
+  padding: 20px 20px 10px;
 }
 
 .subtitulo-header {
@@ -23,29 +35,65 @@ header {
   padding: 40px 20px;
 }
 
+.volver-dashboard {
+  margin: 20px;
+}
+
+.volver-dashboard a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volver-dashboard a:hover {
+  color: #1c3e5c;
+}
+
 .card-cuenta {
   background-color: white;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   width: 100%;
   max-width: 600px;
+  transition: transform .3s ease, box-shadow 0.3s ease;
+}
+
+.card-cuenta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .card-cuenta h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 
 .seccion {
   margin-bottom: 25px;
+  padding: 10px 0;
+  border-left: 4px solid #f9f9f9;
+  padding-left: 12px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.seccion:hover {
+  background-color: #c2dcec;
 }
 
 .seccion h2 {
   font-size: 1.2rem;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .botones {
@@ -54,23 +102,44 @@ header {
   margin-top: 10px;
 }
 
+/* Botones iguales y más bajos */
 .boton-link,
-button {
-  background-color: #00BFA6;
+.botones button {
+  background-color: #2980b9;
   color: white;
   border: none;
-  padding: 8px 14px;
+  width: 100px;
+  height: 32px;
   border-radius: 6px;
   cursor: pointer;
   text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button:hover,
-.boton-link:hover {
-  background-color: #019b89;
+/* Hover en ambos botones */
+.boton-link:hover,
+.botones button:hover {
+  background-color: #34495e;
+  transform: scale(1.05);
 }
 
-/* Footer igual al del login */
+/* Si querés que el botón eliminar sea rojo, descomentá esto:
+
+.botones button {
+  background-color: #e74c3c;
+}
+
+.botones button:hover {
+  background-color: #c0392b;
+}
+
+*/
+
 footer {
   text-align: center;
   padding: 20px;
@@ -95,4 +164,3 @@ footer {
 .footer-redes a:hover {
   color: #2c3e50;
 }
-
