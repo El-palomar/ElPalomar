@@ -191,11 +191,7 @@ p {
   background-color: rgb(252, 74, 65);
 }
 
-<<<<<<< HEAD
-/* === Botones truchos === */ 
-=======
-/* === Botones truchos ===  Remover en la proxima edicion */ 
->>>>>>> 31f0773 (feat: Agregados botones simulados y link a notificacion)
+/* === Botones truchos ===  Remover en la proxima edicion */
 .btn-editar,
 .btn-cancelar {
   display: inline-block;
@@ -205,8 +201,6 @@ p {
   color: white;
   text-decoration: none;
   cursor: pointer;
-<<<<<<< HEAD
-=======
   margin-top: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -229,11 +223,8 @@ p {
   transform: scale(1.02);
 }
 
-
-
 /* === FOOTER === */
 .footer-redes {
->>>>>>> 31f0773 (feat: Agregados botones simulados y link a notificacion)
   margin-top: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
