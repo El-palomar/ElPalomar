@@ -232,11 +232,11 @@ footer {
 }
 
 .footer-logo {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .footer-logo img {
-  height: 90px;
+  height: 60px;
 }
 
 footer small {
@@ -246,20 +246,6 @@ footer small {
   color: #7f8c8d;
 }
 
-.footer-redes {
-  margin-top: 10px;
-}
-
-.footer-redes a {
-  margin: 0 8px;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-
-.footer-redes a:hover {
-  color: hsl(211, 79%, 9%);
-}
 
 /* === ICON === */
 .icon {
