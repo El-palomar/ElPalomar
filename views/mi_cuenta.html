@@ -3,42 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Cuenta</title>
+    <title>Mi Cuenta - SiSEP</title>
     <link rel="stylesheet" href="../assets/styles/mi_cuenta.css" />
-    <script
-      src="https://kit.fontawesome.com/35195391d2.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/35195391d2.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="fondo-transparente"></div>
+    <header>
+      <h1>Mi Cuenta</h1>
+      <p class="subtitulo-header">Aquí podés consultar tus datos y opciones de usuario</p>
+    </header>
 
-    <main class="card-cuenta">
-      <h1>👤 Mi Cuenta</h1>
+    <main class="container">
+      <div class="card-cuenta">
+        <h1>👤 Mi Cuenta</h1>
 
-      <section class="seccion">
-        <h2>Datos personales</h2>
-        <div class="botones">
-          <a href="/views/mi_cuenta_editar.html" class="boton-link">Editar</a>
-          <button>Eliminar</button>
-        </div>
-      </section>
+        <section class="seccion">
+          <h2>Datos personales</h2>
+          <div class="botones">
+            <a href="/views/mi_cuenta_editar.html" class="boton-link">Editar</a>
+            <button>Eliminar</button>
+          </div>
+        </section>
 
-      <section class="seccion">
-        <h2>Membresía</h2>
-      </section>
-
-      <section class="seccion">
-        <h2>Historial</h2>
-      </section>
-
-      <section class="seccion">
-        <h2>Seguridad</h2>
-      </section>
-
-      <section class="seccion">
-        <h2>Ayuda</h2>
-      </section>
+        <section class="seccion"><h2>Membresía</h2></section>
+        <section class="seccion"><h2>Historial</h2></section>
+        <section class="seccion"><h2>Seguridad</h2></section>
+        <section class="seccion"><h2>Ayuda</h2></section>
+      </div>
     </main>
+
+    <footer>
+      <div id="footer-top-img">
+        <img src="/assets/images/sisep_logo.png" alt="SISEP LOGO" style="height: 90px;" />
+      </div>
+      <p>SiSEP - Sistema de Gestión para Clubes Deportivos</p>
+      <small>Versión 1.0</small>
+      <div class="footer-redes">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </footer>
   </body>
 </html>
+
