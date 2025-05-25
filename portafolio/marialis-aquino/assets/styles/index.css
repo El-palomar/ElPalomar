@@ -6,7 +6,6 @@
   --color-gris: #f3f4f6;
 }
 
-/* Reset y base */
 body {
   margin: 0;
   padding: 0;
@@ -53,13 +52,13 @@ header {
 
 /* Nombre destacado */
 .nombre-marca {
-  color: #e8f6e4;
+  color: #fbbf24;
   font-weight: bold;
   transition: color 0.4s ease;
 }
 
 .nombre-marca:hover {
-  color: #fbbf24;
+  color: #eee8da;
 }
 
 /* Avatar en header */
@@ -72,7 +71,7 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* IMAGEN SOBRE MÍ */
+/* Imagen sobre mi */
 .img-sobre-mi {
   width: 200px;
   height: 250px;
@@ -142,7 +141,7 @@ header {
   border-radius: 1rem;
 }
 
-/* BOTONES OUTLINE PERSONALIZADOS */
+/* BOTONES OUTLINE */
 .btn-outline-primary {
   background-color: var(--color-principal);
   color: #fff;
@@ -162,7 +161,6 @@ header {
 .btn-outline-success:focus,
 .btn-outline-success:active {
   background-color: unset;
-  /* Re-asignar mismo fondo que en estado por defecto */
   background-color: var(--color-principal);
   color: #fff;
   border: none;
