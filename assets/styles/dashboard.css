@@ -191,7 +191,7 @@ p {
   background-color: rgb(252, 74, 65);
 }
 
-/* === Botones truchos === */ 
+/* === Botones truchos ===  Remover en la proxima edicion */
 .btn-editar,
 .btn-cancelar {
   display: inline-block;
@@ -251,7 +251,7 @@ footer small {
 }
 
 .footer-redes {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .footer-redes a {
