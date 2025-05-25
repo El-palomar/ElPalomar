@@ -1,32 +1,181 @@
+/* === RESET Y BASE === */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #2c3e50;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.inscripcion-actividades {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI", sans-serif;
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: center;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
 }
 
 h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* Clases reutilizables para títulos */
+.titulo-principal {
+  font-size: 26px;
+  color: #2c3e50;
   text-align: center;
-  color: #333;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.titulo-secundario {
+  font-size: 20px;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  width: 220px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.sidebar .logo img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar h1 {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #ecf0f1;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #34495e;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+/* === MAIN CONTENT === */
+.main-content {
+  flex: 1;
+  margin-left: 220px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* === HEADER === */
+.header {
+  background-color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h2 {
+  margin: 0;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* === INSCRIPCIÓN ACTIVIDADES === */
+.inscripcion-actividades {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.inscripcion-actividades h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.grid-actividades {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 0;
 }
 
 .actividad {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fefefe;
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid #dcdcdc;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  min-height: 280px;
 }
 
 .actividad h3 {
   color: #2c3e50;
-  margin-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 16px;
 }
 
 .lista-horarios {
@@ -37,9 +186,10 @@ h2 {
 
 .lista-horarios li {
   border-top: 1px solid #eee;
-  padding: 10px 0;
+  padding: 12px 0;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 
 .lista-horarios li:first-child {
@@ -92,56 +242,23 @@ h2 {
   color: white;
 }
 
-/* === FOOTER === */
-footer {
-  margin-left: 220px;
-  text-align: center;
-  padding: 10px 20px;
-  background-color: #c3c8c9;
-  color: #2c3e50;
-  font-size: 14px;
-  border-top: 1px solid #ccc;
-  margin-top: auto;
-}
-
-.footer-logo {
-  margin-bottom: 10px;
-}
-
-.footer-logo img {
-  height: 60px;
-}
-
-footer small {
-  display: block;
-  margin-top: 5px;
-  font-size: 12px;
-  color: #7f8c8d;
-}
-
-.footer-redes {
-  margin-top: 20px;
-}
-
-.footer-redes a {
-  margin: 0 8px;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-
-.footer-redes a:hover {
-  color: hsl(211, 79%, 9%);
-}
-
 /* 📱 RESPONSIVE MOBILE */
 @media screen and (max-width: 600px) {
   .lista-horarios li {
     font-size: 14px;
   }
 
-  .actividad {
-    padding: 12px;
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  footer {
+    margin-left: 0;
+  }
+
+  .acciones-inscripcion {
+    flex-direction: column;
   }
 
   .btn-cancelar,
@@ -149,11 +266,19 @@ footer small {
     flex: 1 1 100%;
   }
 
-  h2 {
-    font-size: 22px;
+  .actividad h3 {
+    font-size: 20px;
   }
 
-  .actividad h3 {
-    font-size: 18px;
+  .lista-horarios li {
+    font-size: 14px;
+  }
+
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .grid-actividades {
+    grid-template-columns: 1fr;
   }
 }

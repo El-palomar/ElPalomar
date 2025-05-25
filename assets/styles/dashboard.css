@@ -224,30 +224,6 @@ p {
 }
 
 /* === FOOTER === */
-.footer-redes {
-  margin-top: 10px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-editar {
-  background-color: darkorange;
-}
-
-.btn-editar:hover {
-  background-color: #d2691e;
-  transform: scale(1.02);
-}
-
-.btn-cancelar {
-  background-color: rgb(252, 74, 65);
-}
-
-.btn-cancelar:hover {
-  background-color: rgb(200, 50, 45);
-  transform: scale(1.02);
-}
-
-/* === FOOTER === */
 footer {
   margin-left: 220px;
   text-align: center;
@@ -275,7 +251,7 @@ footer small {
 }
 
 .footer-redes {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .footer-redes a {
