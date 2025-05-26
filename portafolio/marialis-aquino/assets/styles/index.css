@@ -1,118 +1,242 @@
-/* Paleta y fuentes */
 :root {
-  --color-principal: #2341aa;
-  --color-secundario: #192552;
-  --color-acento: #223a86;
+  --color-principal: #2643A4;
+  --color-secundario: #1e40af;
   --color-fondo: #ffffff;
   --color-texto: #333333;
-  --gris-suave: #f2f2f2;
+  --color-gris: #f3f4f6;
 }
 
+
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #ffe5b4);
+  background: linear-gradient(to bottom right, #ffe5b4, #ffe5b4, #ffe5b4);
   color: var(--color-texto);
+}
+
+
+.barra-navegacion {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.barra-navegacion ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Encabezado */
-header {
-  background: linear-gradient(135deg, var(--color-principal), var(--color-acento));
-  color: white;
-  padding: 3rem 1rem;
-  text-align: center;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  position: relative;
-}
 
-header h1 {
-  font-size: 2.8rem;
-  font-weight: bold;
-}
-
-header .lead {
-  font-size: 1.25rem;
-  margin-top: 1rem;
-}
-
-/* Imagen tipo avatar superior derecha */
-.imagen-portfolio {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 110px;
-  height: auto;
-  z-index: 10;
-}
-
-.imagen-portfolio img {
-  width: 100%;
-  max-width: 110px;
-  height: auto;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Secciones generales */
-.section-title {
+.barra-navegacion a {
+  text-decoration: none;
   color: var(--color-principal);
   font-weight: 600;
-  border-bottom: 2px solid var(--color-principal);
-  padding-bottom: 0.4rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-/* Listas */
-ul {
-  padding-left: 1.2rem;
-}
-
-ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* Contacto */
-#contacto a {
-  color: var(--color-acento);
-  text-decoration: none;
   transition: color 0.3s ease;
 }
 
+
+.barra-navegacion a:hover {
+  color: var(--color-secundario);
+}
+
+
+/* HEADER */
+header {
+  background: linear-gradient(to right, #1E3A8A, #2563EB);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+
+/* Nombre destacado */
+.nombre-marca {
+  color: #fbbf24;
+  font-weight: bold;
+  transition: color 0.4s ease;
+}
+
+
+.nombre-marca:hover {
+  color: #eee8da;
+}
+
+
+/* Avatar en header */
+.imagen-portfolio img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Imagen sobre mi */
+.img-sobre-mi {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 40%;
+  border: 3px solid white;
+}
+
+
+/* TÍTULOS DE SECCIÓN */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: var(--color-principal);
+  margin: 2rem 0;
+  position: relative;
+}
+
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: #9b9ba8;
+}
+
+
+.section-title:hover::before,
+.section-title:hover::after {
+  background-color: var(--color-principal);
+}
+
+
+/* HABILIDADES (carrusel) */
+.card-habilidad {
+  width: 160px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card-habilidad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+.card-habilidad img {
+  max-width: 60px;
+  margin-bottom: 10px;
+}
+
+
+.card-habilidad h5 {
+  margin: 10px 0 5px;
+}
+
+
+/* ESTILO GENÉRICO DE CARD */
+.card {
+  background-color: #f5b50b;
+}
+
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+
+/* BOTONES OUTLINE */
+.btn-outline-primary {
+  background-color: var(--color-principal);
+  color: #fff;
+  border: none;
+}
+
+
+.btn-outline-success {
+  background-color: #f5b50b;
+  color: #fff;
+  border: none;
+}
+
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-success:hover,
+.btn-outline-success:focus,
+.btn-outline-success:active {
+  background-color: unset;
+  background-color: var(--color-principal);
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+
+.btn:hover {
+  transform: none;
+}
+
+
+/* ENLACES DE CONTACTO */
+#contacto a {
+  color: var(--color-principal);
+  text-decoration: none;
+}
+
+
 #contacto a:hover {
   text-decoration: underline;
-  color: var(--color-principal);
+  color: var(--color-secundario);
 }
 
-/* Footer */
+
+/* FOOTER */
 footer {
-  background-color: #f8f8f8;
-  color: #777;
+  background-color: #1E3A8A;
+  text-align: center;
+  padding: 1rem 0;
   font-size: 0.9rem;
-  border-top: 1px solid #ddd;
+  margin-top: 4rem;
+  color: white;
 }
 
-/* Ajustes responsivos */
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .imagen-portfolio {
-    position: static;
-    margin: 0 auto 1rem;
-    display: block;
-    text-align: center;
+  .imagen-portfolio img {
+    width: 100px;
+    height: 100px;
   }
-
-  header {
-    padding: 2rem 1rem;
+  .img-sobre-mi {
+    width: 150px;
+    height: 150px;
   }
-
   header h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
-
-  header .lead {
-    font-size: 1rem;
+  .card-habilidad {
+    width: 140px;
+  }
+  .section-title {
+    font-size: 1.4rem;
   }
 }
