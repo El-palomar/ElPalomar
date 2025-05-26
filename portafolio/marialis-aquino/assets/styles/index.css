@@ -10,7 +10,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--gris-suave);
+  background: linear-gradient(to bottom right, #ffe5b4);
   color: var(--color-texto);
   margin: 0;
   padding: 0;
