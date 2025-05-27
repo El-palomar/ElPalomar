@@ -1,9 +1,8 @@
 #actividades-home{
     width: 100%;
-    min-height: 100vh;
-    height: auto;
+    height: 100vh;
     box-sizing: border-box;
-    padding:var(--margin-principal);
+    padding:2rem;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -14,75 +13,99 @@
     padding-top: 2rem;
 }
 
-#actividades-home h2{
+#actividades-home-text{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#actividades-home #actividades-home-text h2{
     font-size: var(--titulos);
 }
 
-#actividades-home-card-container{
+#carouselExampleAutoplaying{
     width: 100%;
-    display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+    height: 80%;
+}
+.carousel-inner{
+    height: 100%;
+}
+.carousel-item{
+    height: 100%;
+    width: 100%;
 }
 
-.card-actividades-home{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: white;
-    border-radius: 0.75rem;
-    height: 400px;
-    overflow: hidden;
-}
-.card-actividades-home-img{
-    width: 100%;
-    height: 50%;
-}
-.card-actividades-home-text{
-    padding: 0.5rem 2rem;
-    color: black;
-}
-.card-actividades-home-img img{
+.carousel-inner .carousel-item img{
     width: 100%;
     height: 100%;
-    border-top-left-radius:0.75rem;
-    border-top-right-radius:0.75rem;
     object-fit: cover;
-    transition: all .2s ease-in-out; 
+    border-radius: 15px;
 }
-
-
-.card-actividades-home-text a{
+.carousel-item .carousel-caption h5{
+    font-size: 2.25rem;
+}
+.carousel-item .carousel-caption p{
+    font-size: 1.3rem;
+}
+.carousel-item .carousel-caption a{
     background-color: var(--color-principal);
-    border: none;
-    text-align: center;
+    border:none;
     padding: 1rem 2rem;
+    width: 80%;
     text-decoration: none;
     color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.carousel-item .carousel-caption{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.card-actividades-home-text a:hover{
-     background-color: #1061b2a4;
-     font-weight: 600;
+.carousel-control-next-icon,.carousel-control-prev-icon{
+    padding: 2rem;
+    border-radius: 50%;
 }
 
-.card-actividades-home-text h3{
-    color: var(--color-principal);
-    font-size: 1.2rem;
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 15px;
+}
+.carousel-item:nth-child(1) .gradient-overlay {
+  background: linear-gradient(to bottom, #fb923c59, #ef444459)
+}
+.carousel-item:nth-child(2) .gradient-overlay {
+  background: linear-gradient(to bottom, #4ade8059, #10b98159);
+}
+.carousel-item:nth-child(3) .gradient-overlay {
+  background: linear-gradient(to bottom, #60a5fa59, #06b6d459);
+}
+.carousel-item:nth-child(4) .gradient-overlay {
+  background: linear-gradient(to bottom, #facc1559, #f9731659);
 }
 
-.card-actividades-home-img:hover img{
-    transform: scale(1.1);
+
+.carousel-caption {
+  z-index: 2;
+  position: relative;
 }
 
-@media screen and (max-width:480px) {   
-    #actividades-home-card-container{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+@media screen and (max-width:768px) {
+
+    .carousel-item .carousel-caption a{
+        width: 100%;
     }
+    
 }
