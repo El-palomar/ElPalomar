@@ -57,6 +57,13 @@ header h1 {
   font-size: 24px;
   color: white;
   margin-bottom: 20px;
+  text-align: center;
+}
+.login-box h3 {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 12px;
+  margin-top: 12px;
 }
 
 label {
