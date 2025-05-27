@@ -11,11 +11,24 @@
       <h1>Bienvenido!</h1>
       <p class="subtitulo-header">Ingresá tus datos y sumate a nuestro club!</p>
     </header>
-    <main>
-        <div class="form-box">
+    <main class="container">
+        <div class="login-box">
         <h1>Registrate ahora</h1>
         <form>
-            <!-- campos -->
+            <h3>Datos de ingreso:</h3>
+            <label for: "email"> E-mail:</label>
+            <input type="email" name="email" required />
+            <label for="contrasena"> Contraseña:</label>
+            <input type="contrasena" name="contrasena" required/>
+            <label for="contrasena"> Confirmar contraseña:</label>
+            <input type="contrasena" name="confirmar-contrasena" required/>
+            <h3>Datos personales:</h3>
+            <label for: "nombre"> Nombre:</label>
+            <input type="nombre" name="nombre" required />
+            <label for="apellido"> Apellido:</label>
+            <input type="apellido" name="apellido" required/>
+            <label for="fecha"> Fecha de nacimiento (dd/mm/aaaa):</label>
+            <input type="fecha" name="fecha" required/>
         </form>
         </div>
     </main>
