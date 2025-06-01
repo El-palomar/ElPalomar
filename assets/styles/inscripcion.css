@@ -1,7 +1,5 @@
 /* === RESET Y BASE === */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #f4f6f9, #dfe6ed);
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,8 +7,10 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3 {
-  font-family: 'Segoe UI', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI", sans-serif;
   color: #2c3e50;
   font-weight: 600;
   text-align: center;
@@ -126,7 +126,7 @@ h3 {
   padding: 15px 20px;
   margin-bottom: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header h2 {
@@ -143,7 +143,7 @@ h3 {
   padding: 30px;
   background-color: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .inscripcion-actividades h2 {
@@ -165,7 +165,7 @@ h3 {
   border-radius: 16px;
   padding: 30px;
   border: 1px solid #dcdcdc;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   min-height: 280px;
 }
 
@@ -239,194 +239,3 @@ h3 {
   background-color: #4caf50;
   color: white;
 }
-
-/* === BOTONES === */
-.btn-inscribirse,
-.btn-cancelar,
-.btn-guardar,
-.btn-accion {
-  display: inline-block;
-  background-color: #2c3e50;
-  color: white;
-  padding: 12px 18px;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 500;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.btn-inscribirse:hover,
-.btn-cancelar:hover,
-.btn-guardar:hover,
-.btn-accion:hover {
-  transform: scale(1.05);
-}
-.btn-inscribirse {
-  background-color: #2c3e50;
-}
-
-.btn-inscribirse:hover {
-  background-color: #1e8449;
-}
-
-.btn-inscribirse:disabled {
-  background-color: gray;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.btn-cancelar {
-  background-color: #e74c3c;
-}
-
-.btn-cancelar:hover {
-  background-color: #c0392b;
-}
-
-.btn-guardar {
-  background-color: #3498db;
-}
-
-.btn-guardar:hover {
-  background-color: #2980b9;
-}
-
-.btn-accion.inscribirse {
-  background-color: #27ae60;
-}
-
-.btn-accion.inscribirse:hover {
-  background-color: #219150;
-}
-
-.btn-accion.cancelar {
-  background-color: #bdc3c7;
-  color: #2c3e50;
-}
-
-.btn-accion.cancelar:hover {
-  background-color: #95a5a6;
-}
-
-/* === FOOTER === */
-footer {
-  width:88.4%;
-  margin-left: 220px;
-  text-align: center;
-  padding: 20px;
-  background-color: #c3c8c9;
-  color: #2c3e50;
-  font-size: 14px;
-  border-top: 1px solid #ccc;
-  border-radius: 0;
-  box-sizing: border-box;
-}
-
-.footer-logo {
-  margin-bottom: 10px;
-}
-
-.footer-logo img {
-  height: 60px;
-}
-
-footer small {
-  display: block;
-  margin-top: 5px;
-  font-size: 12px;
-  color: #7f8c8d;
-}
-
-.footer-redes {
-  margin-top: 20px;
-}
-
-.footer-redes a {
-  margin: 0 8px;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-
-.footer-redes a:hover {
-  color: hsl(211, 79%, 9%);
-}
-
-/* === RESPONSIVE === */
-@media screen and (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    position: relative;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px 20px;
-  }
-
-  .sidebar .logo {
-    margin-bottom: 0;
-    width: auto;
-  }
-
-  .sidebar nav ul {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    flex-wrap: wrap;
-    width: auto;
-  }
-
-  .sidebar nav ul li {
-    margin: 0;
-  }
-
-  .sidebar nav ul li a {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
-  .main-content {
-    margin-left: 0;
-    padding: 10px;
-  }
-
-  footer {
-    margin-left: 0;
-  }
-
-  .acciones-inscripcion {
-    flex-direction: column;
-  }
-
-  .btn-cancelar,
-  .btn-guardar {
-    flex: 1 1 100%;
-  }
-
-  .actividad h3 {
-    font-size: 20px;
-  }
-
-  .lista-horarios li {
-    font-size: 14px;
-  }
-
-  .header h2 {
-    font-size: 20px;
-  }
-
-  .grid-actividades {
-    grid-template-columns: 1fr;
-  }
-}
-

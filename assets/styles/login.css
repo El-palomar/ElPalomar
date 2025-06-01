@@ -57,6 +57,13 @@ header h1 {
   font-size: 24px;
   color: white;
   margin-bottom: 20px;
+  text-align: center;
+}
+.login-box h3 {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 12px;
+  margin-top: 12px;
 }
 
 label {
@@ -67,7 +74,10 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="tel"]  {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -75,6 +85,13 @@ input[type="password"] {
   border-radius: 6px;
   font-size: 16px;
 }
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
 
 input[type="submit"] {
   width: 100%;
