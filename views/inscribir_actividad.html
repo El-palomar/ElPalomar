@@ -30,106 +30,120 @@
     </header>
 
     <section class="inscripcion-actividades">
-      <h2>Nuestros horarios y cupos de inscripción</h2>
-
+      <h2>Nuestros horarios y cupos de inscripción, ¡elije tu favorito y empieza ahora!</h2>
       <div class="grid-actividades">
 
         <!-- Fútbol -->
-        <div class="actividad">
-          <h3>Fútbol</h3>
-          <ul class="lista-horarios">
-            <li>
-              <p><strong>Lunes • 17:00 - 19:00</strong></p>
-              <p>Fabrizio Avila - Cancha 22</p>
-              <span class="cupos cupos-disponibles">4 cupos</span><br>
-              <button class="btn-inscribirse">Inscribirse</button>
-            </li>
-            <li>
-              <p><strong>Miércoles • 17:00 - 19:00</strong></p>
-              <p>Fabrizio Avila - Cancha 21</p>
-              <span class="cupos cupos-agotados">Sin cupo</span><br>
-              <button class="btn-inscribirse" disabled>Sin cupo</button>
-            </li>
-            <li>
-              <p><strong>Viernes • 17:00 - 19:00</strong></p>
-              <p>Fabrizio Avila - Cancha 20</p>
-              <span class="cupos cupos-disponibles">2 cupos</span><br>
-              <button class="btn-inscribirse">Inscribirse</button>
-            </li>
-          </ul>
-        </div>
+<div class="actividad">
+  <div class="imagen-actividad">
+    <img src="/assets/images/futbol.jpg" alt="Fútbol">
+  </div>
+  <h3 class="titulo-actividad">Fútbol</h3>
+  <ul class="lista-horarios">
+    <li>
+      <p><strong>Lunes • 17:00 - 19:00</strong></p>
+      <p>Fabrizio Avila - Cancha 22</p>
+      <span class="cupos cupos-disponibles">4 cupos</span><br>
+      <button class="btn-inscribirse">Inscribirse</button>
+    </li>
+    <li>
+      <p><strong>Miércoles • 17:00 - 19:00</strong></p>
+      <p>Fabrizio Avila - Cancha 22</p>
+      <span class="cupos cupos-completos">Cupos completos</span><br>
+      <button class="btn-cancelar" disabled>Inscribirse</button>
+    </li>
+  </ul>
+</div>
 
-        <!-- Natación -->
-        <div class="actividad">
-          <h3>Natación</h3>
-          <ul class="lista-horarios">
-            <li>
-              <p><strong>Lunes • 08:00 - 09:00</strong></p>
-              <p>Ezequiel Gonzalez - Pileta Olímpica</p>
-              <span class="cupos cupos-disponibles">5 cupos</span><br>
-              <button class="btn-inscribirse">Inscribirse</button>
-            </li>
-            <li>
-              <p><strong>Miércoles • 08:00 - 09:00</strong></p>
-              <p>Ezequiel Gonzalez - Pileta Olímpica</p>
-              <span class="cupos cupos-disponibles">8 cupos</span><br>
-              <button class="btn-inscribirse">Inscribirse</button>
-            </li>
-            <li>
-              <p><strong>Miércoles • 18:00 - 19:00</strong></p>
-              <p>Ana Camila Almiron - Pileta Olímpica</p>
-              <span class="cupos cupos-disponibles">2 cupos</span><br>
-              <button class="btn-inscribirse">Inscribirse</button>
-            </li>
-            <li>
-              <p><strong>Viernes • 10:00 - 11:00</strong></p>
-              <p>Ana Camila Almiron - Pileta Olímpica</p>
-              <span class="cupos cupos-agotados">Sin cupo</span><br>
-              <button class="btn-inscribirse" disabled>Sin cupo</button>
-            </li>
-          </ul>
-        </div>
+<!-- Natación -->
+<div class="actividad">
+  <div class="imagen-actividad">
+    <img src="/assets/images/natacion.jpg" alt="Natación">
+  </div>
+  <h3 class="titulo-actividad">Natación</h3>
+  <ul class="lista-horarios">
+    <li>
+      <p><strong>Martes • 10:00 - 11:00</strong></p>
+      <p>Lucía Torres - Pileta cubierta</p>
+      <span class="cupos cupos-disponibles">3 cupos</span><br>
+      <button class="btn-inscribirse">Inscribirse</button>
+    </li>
+    <li>
+      <p><strong>Jueves • 10:00 - 11:00</strong></p>
+      <p>Lucía Torres - Pileta cubierta</p>
+      <span class="cupos cupos-disponibles">2 cupos</span><br>
+      <button class="btn-inscribirse">Inscribirse</button>
+    </li>
+  </ul>
+</div>
 
-        <!-- Voleibol -->
-        <div class="actividad">
-          <h3>Voleibol</h3>
-          <ul class="lista-horarios">
-            <li>
-              <p><strong>Martes • 16:00 - 17:30</strong></p>
-              <p>Marialis Aquino - Cancha de Voley 2</p>
-              <span class="cupos cupos-disponibles">6 cupos</span><br>
-              <button class="btn-inscribirse">Inscribirse</button>
-            </li>
-            <li>
-              <p><strong>Jueves • 16:00 - 17:30</strong></p>
-              <p>Marialis Aquino - Cancha de Voley 1</p>
-              <span class="cupos cupos-disponibles">3 cupos</span><br>
-              <button class="btn-inscribirse">Inscribirse</button>
-            </li>
-          </ul>
-        </div>
+<!-- Básquet -->
+<div class="actividad">
+  <div class="imagen-actividad"> 
+    <img src="/assets/images/basket.jpg" alt="Básquet">
+  </div>
+  <h3 class="titulo-actividad">Básquet</h3>
+  <ul class="lista-horarios">
+    <li>
+      <p><strong>Lunes • 15:00 - 16:30</strong></p>
+      <p>Julián López - Gimnasio B</p>
+      <span class="cupos cupos-disponibles">5 cupos</span><br>
+      <button class="btn-inscribirse">Inscribirse</button>
+    </li>
+    <li>
+      <p><strong>Viernes • 15:00 - 16:30</strong></p>
+      <p>Julián López - Gimnasio B</p>
+      <span class="cupos cupos-completos">Cupos completos</span><br>
+      <button class="btn-cancelar" disabled>Inscribirse</button>
+    </li>
+  </ul>
+</div>
 
-        <!-- Básquet -->
-        <div class="actividad">
-          <h3>Básquet</h3>
-          <ul class="lista-horarios">
-            <li>
-              <p><strong>Lunes • 19:00 - 20:30</strong></p>
-              <p>Carlos Huallpa - Gimnasio 2</p>
-              <span class="cupos cupos-disponibles">5 cupos</span><br>
-              <button class="btn-inscribirse">Inscribirse</button>
-            </li>
-            <li>
-              <p><strong>Miércoles • 19:00 - 20:30</strong></p>
-              <p>Carlos Huallpa - Gimnasio 3</p>
-              <span class="cupos cupos-agotados">Sin cupo</span><br>
-              <button class="btn-inscribirse" disabled>Sin cupo</button>
-            </li>
-          </ul>
-        </div>
+<!-- Voleibol -->
+<div class="actividad">
+  <div class="imagen-actividad">
+    <img src="/assets/images/volley.jpg" alt="Voleibol">
+  </div>
+  <h3 class="titulo-actividad">Voleibol</h3>
+  <ul class="lista-horarios">
+    <li>
+      <p><strong>Miércoles • 18:00 - 19:30</strong></p>
+      <p>María Gómez - Gimnasio A</p>
+      <span class="cupos cupos-disponibles">6 cupos</span><br>
+      <button class="btn-inscribirse">Inscribirse</button>
+    </li>
+    <li>
+      <p><strong>Viernes • 18:00 - 19:30</strong></p>
+      <p>María Gómez - Gimnasio A</p>
+      <span class="cupos cupos-disponibles">1 cupo</span><br>
+      <button class="btn-inscribirse">Inscribirse</button>
+    </li>
+  </ul>
+</div>
 
+<<<<<<< Updated upstream
   <div class="acciones-inscripcion">
     <button class="btn-cancelar">Cancelar</button>
     <button class="btn-guardar">Guardar Inscripción</button>
   </div>
 </section>
+=======
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="footer-logo">
+      <img src="/assets/images/sisep_logo.png" alt="SISEP LOGO" style="height: 90px;" />
+    </div>
+    <div class="footer-redes">
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter-square"></i></a>
+    </div>
+    <small>&copy; 2025 Mi Club Deportivo. Todos los derechos reservados.</small>
+  </footer>
+
+</body>
+</html>
+>>>>>>> Stashed changes
