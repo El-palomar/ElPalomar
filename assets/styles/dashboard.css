@@ -60,21 +60,6 @@ body {
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Logo arriba a la derecha */
-.logo-container {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-}
-
-.logo-header {
-  max-height: 130px;
-  width: auto;
-  animation: flyLoop 4s ease-in-out infinite;
-  transform-origin: center;
-}
-
 /* Contenido centrado vertical y horizontal */
 .header-texto {
   max-width: 800px;
