@@ -1,0 +1,35 @@
+#experiencia{
+    background-color: #1c1c1e;
+    min-height: 100vh;
+    width: 100%;
+    padding-left: calc(var(--margen-principal) + 3rem);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2rem;
+}
+
+#experiencia h2{
+    font-size: var(--tamaño-titulo);
+    margin: 1rem 0;
+}
+
+
+
+@media screen and (max-width:1024px) {
+    #experiencia{
+        padding:3rem;
+    }
+    #experiencia h2{
+        font-size: 2.5rem;
+    }
+   
+}
+
+@media screen and (max-width:768px){
+    #experiencia h2{
+        margin: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+}
