@@ -42,7 +42,7 @@ Para mantener una buena organización en el desarrollo del proyecto, implementam
 
 🔹 main: contiene la versión final y estable del proyecto.
 
-🔸 develop: rama intermedia donde se integran todos los cambios antes de pasar a producción.
+🔸 develop: rama intermedia donde se integran todos los cambios antes de pasar a producción (main)
 
 🔧 Ramas personales: cada integrante trabajó en una rama con su nombre
 
