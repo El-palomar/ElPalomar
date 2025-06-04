@@ -33,6 +33,12 @@ nav{
 }
 
 @media screen and (max-width:991px){
+    nav .container-fluid{
+        background-color: white;
+    }
+    #login-button{
+        margin-bottom: 1rem;
+    }
     .navbar-brand img{
         height: 10vh;
         object-fit: cover;
