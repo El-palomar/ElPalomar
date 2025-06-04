@@ -5,7 +5,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Segoe UI", sans-serif; /* Se agregó aquí */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
