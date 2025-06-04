@@ -34,7 +34,7 @@ body {
     text-align: center;
 }
 
-/* Íconos en general */
+/* Íconos de habilidades */
 .skills .skill-item img {
     width: auto;
     height: 48px;
@@ -56,3 +56,12 @@ body {
     width: 100%;
 }
 
+/*Hover de iconos */
+
+.skills .skill-item:hover {
+    background-color: #f0f0f0;
+    border: 2px solid red;
+    transform: scale(1.2);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
