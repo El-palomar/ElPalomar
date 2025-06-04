@@ -37,6 +37,19 @@ Hacer una aplicación web donde los socios puedan gestionar todo de forma:
 - Rápida
 - Desde cualquier dispositivo
 
+## 🌿 Organización del Proyecto en GitHub (Sistema de Branching) 🌿
+Para mantener una buena organización en el desarrollo del proyecto, implementamos un sistema de branching basado en tres niveles / ramas principales:
+
+🔹 main: contiene la versión final y estable del proyecto.
+
+🔸 develop: rama intermedia donde se integran todos los cambios antes de pasar a producción (main)
+
+🔧 Ramas personales: cada integrante trabajó en una rama con su nombre
+
+### 🚀 ¿Cómo trabajamos?
+Cada integrante desarrolló sus tareas / issues  en su propia rama personal.
+
+Luego, unimos los avances a la rama develop, donde se integraban y probaban todos los cambios en conjunto.
 
 ## 🕊️ ¿Quienes Somos ?🕊️
 **_El Palomar  - Estudiantes del ISPC / Tecnicatura en Desarrollo de Software_**
