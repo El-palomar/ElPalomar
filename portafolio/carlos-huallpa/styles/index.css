@@ -1,3 +1,5 @@
+/* Estilos generales */
+
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
@@ -7,8 +9,13 @@ body {
 .hero {
     background: #1e1e2f;
     color: white;
-    padding: 100px 20px;
+    padding: 80px 20px 60px 20px;
     text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
 }
 
 .section {
@@ -34,7 +41,7 @@ body {
     text-align: center;
 }
 
-/* Íconos en general */
+/* Íconos de habilidades */
 .skills .skill-item img {
     width: auto;
     height: 48px;
@@ -56,3 +63,30 @@ body {
     width: 100%;
 }
 
+/*Hover de iconos */
+
+.skills .skill-item:hover {
+    background-color: #f0f0f0;
+    border: 2px solid rgba(3, 8, 75, 0.525);
+    transform: scale(1.2);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+/* Foto de perfil */
+.profile-pic {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    object-position: 50% 15%;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.profile-pic:hover {
+    filter: grayscale(60%);
+    transform: scale(1.05);
+}

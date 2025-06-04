@@ -9,10 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-
+    <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -27,12 +27,22 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
+    </header>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <!-- Texto de presentación -->
+      <div class="text-center text-md-start">
         <h1>¡Hola! Soy Carlos Huallpa</h1>
         <p>Me apasionan las ciencias básicas y la computación. Analizo datos para encontrar patrones y extraer conclusiones.</p>
-    </header>
+      </div>
+      <!-- Imagen de perfil -->
+      <img src="images/carlos2.jpeg" alt="Carlos Huallpa" class="profile-pic">
+    </div>
+  </div>
+</section>
+
 
     <!-- Sobre mí -->
     <section id="about" class="section">
@@ -48,6 +58,7 @@
     </section>
 
     <!-- Habilidades -->
+
     <section id="skills" class="section bg-light">
         <div class="container text-center">
             <h2>Habilidades</h2>
@@ -87,7 +98,7 @@
                 </div>
                 <div class="skill-item">
                     <img src="images/git.svg" alt="Git" />
-                    <span>...Git...</span>
+                    <span>Git</span>
                 </div>
                 <div class="skill-item">
                     <img src="images/github.svg" alt="Github" />
