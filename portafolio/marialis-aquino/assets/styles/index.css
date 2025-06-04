@@ -39,7 +39,7 @@ body {
   color: var(--color-principal);
   font-weight: 600;
   transition: color 0.3s ease;
-} 
+}
 
 
 .barra-navegacion a:hover {
@@ -104,10 +104,6 @@ header {
   position: relative;
 }
 
-.titulo-azul {
-  color: #1E3A8A;
-}
-
 
 .section-title::before,
 .section-title::after {
@@ -152,7 +148,7 @@ header {
 }
 
 
-/* ESTILO CARD */
+/* ESTILO GENÉRICO DE CARD */
 .card {
   background-color: #f5b50b;
 }
