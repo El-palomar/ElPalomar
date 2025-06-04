@@ -228,9 +228,9 @@ h3 {
   color: #155724;
 }
 
-.cupos-agotados {
+.cupos-completos {
   background-color: #f8d7da;
-  color: #721c24;
+  color: #b2202e;
 }
 
 .acciones-inscripcion {
@@ -354,7 +354,6 @@ h3 {
 
 /* === FOOTER === */
 footer {
-  width:88.4%;
   margin-left: 220px;
   text-align: center;
   padding: 20px;
