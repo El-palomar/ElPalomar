@@ -1,0 +1,58 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background: #1e1e2f;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.section {
+    padding: 60px 20px;
+}
+
+.skills {
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.skills .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* Íconos en general */
+.skills .skill-item img {
+    width: auto;
+    height: 48px;
+    max-width: 75px;
+    margin-bottom: 10px;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* Texto debajo de cada ícono */
+.skills .skill-item span {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
