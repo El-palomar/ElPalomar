@@ -83,13 +83,16 @@ body {
     object-position: 50% 15%;
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
 
 }
 
 .profile-pic:hover {
     filter: grayscale(60%);
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
+
+/* About me */
 .about-img {
     max-height: 300px;
     width: auto;
@@ -103,4 +106,16 @@ body {
 .about-img:hover {
     transform: scale(1.03);
     filter: grayscale(0%);
+}
+
+/* Footer */
+.footer-icon {
+    font-size: 24px;
+    color: #9ec6ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+    color: #ffffff;
 }
