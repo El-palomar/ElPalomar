@@ -1,5 +1,10 @@
 /* Estilos generales */
 
+.navbar-custom {
+  background-color: #1e1e2f;
+}
+
+
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
