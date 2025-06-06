@@ -1,9 +1,9 @@
 /* Estilos generales */
 
 .navbar-custom {
-  background-color: #1e1e2f;
+  background-color: #1e1e2c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -115,7 +115,7 @@ body {
 
 /* Footer */
 .footer-icon {
-    font-size: 24px;
+    font-size: 30px;
     color: #9ec6ff;
     text-decoration: none;
     transition: color 0.3s ease;
