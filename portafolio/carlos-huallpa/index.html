@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Portfolio de Carlos Huallpa</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="styles/index.css" >
 </head>
 <body>
-
+    <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">Mi Portfolio</a>
-            <div class="collapse navbar-collapse">
+            <!-- Boton hamburguesado -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
@@ -26,81 +32,180 @@
                 </ul>
             </div>
         </div>
-    </nav>
 
+    </nav>
+    </header>
     <!-- Hero Section -->
-    <header class="hero">
+    <section class="hero">
+        <div class="container">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <!-- Texto de presentación -->
+        <div class="text-center text-md-start">
         <h1>¡Hola! Soy Carlos Huallpa</h1>
         <p>Me apasionan las ciencias básicas y la computación. Analizo datos para encontrar patrones y extraer conclusiones.</p>
-    </header>
+        </div>
+        <!-- Imagen de perfil -->
+        <img src="images/carlos2.jpeg" alt="Carlos Huallpa" class="profile-pic">
+        </div>
+        </div>
+    </section>
+
 
     <!-- Sobre mí -->
     <section id="about" class="section">
         <div class="container">
-            <h2>Sobre mí</h2>
-            <p>
-                Como biólogo me desempeñé durante muchos años en laboratorios de investigación, donde me especialicé en el desarrollo de medicamentos a partir de extractos de plantas medicinales y aromáticas. Mi interés por optimizar procesos me llevó a adentrarme en el mundo de la programación y la gestión de datos.
-            </p>
-            <p>
-                Actualmente estudio Desarrollo de Software en el Instituto Politécnico de Córdoba, donde sigo expandiendo mis conocimientos en admministración de bases de datos, automatización de tareas, web scraping y servicios en la nube como AWS.
-            </p>
+
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0 text-center">
+                    <img src="images/science.png" alt="cientifico"
+                     class="about-img img-fluid mx-auto d-block" >
+                </div>
+            
+                <div class="col-md-6">
+                    <h2>Sobre mí</h2>            
+                    <p>
+                    Como biólogo me desempeñé durante muchos años en laboratorios de investigación, donde me especialicé en el desarrollo de medicamentos a partir de extractos de plantas medicinales y aromáticas. Mi interés por optimizar procesos me llevó a adentrarme en el mundo de la programación y la gestión de datos.
+                    </p>
+                    <p>
+                    Actualmente estudio Desarrollo de Software en el Instituto Politécnico de Córdoba, donde sigo expandiendo mis conocimientos en administración de bases de datos, automatización de tareas, web scraping y servicios en la nube como AWS.
+                    </p>
+                </div>
+            </div>
+            
+
         </div>    
     </section>
 
     <!-- Habilidades -->
+
     <section id="skills" class="section bg-light">
         <div class="container text-center">
             <h2>Habilidades</h2>
             <div class="skills d-flex flex-wrap justify-content-center gap-4 mt-4">
 
                 <div class="skill-item">
-                    <img src="images/python.svg" alt="Python" />
+                    <img src="images/python.svg" alt="Python" >
                     <span>Python</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/pandas.svg" alt="Pandas" />
+                    <img src="images/pandas.svg" alt="Pandas" >
                     <span>Pandas</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/matplotlib2.svg" alt="Matplotlib" />
+                    <img src="images/matplotlib2.svg" alt="Matplotlib" >
                     <span>Matplotlib</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/selenium.svg" alt="Selenium" />
-                    <span>Selenium</span>
-                </div>
-                <div class="skill-item">
-                    <img src="images/powerbi.svg" alt="Power BI" />
+                    <img src="images/powerbi.svg" alt="Power BI" >
                     <span>Power BI</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/mysql.svg" alt="MySQL" />
+                    <img src="images/tableau.svg" alt="Tableau" >
+                    <span>Tableau</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/mysql.svg" alt="MySQL" >
                     <span>MySQL</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/mongodb.svg" alt="MongoDB" />
+                    <img src="images/mongodb.svg" alt="MongoDB" >
                     <span>MongoDB</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/aws.svg" alt="AWS" />
-                    <span>A. W. S.</span>
+                    <img src="images/aws.svg" alt="AWS" >
+                    <span>A W S</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/git.svg" alt="Git" />
-                    <span>...Git...</span>
+                    <img src="images/git2.svg" alt="Git" >
+                    <span>Git</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/github.svg" alt="Github" />
+                    <img src="images/github.svg" alt="Github" >
                     <span>Github</span>
                 </div>
                 <div class="skill-item">
-                    <img src="images/tableau.svg" alt="Tableau" />
-                    <span>Tableau</span>
+                    <img src="images/selenium.svg" alt="Selenium" >
+                    <span>Selenium</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/html5.svg" alt="Html 5" >
+                    <span>Html 5</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/css.svg" alt="Css" >
+                    <span>CSS</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/bootstrap.svg" alt="Bootstrap" >
+                    <span>Bootstrap</span>
                 </div>
 
             </div>
         </div>
     </section>
+    <!-- Mis Proyectos --> 
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Mis Proyectos</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/sisep.png" class="card-img-top" alt="sisep">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"> SiSEP: Sistema de gestión de clubes</h5>
+                            <p class="card-text"> Aplicación web para gestionar clubes deportivos. Permite el registro de socios, inscripción  a actividades y provée métricas de interés comercial. Incopora HTML 5, Css y Bootstrap (Producto en desarrollo)</p>
+                            <a href="https://github.com/El-palomar/ElPalomar" class="btn btn-dark mt-auto" target="_blank">
+                                Ir al repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/olimpiadas.png" class="card-img-top" alt="sisep">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"> Análisis de medallas olímpicas</h5>
+                            <p class="card-text"> En este proyecto se recopiló información sobre medalleros olimpicos y se estudió la distribución de medallas. Incopora Python, Selenium, Pandas, Matplotlib y Seaborn (Producto en desarrollo)</p>
+                            <a href="https://github.com/carlos-huallpa/medallas-olimpicas" class="btn btn-dark mt-auto" target="_blank">
+                                Ir al repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/science2.png" class="card-img-top" alt="cientifico">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"> Portfolio personal</h5>
+                            <p class="card-text"> Página web  personal para la demostración de proyectos personales. Utiliza HTML 5, CSS y Bootstrap. (Producto en desarrollo)</p>
+                            <a href="https://github.com/carlos-huallpa/medallas-olimpicas" class="btn btn-dark mt-auto" target="_blank">
+                                Ir al repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>                       
+            </div>
 
+            
+
+        </div>
+    </section>
+<!-- Footer -->
+<footer class="footer bg-dark text-light py-4 mt-5">
+  <div class="container text-center">
+    <div class="mb-3">
+      <a href="https://github.com/carlos-huallpa" target="_blank" class="footer-icon mx-2">
+        <i class="bi bi-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/huallpa-carlos" target="_blank" class="footer-icon mx-2">
+        <i class="bi bi-linkedin"></i>
+      </a>
+    </div>
+    <p class="mb-1">Contacto: carlos.huallpa@gmail.com</p>
+    <p class="mb-0">&copy; 2025 Carlos Huallpa. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<!-- Script para boton de hamburguesa -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
