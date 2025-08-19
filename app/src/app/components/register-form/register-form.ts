@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-register-form',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule,],
   templateUrl: './register-form.html',
-  styleUrl: './register-form.css'
+  styleUrls: ['./register-form.css']
 })
-export class RegisterForm {
-
-}
+export class RegisterForm {}
