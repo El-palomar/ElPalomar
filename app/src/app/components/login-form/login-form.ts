@@ -1,11 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './login-form.html',
-  styleUrl: './login-form.css'
+  styleUrls: ['./login-form.css'],
 })
 export class LoginForm {
+  usuario: string = '';
+  contrasena: string = '';
 
+  @Output() submitForm = new EventEmitter<{
+    usuario: string;
+    contrasena: string;
+  }>();
+
+  onSubmit() {
+    this.submitForm.emit({
+      usuario: this.usuario,
+      contrasena: this.contrasena,
+    });
+  }
 }
