@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -18,7 +18,7 @@ header {
   background: linear-gradient(90deg, #3498db, #2980b9);
   color: white;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -77,7 +77,7 @@ input[type="text"],
 input[type="password"],
 input[type="date"],
 input[type="email"],
-input[type="tel"]  {
+input[type="tel"] {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -91,7 +91,6 @@ input[type="tel"]  {
   gap: 10px;
   margin-bottom: 15px;
 }
-
 
 input[type="submit"] {
   width: 100%;
