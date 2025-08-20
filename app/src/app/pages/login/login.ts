@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LoginFormComponent } from '../../components/login-form/login-form';
+import { LoginForm } from '../../components/login-form/login-form';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, LoginFormComponent],
+  imports: [LoginForm],
   templateUrl: './login.html',
+  styleUrls: ['./login.css'],
 })
-export class LoginPage {}
+export class Login {
+  constructor(private router: Router) {}
+
+  onSubmit(event: { usuario: string; contrasena: string }) {
+    console.log('Usuario:', event.usuario);
+    console.log('Contraseña:', event.contrasena);
+
+    this.router.navigate(['/dashboard']);
+  }
+}

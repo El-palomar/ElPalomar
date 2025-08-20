@@ -1,34 +1,26 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [FormsModule],
   templateUrl: './login-form.html',
-  styleUrl: './login-form.css',
+  styleUrls: ['./login-form.css'],
 })
-export class LoginFormComponent {
-  form;
+export class LoginForm {
+  usuario: string = '';
+  contrasena: string = '';
 
-  constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-    });
-  }
-
-  isInvalid(controlName: string): boolean {
-    const control = this.form.get(controlName);
-    return !!(control && control.invalid && (control.dirty || control.touched));
-  }
+  @Output() submitForm = new EventEmitter<{
+    usuario: string;
+    contrasena: string;
+  }>();
 
   onSubmit() {
-    if (this.form.valid) {
-      console.log('Login enviado ', this.form.value);
-    } else {
-      this.form.markAllAsTouched();
-    }
+    this.submitForm.emit({
+      usuario: this.usuario,
+      contrasena: this.contrasena,
+    });
   }
 }
