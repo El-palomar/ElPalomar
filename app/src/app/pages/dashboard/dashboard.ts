@@ -4,7 +4,8 @@ import { Header } from '../../components/header/header';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  standalone: true,
+  imports: [Footer, Header],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
