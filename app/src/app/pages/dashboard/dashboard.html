@@ -1,0 +1,136 @@
+<!-- Encabezado -->
+<app-header></app-header>
+
+<!-- Menú lateral -->
+<aside class="sidebar" role="complementary">
+  <h2>Dashboard</h2>
+  <nav aria-label="Menú principal">
+    <ul>
+      <li><a routerLink="/">🏠 Inicio</a></li>
+      <li><a routerLink="/mi-cuenta" class="activo">👤 Mi Cuenta</a></li>
+      <li><a routerLink="/cronograma">📅 Cronograma</a></li>
+      <li><a routerLink="/">🔓 Cerrar Sesión</a></li>
+      <li><a routerLink="/configuracion">⚙️ Configuración</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<!-- Contenido principal -->
+<main>
+  <!-- Sección de Actividades Disponibles -->
+  <section
+    id="actividades-disponibles"
+    aria-labelledby="titulo-actividades-disponibles"
+  >
+    <h2 id="titulo-actividades-disponibles">Actividades Disponibles</h2>
+
+    <div class="grid-actividades">
+      <article class="actividad">
+        <img
+          src="assets/images/futbol.jpg"
+          alt="Jugadores de fútbol en acción"
+          class="actividad-img"
+        />
+        <h3>Fútbol</h3>
+        <p>Entrenamientos y partidos semanales.</p>
+        <p><strong>Fecha de inicio:</strong> 20/05/2025</p>
+        <a routerLink="/inscribir-actividad" class="btn-inscribirse"
+          >Inscribirse</a
+        >
+      </article>
+
+      <article class="actividad">
+        <img
+          src="assets/images/natacion.jpg"
+          alt="Persona nadando en piscina"
+          class="actividad-img"
+        />
+        <h3>Natación</h3>
+        <p>Clases de natación para todos los niveles.</p>
+        <p><strong>Fecha de inicio:</strong> 22/05/2025</p>
+        <a routerLink="/inscribir-actividad" class="btn-inscribirse"
+          >Inscribirse</a
+        >
+      </article>
+
+      <article class="actividad">
+        <img
+          src="assets/images/volley.jpg"
+          alt="Jugadores de vóley durante un partido"
+          class="actividad-img"
+        />
+        <h3>Voleibol</h3>
+        <p>Entrenamientos y torneos locales.</p>
+        <p><strong>Fecha de inicio:</strong> 27/05/2025</p>
+        <a routerLink="/inscribir-actividad" class="btn-inscribirse"
+          >Inscribirse</a
+        >
+      </article>
+
+      <article class="actividad">
+        <img
+          src="assets/images/basket.jpg"
+          alt="Partido de básquet en desarrollo"
+          class="actividad-img"
+        />
+        <h3>Básquet</h3>
+        <p>Equipos formados por categorías y competencias.</p>
+        <p><strong>Fecha de inicio:</strong> 30/05/2025</p>
+        <a routerLink="/inscribir-actividad" class="btn-inscribirse"
+          >Inscribirse</a
+        >
+      </article>
+    </div>
+  </section>
+
+  <!-- Sección de Actividades Inscritas -->
+  <section
+    id="actividades-inscritas"
+    aria-labelledby="titulo-actividades-inscritas"
+  >
+    <h2 id="titulo-actividades-inscritas">Mis Actividades Inscritas</h2>
+
+    <article class="actividad-inscrita">
+      <h3>Fútbol</h3>
+      <p>
+        <i class="fa-solid fa-calendar fa-lg icon"></i>Lunes, Miércoles y
+        Viernes, 17:00 - 19:00
+      </p>
+      <div>
+        <span>Profesor</span>
+        <p>Fabrizio Avila</p>
+      </div>
+      <div>
+        <span>Ubicación</span>
+        <p>Cancha 22</p>
+      </div>
+      <div class="botones-actividad">
+        <a routerLink="/notificacion" class="btn-editar">Editar</a>
+        <a routerLink="/notificacion" class="btn-cancelar">Cancelar</a>
+      </div>
+    </article>
+
+    <article class="actividad-inscrita">
+      <h3>Natación</h3>
+      <p>
+        <i class="fa-solid fa-calendar fa-lg icon"></i>Martes y Jueves, 20:00 -
+        21:00
+      </p>
+      <div>
+        <span>Profesor</span>
+        <p>Ezequiel Gonzalez</p>
+      </div>
+      <div>
+        <span>Ubicación</span>
+        <p>Pileta Olímpica</p>
+      </div>
+      <div class="botones-actividad">
+        <a routerLink="/notificacion" class="btn-editar">Editar</a>
+        <a routerLink="/notificacion" class="btn-cancelar">Cancelar</a>
+      </div>
+    </article>
+  </section>
+</main>
+
+<!-- Pie de página -->
+<app-footer></app-footer>
