@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { LoginForm } from '../../components/login-form/login-form';
-import { Footer } from '../../components/footer/footer';
-import { Header } from '../../components/header/header';
+import { CommonModule } from '@angular/common';
+import { LoginFormComponent } from '../../components/login-form/login-form';
 
 @Component({
   selector: 'app-login',
-  imports: [Header, Footer, LoginForm],
+  standalone: true,
+  imports: [CommonModule, LoginFormComponent],
   templateUrl: './login.html',
-  styleUrl: './login.css'
 })
-export class Login {
-
-}
+export class LoginPage {}
