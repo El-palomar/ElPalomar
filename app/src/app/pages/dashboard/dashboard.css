@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
   box-sizing: border-box;
   margin: 0;
@@ -158,7 +157,7 @@ p {
   cursor: pointer;
   margin-top: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  text-decoration: none; 
+  text-decoration: none;
   text-align: center;
 }
 
@@ -283,15 +282,4 @@ footer small {
   footer {
     margin-left: 0;
   }
-=======
-main {
-  padding: 2rem;
-  text-align: center;
-}
-
-button {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
->>>>>>> 7d6a929 (feat: se agrega pagina login con Angular)
 }

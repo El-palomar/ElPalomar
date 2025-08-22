@@ -1,36 +1,34 @@
-<<<<<<< HEAD
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-
-@Component({
-  selector: 'app-login-form',
-  imports: [FormsModule,RouterLink],
-=======
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [FormsModule],
->>>>>>> 7d6a929 (feat: se agrega pagina login con Angular)
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login-form.html',
-  styleUrls: ['./login-form.css'],
+  styleUrl: './login-form.css',
 })
-export class LoginForm {
-  usuario: string = '';
-  contrasena: string = '';
+export class LoginFormComponent {
+  form;
 
-  @Output() submitForm = new EventEmitter<{
-    usuario: string;
-    contrasena: string;
-  }>();
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
+
+  isInvalid(controlName: string): boolean {
+    const control = this.form.get(controlName);
+    return !!(control && control.invalid && (control.dirty || control.touched));
+  }
 
   onSubmit() {
-    this.submitForm.emit({
-      usuario: this.usuario,
-      contrasena: this.contrasena,
-    });
+    if (this.form.valid) {
+      console.log('Login enviado ', this.form.value);
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
 }
