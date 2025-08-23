@@ -2,18 +2,20 @@ import { Component } from '@angular/core';
 
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule,RouterModule],
   templateUrl: './login-form.html',
   styleUrl: './login-form.css',
 })
 export class LoginFormComponent {
   form;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private router:Router) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -28,6 +30,7 @@ export class LoginFormComponent {
   onSubmit() {
     if (this.form.valid) {
       console.log('Login enviado ', this.form.value);
+      this.router.navigate(["/dashboard"])
     } else {
       this.form.markAllAsTouched();
     }
