@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Footer } from '../../components/footer/footer';
-import { Header } from '../../components/header/header';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
+  selector: 'app-mi-cuenta',
   imports: [Footer,RouterModule],
-  templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css',
+  templateUrl: './mi-cuenta.html',
+  styleUrl: './mi-cuenta.css'
 })
-export class Dashboard {}
+export class MiCuenta {
+
+}

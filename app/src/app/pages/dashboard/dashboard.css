@@ -81,17 +81,20 @@ body {
 /* === MAIN === */
 main {
   margin-left: 220px;
-  padding: 30px;
   flex: 1;
 }
 
 section {
   margin-bottom: 40px;
 }
+#actividades-disponibles{
+  padding: 2rem;
+}
 
 #actividades-inscritas {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
 
 .grid-actividades {

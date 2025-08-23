@@ -16,7 +16,7 @@
   align-items: center;
   text-align: center;
 
-  border: 20px solid #1061b2a4;
+  border: 20px solid #2c3e50;
 }
 
 .title {
@@ -95,7 +95,7 @@ button {
   padding: 0.9rem;
   border: none;
   border-radius: 12px;
-  background: #1061b2a4;
+  background: #2c3e50;
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -104,7 +104,7 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background: #0a4885a4;
+  background: #1c2733;
 }
 
 button:disabled {
@@ -120,13 +120,18 @@ button:disabled {
 }
 
 .login-options a {
-  color: #007bff;
+  color: #2c3e50;
   text-decoration: none;
   margin-left: 5px;
 }
 
 .login-options a:hover {
   text-decoration: underline;
+  font-weight: 600;
+}
+.atras-home a{
+  color: #1c2733;
+  text-decoration: none;
 }
 
 @media (max-width: 480px) {
