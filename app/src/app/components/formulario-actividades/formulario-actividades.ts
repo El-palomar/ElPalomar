@@ -1,4 +1,5 @@
 // formulario-actividades.component.ts
+import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,6 +25,7 @@ declare var bootstrap: any;
 
 @Component({
   selector: 'app-formulario-actividades',
+  imports:[ReactiveFormsModule,CommonModule],
   templateUrl: './formulario-actividades.html',
   styleUrls: ['./formulario-actividades.css']
 })

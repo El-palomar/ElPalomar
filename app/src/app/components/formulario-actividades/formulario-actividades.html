@@ -1,4 +1,3 @@
-<p>formulario-actividades works!</p>
 <!-- formulario-actividades.component.html -->
 
 <!-- Botón para abrir el formulario -->
@@ -23,107 +22,105 @@
       </div>
       
       <div class="modal-body">
-        <!-- Nombre -->
-        <div class="mb-3">
-          <label [for]="modalId + 'nombre'" class="form-label">Nombre de la actividad *</label>
-          <input 
-            type="text" 
-            [id]="modalId + 'nombre'"
-            class="form-control"
-            [formControl]="activityForm.get('nombre')!"
-            placeholder="Ej: Básquet"
-            [class.is-invalid]="activityForm.get('nombre')?.invalid && activityForm.get('nombre')?.touched">
-          
-          <div class="invalid-feedback" 
-               *ngIf="activityForm.get('nombre')?.invalid && activityForm.get('nombre')?.touched">
-            El nombre es obligatorio (mínimo 3 caracteres)
+        <!-- ✅ Envolver en form con formGroup -->
+        <form [formGroup]="activityForm" (ngSubmit)="onSubmit()">
+          <!-- Nombre -->
+          <div class="mb-3">
+            <label [for]="modalId + 'nombre'" class="form-label">Nombre de la actividad *</label>
+            <input 
+              type="text" 
+              [id]="modalId + 'nombre'"
+              class="form-control"
+              formControlName="nombre"
+              placeholder="Ej: Básquet"
+              [class.is-invalid]="isFieldInvalid('nombre')">
+            
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('nombre')">
+              El nombre es obligatorio (mínimo 3 caracteres)
+            </div>
           </div>
-        </div>
 
-        <!-- Categoría -->
-        <div class="mb-3">
-          <label [for]="modalId + 'categoria'" class="form-label">Categoría *</label>
-          <select 
-            [id]="modalId + 'categoria'" 
-            class="form-select"
-            [formControl]="activityForm.get('categoria')!"
-            [class.is-invalid]="activityForm.get('categoria')?.invalid && activityForm.get('categoria')?.touched">
-            <option value="">Seleccione una categoría</option>
-            <option *ngFor="let cat of categorias" [value]="cat.value">
-              {{ cat.label }}
-            </option>
-          </select>
-          
-          <div class="invalid-feedback" 
-               *ngIf="activityForm.get('categoria')?.invalid && activityForm.get('categoria')?.touched">
-            Debe seleccionar una categoría
+          <!-- Categoría -->
+          <div class="mb-3">
+            <label [for]="modalId + 'categoria'" class="form-label">Categoría *</label>
+            <select 
+              [id]="modalId + 'categoria'" 
+              class="form-select"
+              formControlName="categoria"
+              [class.is-invalid]="isFieldInvalid('categoria')">
+              <option value="">Seleccione una categoría</option>
+              <option *ngFor="let cat of categorias" [value]="cat.value">
+                {{ cat.label }}
+              </option>
+            </select>
+            
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('categoria')">
+              Debe seleccionar una categoría
+            </div>
           </div>
-        </div>
 
-        <!-- Descripción -->
-        <div class="mb-3">
-          <label [for]="modalId + 'descripcion'" class="form-label">Descripción</label>
-          <textarea 
-            [id]="modalId + 'descripcion'"
-            class="form-control"
-            [formControl]="activityForm.get('descripcion')!"
-            rows="3"
-            placeholder="Descripción de la actividad">
-          </textarea>
-        </div>
-
-        <!-- Horario -->
-        <div class="mb-3">
-          <label [for]="modalId + 'horario'" class="form-label">Horario *</label>
-          <input 
-            type="text" 
-            [id]="modalId + 'horario'"
-            class="form-control"
-            [formControl]="activityForm.get('horario')!"
-            placeholder="Ej: 18:00 - 20:00"
-            [class.is-invalid]="activityForm.get('horario')?.invalid && activityForm.get('horario')?.touched">
-          
-          <div class="invalid-feedback" 
-               *ngIf="activityForm.get('horario')?.invalid && activityForm.get('horario')?.touched">
-            El horario es obligatorio
+          <!-- Descripción -->
+          <div class="mb-3">
+            <label [for]="modalId + 'descripcion'" class="form-label">Descripción</label>
+            <textarea 
+              [id]="modalId + 'descripcion'"
+              class="form-control"
+              formControlName="descripcion"
+              rows="3"
+              placeholder="Descripción de la actividad">
+            </textarea>
           </div>
-        </div>
 
-        <!-- Instructor -->
-        <div class="mb-3">
-          <label [for]="modalId + 'instructor'" class="form-label">Instructor *</label>
-          <input 
-            type="text" 
-            [id]="modalId + 'instructor'"
-            class="form-control"
-            [formControl]="activityForm.get('instructor')!"
-            placeholder="Nombre del instructor"
-            [class.is-invalid]="activityForm.get('instructor')?.invalid && activityForm.get('instructor')?.touched">
-          
-          <div class="invalid-feedback" 
-               *ngIf="activityForm.get('instructor')?.invalid && activityForm.get('instructor')?.touched">
-            El instructor es obligatorio
+          <!-- Horario -->
+          <div class="mb-3">
+            <label [for]="modalId + 'horario'" class="form-label">Horario *</label>
+            <input 
+              type="text" 
+              [id]="modalId + 'horario'"
+              class="form-control"
+              formControlName="horario"
+              placeholder="Ej: 18:00 - 20:00"
+              [class.is-invalid]="isFieldInvalid('horario')">
+            
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('horario')">
+              El horario es obligatorio
+            </div>
           </div>
-        </div>
 
-        <!-- Cupo Máximo -->
-        <div class="mb-3">
-          <label [for]="modalId + 'cupoMaximo'" class="form-label">Cupo máximo *</label>
-          <input 
-            type="number" 
-            [id]="modalId + 'cupoMaximo'"
-            class="form-control"
-            [formControl]="activityForm.get('cupoMaximo')!"
-            min="1"
-            max="100"
-            placeholder="Ej: 20"
-            [class.is-invalid]="activityForm.get('cupoMaximo')?.invalid && activityForm.get('cupoMaximo')?.touched">
-          
-          <div class="invalid-feedback" 
-               *ngIf="activityForm.get('cupoMaximo')?.invalid && activityForm.get('cupoMaximo')?.touched">
-            Debe ingresar un cupo válido (1-100)
+          <!-- Instructor -->
+          <div class="mb-3">
+            <label [for]="modalId + 'instructor'" class="form-label">Instructor *</label>
+            <input 
+              type="text" 
+              [id]="modalId + 'instructor'"
+              class="form-control"
+              formControlName="instructor"
+              placeholder="Nombre del instructor"
+              [class.is-invalid]="isFieldInvalid('instructor')">
+            
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('instructor')">
+              El instructor es obligatorio
+            </div>
           </div>
-        </div>
+
+          <!-- Cupo Máximo -->
+          <div class="mb-3">
+            <label [for]="modalId + 'cupoMaximo'" class="form-label">Cupo máximo *</label>
+            <input 
+              type="number" 
+              [id]="modalId + 'cupoMaximo'"
+              class="form-control"
+              formControlName="cupoMaximo"
+              min="1"
+              max="100"
+              placeholder="Ej: 20"
+              [class.is-invalid]="isFieldInvalid('cupoMaximo')">
+            
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('cupoMaximo')">
+              Debe ingresar un cupo válido (1-100)
+            </div>
+          </div>
+        </form>
       </div>
 
       <div class="modal-footer">
@@ -211,7 +208,7 @@
         </div>
 
         <!-- Lista de Participantes -->
-        <div *ngIf="activity.participantes?.length > 0 && mostrarParticipantes" class="mb-3">
+        <div *ngIf="activity.participantes && activity.participantes.length > 0 && mostrarParticipantes" class="mb-3">
           <h6 class="small fw-bold text-muted mb-2">
             <i class="fas fa-list"></i> Participantes ({{ activity.participantes.length }})
           </h6>
