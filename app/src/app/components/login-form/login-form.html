@@ -1,0 +1,55 @@
+<div class="mt-3 mx-3 atras-home">
+    <a routerLink="/"><i class="fa-solid fa-arrow-left"></i> Volver </a>
+</div>
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="title">Bienvenido</h2>
+    <p class="subtitle">Iniciá sesión para continuar</p>
+
+    <div class="login-box">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+        <div class="input-group">
+          <label for="email">Correo electrónico</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="tu@email.com"
+          />
+          <p *ngIf="isInvalid('email')" class="error">
+            Ingresá un email válido
+          </p>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Contraseña</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="••••••••"
+          />
+          <p
+            *ngIf="form.get('password')?.errors?.['required'] && isInvalid('password')"
+            class="error"
+          >
+            La contraseña es obligatoria
+          </p>
+          <p
+            *ngIf="form.get('password')?.errors?.['minlength'] && isInvalid('password')"
+            class="error"
+          >
+            Debe tener al menos 6 caracteres
+          </p>
+        </div>
+
+        <button type="submit" [disabled]="form.invalid">Ingresar</button>
+
+        <div class="login-options">
+          <span>¿No tenés cuenta?</span>
+          <a routerLink="/register">Registrarse</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-sidebar',
   imports: [RouterModule],
-  templateUrl: './header.html',
-  styleUrl: './header.css'
+  templateUrl: './sidebar.html',
+  styleUrl: './sidebar.css'
 })
-export class Header {
+export class Sidebar {
 
 }

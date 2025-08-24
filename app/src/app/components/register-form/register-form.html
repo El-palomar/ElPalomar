@@ -1,0 +1,137 @@
+<main class="container">
+  <div class="login-box">
+    <h1>Registrate ahora</h1>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+      <h3>Datos de ingreso:</h3>
+
+      <!-- EMAIL -->
+      <label for="email">E-mail:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        email
+        #emailCtrl="ngModel"
+      />
+      <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)">
+        <small style="color:red" *ngIf="emailCtrl.errors?.['required']">
+          El email es obligatorio
+        </small>
+        <small style="color:red" *ngIf="emailCtrl.errors?.['email']">
+          El formato no es válido
+        </small>
+      </div>
+
+      <!-- CONTRASEÑA -->
+      <label for="contrasena">Contraseña:</label>
+      <input
+        type="password"
+        id="contrasena"
+        name="contrasena"
+        [(ngModel)]="contrasena"
+        required
+        minlength="8"
+        #passCtrl="ngModel"
+      />
+      <div *ngIf="passCtrl.invalid && (passCtrl.dirty || passCtrl.touched)">
+        <small style="color:red" *ngIf="passCtrl.errors?.['required']">
+          La contraseña es obligatoria
+        </small>
+        <small style="color:red" *ngIf="passCtrl.errors?.['minlength']">
+          Debe tener al menos 8 caracteres
+        </small>
+      </div>
+
+      <!-- CONFIRMAR CONTRASEÑA -->
+      <label for="confirmarContrasena">Confirmar contraseña:</label>
+      <input
+        type="password"
+        id="confirmarContrasena"
+        name="confirmarContrasena"
+        required
+        [(ngModel)]="confirmarContrasena"
+        #confirmCtrl="ngModel"
+      />
+      <div *ngIf="confirmCtrl.touched && contrasena !== confirmarContrasena">
+        <small style="color:red">Las contraseñas no coinciden</small>
+      </div>
+
+      <h3>Datos personales:</h3>
+      <div class="form-row">
+        <!-- NOMBRE -->
+        <div class="form-field w-50">
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+            [(ngModel)]="nombre"
+            #nombreCtrl="ngModel"
+          />
+          <div *ngIf="nombreCtrl.invalid && (nombreCtrl.dirty || nombreCtrl.touched)">
+            <small style="color:red">El nombre es obligatorio</small>
+          </div>
+        </div>
+
+        <!-- APELLIDO -->
+        <div class="form-field w-50">
+          <label for="apellido">Apellido:</label>
+          <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            required
+            [(ngModel)]="apellido"
+            #apellidoCtrl="ngModel"
+          />
+          <div *ngIf="apellidoCtrl.invalid && (apellidoCtrl.dirty || apellidoCtrl.touched)">
+            <small style="color:red">El apellido es obligatorio</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <!-- FECHA -->
+        <div class="form-field w-50">
+          <label for="fecha">Fecha de nacimiento:</label>
+          <input
+            type="date"
+            id="fecha"
+            name="fecha"
+            required
+            [(ngModel)]="fecha"
+            #fechaCtrl="ngModel"
+          />
+          <div *ngIf="fechaCtrl.invalid && (fechaCtrl.dirty || fechaCtrl.touched)">
+            <small style="color:red">La fecha de nacimiento es obligatoria</small>
+          </div>
+        </div>
+
+        <!-- TELÉFONO -->
+        <div class="form-field w-50">
+          <label for="telefono">Teléfono:</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            [(ngModel)]="telefono"
+            pattern="^[0-9]{7,15}$"
+            #telefonoCtrl="ngModel"
+          />
+          <div *ngIf="telefonoCtrl.invalid && (telefonoCtrl.dirty || telefonoCtrl.touched)">
+            <small style="color:red" *ngIf="telefonoCtrl.errors?.['pattern']">
+              El teléfono debe tener solo números (7-15 dígitos)
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="login-container d-flex justify-content-center align-center my-3">
+        <span> Ya tenes una cuenta <a routerLink="/login" class="text-decoration-none">Inicia Sesion</a></span>
+      </div>
+      <input type="submit" value="Registrarse" [disabled]="registerForm.invalid" />
+    </form>
+  </div>
+</main>
