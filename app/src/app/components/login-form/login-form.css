@@ -1,0 +1,156 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  border: 20px solid #2c3e50;
+}
+
+.title {
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+.subtitle {
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.login-box {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #868686ff;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+input.ng-touched.ng-invalid {
+  border: 1px solid #e63946;
+}
+
+input.ng-touched.ng-valid {
+  border: 1px solid #38b000;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: #2c3e50;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #1c2733;
+}
+
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.login-options {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-options a {
+  color: #2c3e50;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+  font-weight: 600;
+}
+.atras-home a{
+  color: #1c2733;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .login-box {
+    padding: 20px 15px;
+  }
+
+  input {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+}
