@@ -13,6 +13,7 @@ CREATE TABLE deportes (
 CREATE TABLE horarios (
     id_horario INT AUTO_INCREMENT PRIMARY KEY,
     id_deporte INT NOT NULL,
+    cupo_max INT NOT NULL DEFAULT 20,
     dia ENUM('Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo') NOT NULL,
     hora_inicio TIME NOT NULL,
     hora_fin TIME NOT NULL,
