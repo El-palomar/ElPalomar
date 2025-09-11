@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Futbol",
+        "days": "Lunes, Miercoles , Viernes",
+        "time": "17:00 - 19:00",
+        "profesor": "Fabrizio Avila",
+        "location": "Cancha 22"
+    },
+    {
+        "id": 2,
+        "name": "Basquet",
+        "days": "Martes, Jueves",
+        "time": "18:30 - 20:00",
+        "profesor": "Carlos Huallpa",
+        "location": "Gimnasio Central"
+    },
+    {
+        "id": 3,
+        "name": "Natación",
+        "days": "Lunes, Miércoles, Viernes",
+        "time": "15:00 - 16:30",
+        "profesor": "Marialis Aquino",
+        "location": "Pileta Olímpica"
+    },
+    {
+        "id": 4,
+        "name": "Tenis",
+        "days": "Sábado, Domingo",
+        "time": "10:00 - 12:00",
+        "profesor": "Ana Camila Almiron",
+        "location": "Cancha 5"
+    },
+    {
+        "id": 5,
+        "name": "Vóley",
+        "days": "Martes, Jueves, Sábado",
+        "time": "19:00 - 21:00",
+        "profesor": "Ezequiel Gonzalez",
+        "location": "Polideportivo Norte"
+    }
+]
