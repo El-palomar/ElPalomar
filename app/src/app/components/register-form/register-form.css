@@ -169,9 +169,7 @@ footer small {
   font-weight: 600;
 }
 
-.atras-home a{
-  color: #1c2733;
-}
+
 
 /* === RESPONSIVE === */
 @media (max-width: 600px) {

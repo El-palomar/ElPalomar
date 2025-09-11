@@ -1,71 +1,89 @@
 /* formulario-actividades.component.css */
 
+/* Tarjetas de actividades */
+/* Contenedor de cada tarjeta */
 .activity-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* asegura que el botón quede abajo */
+  height: 100%; /* todas las tarjetas con la misma altura */
   border: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
   position: relative;
+  border-radius: 0.75rem;
 }
 
 .activity-card:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
 }
 
+/* Asegurar que el body crezca y el botón quede fijo abajo */
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body .btn {
+  margin-top: auto; /* empuja el botón hacia abajo */
+}
+
+
+/* Header con colores similares a la web */
 .card-header {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
+  background: linear-gradient(135deg, #0d6efd, #007bff);
+  color: white;
+  border-bottom: none;
+  font-weight: 600;
 }
 
+/* Info de actividades */
 .activity-info .info-item {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
+  color: #333;
 }
 
 .activity-info .info-item i {
   width: 20px;
   text-align: center;
+  color: #0d6efd;
 }
 
+/* Lista de participantes */
 .participant-list {
   max-height: 120px;
   overflow-y: auto;
-  border: 1px solid #e9ecef;
-  border-radius: 0.375rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: #f8f9fa;
-}
-
-.participant-list::-webkit-scrollbar {
-  width: 6px;
-}
-
-.participant-list::-webkit-scrollbar-thumb {
-  background-color: #dee2e6;
-  border-radius: 3px;
-}
-
-.participant-list::-webkit-scrollbar-thumb:hover {
-  background-color: #adb5bd;
+  background-color: #f9f9f9;
 }
 
 .participant-item {
   padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  background-color: white;
-  border: 1px solid #e9ecef;
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 0.25rem;
 }
 
+/* Botón de remover participante */
 .participant-remove-btn {
   padding: 0.125rem 0.25rem;
   font-size: 0.75rem;
+  color: white;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 0.25rem;
 }
 
-.badge {
-  font-size: 0.75em;
-}
-
+/* Progress bar */
 .progress {
   height: 8px;
   background-color: #e9ecef;
@@ -74,152 +92,38 @@
 
 .progress-bar {
   transition: width 0.6s ease;
+  background-color: #0d6efd; /* Azul de la web */
 }
 
-.btn-sm {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+/* Botones */
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.modal-header {
-  border-bottom: 1px solid #dee2e6;
-  background-color: #f8f9fa;
+.btn-primary,
+.btn-sm,
+.btn-outline-secondary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
 }
 
-.modal-footer {
-  border-top: 1px solid #dee2e6;
-  background-color: #f8f9fa;
-}
-
-.is-invalid {
-  border-color: #dc3545;
-}
-
-.invalid-feedback {
-  display: block;
-  color: #dc3545;
-  font-size: 0.875em;
-  margin-top: 0.25rem;
-}
-
-.empty-state {
-  padding: 3rem 1rem;
-}
-
-.empty-state i {
-  opacity: 0.5;
-}
-
-/* Badges de categorías */
-.bg-warning {
-  background-color: #ffc107 !important;
-  color: #212529 !important;
-}
-
-.bg-success {
-  background-color: #198754 !important;
-  color: white !important;
-}
-
-.bg-info {
-  background-color: #0dcaf0 !important;
-  color: #212529 !important;
-}
-
-.bg-primary {
-  background-color: #0d6efd !important;
-  color: white !important;
-}
-
-.bg-secondary {
-  background-color: #6c757d !important;
-  color: white !important;
-}
-
-.bg-danger {
-  background-color: #dc3545 !important;
-  color: white !important;
-}
-
-.bg-dark {
-  background-color: #212529 !important;
-  color: white !important;
-}
-
-/* Estados de texto */
-.text-success {
-  color: #198754 !important;
-}
-
-.text-warning {
-  color: #ffc107 !important;
-}
-
-.text-danger {
-  color: #dc3545 !important;
-}
-
-/* Botones personalizados */
+.btn-primary:hover,
+.btn-sm:hover,
 .btn-outline-secondary:hover {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #0b5ed7;
+  border-color: #0b5ed7;
 }
 
-.dropdown-toggle::after {
-  margin-left: 0.255em;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .activity-card {
-    margin-bottom: 1rem;
-  }
-  
-  .card-header {
-    padding: 0.75rem;
-  }
-  
-  .card-body {
-    padding: 0.75rem;
-  }
-  
-  .participant-list {
-    max-height: 100px;
-  }
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.activity-card {
-  animation: fadeIn 0.3s ease-out;
+/* Modal */
+.modal-header, .modal-footer {
+  border: none;
+  background-color: #f1f3f5;
 }
 
 /* Estados de actividad */
-.activity-status-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  border: 2px solid white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
 .status-available {
   background-color: #198754;
   color: white;
@@ -235,14 +139,9 @@
   color: white;
 }
 
-/* Mejoras de accesibilidad */
+/* Mejoras accesibilidad */
 .btn:focus,
 .form-control:focus,
 .form-select:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-
-.btn:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
+  box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.3);
 }

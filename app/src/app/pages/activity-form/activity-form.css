@@ -1,4 +1,8 @@
 main{ 
     margin-left: 220px;
-    padding: 1rem;
+}
+
+.atras-home a{
+  color: #1c2733;
+  text-decoration: none;
 }
