@@ -8,10 +8,14 @@ import { IActivity } from '../models/activity';
 })
 export class ActivitiesService {
   private dataURL = "/assets/data/activities.json" // Es la url donde se hace la peticion
+  private crudURL = "/assets/data/activitiesCrud.json"
 
   constructor(private http: HttpClient) { }
 
   getAllActivities(): Observable<IActivity[]> {
     return this.http.get<IActivity[]>(this.dataURL)
+  }
+  getCrudData(): Observable<any> {
+    return this.http.get<any>(this.crudURL);
   }
 }
