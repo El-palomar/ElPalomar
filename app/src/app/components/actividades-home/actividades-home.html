@@ -2,11 +2,11 @@
   <div id="actividades-home-text">
     <h2>Nuestras Actividades</h2>
     <p>
-      Explora la variedad de actividades deportivas que ofrecemos para todas las edades y niveles
+      Explora la variedad de actividades deportivas que ofrecemos para todas las edades y niveles.
     </p>
   </div>
-  <div *ngIf="activities && activities.length > 0" id="carouselExampleAutoplaying" class="carousel slide"
-    data-bs-ride="carousel">
+  <!-- Se utiliza *ngIf para asegurar que el carrusel solo se renderice si hay datos -->
+  <div *ngIf="activities && activities.length > 0" id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div *ngFor="let activity of activities; let i = index" class="carousel-item" [class.active]="i === 0">
         <img [src]="activity.image" class="d-block w-100" [alt]="activity.name">
@@ -14,22 +14,19 @@
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ activity.name }}</h5>
           <p>{{ activity.description }}</p>
-          <a href="./login.html">Unirte Ahora</a>
+          <!-- Enlace corregido para usar routerLink -->
+          <a routerLink="/login" class="btn btn-primary">Unirte Ahora</a>
         </div>
       </div>
-
-      <!-- Botones del carrusel -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
+    <!-- Botones del carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
   </div>
-
 </section>

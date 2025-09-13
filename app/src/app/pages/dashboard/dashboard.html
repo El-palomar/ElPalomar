@@ -2,8 +2,8 @@
 
 <!-- Menú lateral -->
 <app-sidebar></app-sidebar>
-<!-- Contenido principal -->
-<main>
+<!-- Contenido principal con la clase 'main-content' para evitar que lo tape el sidebar -->
+<main class="main-content">
   <!-- Sección de Actividades Disponibles -->
   <section id="actividades-disponibles" aria-labelledby="titulo-actividades-disponibles">
     <h2 id="titulo-actividades-disponibles">Actividades Disponibles</h2>
@@ -12,7 +12,8 @@
         <img [src]="activity.image" [alt]="activity.name" class="actividad-img">
         <h3>{{activity.name}}</h3>
         <p>{{activity.description}}</p>
-        <a routerLink="/activity_form" class="btn-inscribirse">Inscribirse</a>
+        <!-- Botón con clase base para estilos -->
+        <a routerLink="/activity_form" class="btn-base-dash btn-inscribirse">Inscribirse</a>
       </article>
     </div>
   </section>
@@ -35,12 +36,15 @@
         <p>{{activity.location}}</p>
       </div>
       <div class="botones-actividad d-flex gap-2">
-        <a routerLink="/activity_form" class="btn-editar">Editar</a>
-        <a routerLink="/notificacion" class="btn-cancelar">Cancelar</a>
+        <!-- Botones con clase base para estilos -->
+        <a routerLink="/activity_form" class="btn-base-dash btn-editar">Editar</a>
+        <a routerLink="/notificacion" class="btn-base-dash btn-cancelar">Cancelar</a>
       </div>
     </article>
   </section>
+
   <app-footer></app-footer>
+  
 </main>
 
 <!-- Pie de página -->
