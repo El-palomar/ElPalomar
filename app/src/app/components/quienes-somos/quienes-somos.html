@@ -1,44 +1,25 @@
-<section id="quienes-somos">
-      <h1 id="titulo-qs">🕊️ ¿Quienes Somos ? 🕊️</h1>
-      <div class="qs-content">
-        <div id="imagen-qs">
-          <img src="/assets/images/el_palomar_logo.jpg" alt="El Palomar" />
+<section id="quienes-somos" *ngIf="data">
+  <h1 id="titulo-qs">🕊️ {{ data.titulo }} 🕊️</h1>
+  <div class="qs-content">
+    <div id="texto-qs">
+      <p>{{ data.descripcion }}</p>
+    </div>
+
+    <!-- Contenedor específico para las tarjetas del equipo -->
+    <div class="equipo-container">
+      <div *ngFor="let persona of data.equipo" class="persona-card">
+        <div class="foto-container">
+          <img
+            [src]="persona.image"
+            [alt]="persona.nombre"
+            class="persona-foto"
+          />
         </div>
-        <div id="texto-qs">
-          <p>
-            Bienvenido a nuestro proyecto!<br />
-            Somos <strong>El Palomar</strong>, un grupo compuesto por 5
-            estudiantes del <strong>ISPC</strong> (Instituto Superior
-            Politécnico Córdoba), actualmente estamos cursando la tecnicatura en
-            Desarrollo de Software. En la foto, de izquierda a derecha, somos
-            Carlos Huallpa, Marialis Aquino, Ezequiel Gonzalez, Fabrizio Avila y
-            Ana Camila Almiron. <br />A continuación, nuestras presentaciones:
-            <br />
-            Hola, soy <strong>Carlos Huallpa</strong>, soy biólogo con
-            experiencia en investigación científica. A lo largo de mi carrera
-            desarrollé un interés por optimizar la recolección y análisis de
-            datos, así como por automatizar procesos, lo que me llevó a explorar
-            el desarrollo de software. Actualmente estoy ampliando mis
-            habilidades en bases de datos, web scraping y desarrollo web.<br />
-            Hola, soy <strong>Marialis Aquino</strong> y en esta etapa tengo el
-            rol de Scrum Master por primera vez. Me gusta la metodología ágil
-            que utilizamos para estructurar el proyecto y a desarrollar el
-            pensamiento crítico colaborativo. Me entusiasma poder aplicar lo que
-            vamos aprendiendo en un proyecto real.<br />
-            Mi nombre es <strong>Ezequiel Gonzalez</strong>, tengo 25 años, soy
-            de Cordoba, Capital. Actualmente me desempeño en el area de analisis
-            de datos y estoy cursando la carrera de tecnico en desarrollo de
-            software.<br />
-            Hola, soy <strong>Fabrizio Avila</strong>, tengo 23 años y estoy
-            desempeñando el rol de desarrollador. Este proyecto me está
-            permitiendo poner en práctica todo lo que fui aprendiendo y estoy
-            muy emocionado por seguir creciendo profesionalmente. Me gusta
-            trabajar en equipo y enfrentar nuevos desafíos.<br />Hola, soy
-            <strong>Ana Camila Almiron</strong>, tengo 24 años y me desempeño
-            como desarrolladora. Estoy muy entusiasmada con este proyecto, ya
-            que me está brindando la oportunidad de seguir aprendiendo,
-            perfeccionar mis habilidades y crecer junto a mi equipo.
-          </p>
+        <div class="persona-info">
+          <strong>{{ persona.nombre }}</strong>
+          <p>{{ persona.rol }}</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
