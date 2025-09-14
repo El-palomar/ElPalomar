@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "title": "Inscripción a actividades",
+    "actividades": [
+      { "id": 1, "name": "Futbol" },
+      { "id": 2, "name": "Basquet" },
+      { "id": 3, "name": "Natación" },
+      { "id": 4, "name": "Tenis" },
+      { "id": 5, "name": "Vóley" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Consulta tus actividades",
+    "actividades_inscriptas": [
+      {
+        "id": 1,
+        "name": "Futbol",
+        "days": "Lunes, Miércoles y Viernes",
+        "time": "17:00 - 19:00",
+        "profesor": "Fabrizio Avila",
+        "location": "Cancha 22"
+      },
+      {
+        "id": 2,
+        "name": "Tenis",
+        "days": "Sábado y Domingo",
+        "time": "10:00 - 12:00",
+        "profesor": "Ana Camila Almiron",
+        "location": "Cancha 5"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Modificar actividad",
+    "actividades_disponibles": [
+      {
+        "id": 3,
+        "name": "Natación",
+        "days": "Lunes, Miércoles y Viernes",
+        "time": "15:00 - 16:30"
+      },
+      {
+        "id": 4,
+        "name": "Vóley",
+        "days": "Martes, Jueves y Sábado",
+        "time": "19:00 - 21:00"
+      },
+      {
+        "id": 5,
+        "name": "Basquet",
+        "days": "Martes y Jueves",
+        "time": "18:30 - 20:00"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Eliminar actividad",
+    "actividades_inscriptas": [
+      { "id": 1, "name": "Futbol" },
+      { "id": 2, "name": "Tenis" }
+    ]
+  }
+]
