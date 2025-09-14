@@ -8,7 +8,7 @@
 }
 
 #titulo-qs {
-  font-size: 44px;
+  font-size: 50px;
   color: #0a3d62;
   margin-bottom: 40px;
   text-align: center;
@@ -33,7 +33,6 @@
   font-weight: 500;
 }
 
-/* Contenedor específico para las tarjetas */
 .equipo-container {
   display: flex;
   flex-wrap: wrap;
@@ -55,7 +54,7 @@
   transition: transform 0.4s;
   width: 280px;
   cursor: pointer;
-  flex: 0 0 auto; /* Evita que se estiren */
+  flex: 0 0 auto;
 }
 
 .persona-card:hover {
@@ -64,9 +63,9 @@
 }
 
 .foto-container {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 150px;
+  height: 200px;
+
   overflow: hidden;
   border: 3px solid #0a3d62;
   transition: transform 0.3s;
@@ -101,18 +100,17 @@
   text-align: center;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .equipo-container {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    overflow-x: visible; /* Quita el scroll en móviles */
+    overflow-x: visible;
     gap: 20px;
   }
 
   .persona-card {
     width: 90%;
-    min-width: unset; /* Quita el ancho mínimo en móviles */
+    min-width: unset;
   }
 }

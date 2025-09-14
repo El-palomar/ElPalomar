@@ -1,11 +1,10 @@
 <section id="quienes-somos" *ngIf="data">
-  <h1 id="titulo-qs">🕊️ {{ data.titulo }} 🕊️</h1>
+  <h1 id="titulo-qs">{{ data.titulo }}</h1>
   <div class="qs-content">
     <div id="texto-qs">
       <p>{{ data.descripcion }}</p>
     </div>
 
-    <!-- Contenedor específico para las tarjetas del equipo -->
     <div class="equipo-container">
       <div *ngFor="let persona of data.equipo" class="persona-card">
         <div class="foto-container">
