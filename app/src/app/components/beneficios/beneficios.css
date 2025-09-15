@@ -19,7 +19,8 @@
 #beneficios-card-container{
     width: 100%;
     display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+    /* Cambio: Usamos una plantilla de columnas fija para 3x2 en pantallas grandes */
+    grid-template-columns:repeat(3, 1fr);
     gap: 2rem;
 }
 .card-beneficios{
@@ -78,8 +79,13 @@
     width: 40%;
 }
 
+@media screen and (max-width:991px) {
+  #beneficios-card-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media screen and (max-width:480px) {
     #beneficios-card-container{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 1fr;
     }
 }
