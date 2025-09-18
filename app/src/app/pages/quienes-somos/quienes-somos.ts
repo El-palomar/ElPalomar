@@ -5,10 +5,8 @@ import { Header } from '../../components/header/header';
 
 @Component({
   selector: 'app-quienes-somos',
-  imports: [Header,Footer,QuienesSomosC],
+  imports: [Header, Footer, QuienesSomosC],
   templateUrl: './quienes-somos.html',
-  styleUrl: './quienes-somos.css'
+  styleUrl: './quienes-somos.css',
 })
-export class QuienesSomos {
-
-}
+export class QuienesSomos {}

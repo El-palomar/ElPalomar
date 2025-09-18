@@ -1,60 +1,116 @@
-#nav-text-btn-qs {
-  font-weight: bold;
-}
 #quienes-somos {
-  background-color: rgb(188, 192, 196);
+  background: linear-gradient(135deg, #f0f4f8, #e0e5ec);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 20px;
-  box-sizing: border-box;
+  padding: 50px 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 #titulo-qs {
-  font-size: 40px;
+  font-size: 50px;
   color: #0a3d62;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .qs-content {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1000px;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-#imagen-qs img {
-  width: 450px;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 50px;
+  max-width: 1200px;
 }
 
 #texto-qs {
-  max-width: 500px;
-  font-size: 15px;
-  color: #000000;
-  text-align: left;
+  width: 100%;
+  font-size: 18px;
+  color: #1f1f1f;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.equipo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.persona-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 20px;
+  border-radius: 25px;
+  background: #d6d6d6ff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  perspective: 1000px;
+  transition: transform 0.4s;
+  width: 280px;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.persona-card:hover {
+  transform: rotateY(10deg) rotateX(5deg) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.foto-container {
+  width: 150px;
+  height: 200px;
+
+  overflow: hidden;
+  border: 3px solid #0a3d62;
+  transition: transform 0.3s;
+}
+
+.persona-card:hover .foto-container {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.persona-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.persona-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.persona-info strong {
+  font-size: 1.3rem;
+  color: #0a3d62;
+  margin-bottom: 0.5rem;
+}
+
+.persona-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-  .qs-content {
+  .equipo-container {
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
+    overflow-x: visible;
     gap: 20px;
   }
 
-  #imagen-qs img {
-    width: 200px;
-  }
-
-  #texto-qs {
-    font-size: 16px;
-    text-align: center;
+  .persona-card {
+    width: 90%;
+    min-width: unset;
   }
 }
