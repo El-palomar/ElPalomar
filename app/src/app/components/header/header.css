@@ -1,10 +1,15 @@
 nav{
-    height: 15vh;
+    height: 85px;;
+    display: flex;
+    align-items: center;
 }
-.navbar-brand img{
-    height: 10vh;
-    width: 14rem;
-    object-fit: cover;
+
+.navbar-brand img {
+    max-height: 85px; /* controla la altura máxima relativa al nav */
+    width: auto;      /* mantiene proporción original */
+    object-fit: contain; /* asegura que no se recorte */
+    display: block;
+    padding-left: 3rem;
 }
 .container-fluid{
     height: 100%;
@@ -39,7 +44,7 @@ nav{
 
 @media screen and (max-width:991px){
     .navbar-brand img{
-        height: 10vh;
+        height: 70px;
         object-fit: cover;
     }
     nav .container-fluid{
