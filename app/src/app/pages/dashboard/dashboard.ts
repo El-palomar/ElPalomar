@@ -16,49 +16,30 @@ import { IUserActivity } from '../../models/user-activity';
   styleUrl: './dashboard.css'
 })
 export class Dashboard implements OnInit {
-  activities: IActivity[] = [];
-  userActivities: IUserActivity[] = [];
-  isAdmin: boolean = false; // nueva variable
-  currentUser: any; // usuario logueado
-
-  constructor(
-    private activityService: ActivitiesService,
-    private userActivityService: UserService
-  ) {}
+  activities: IActivity[] = []
+  userActivities: IUserActivity[] = []
+  constructor(private activityService: ActivitiesService, private userActivityService: UserService) { }
 
   ngOnInit() {
-    this.loadCurrentUser();
-    this.getInitialData();
+    this.getInitialData()
   }
-
-  loadCurrentUser() {
-    const storedUser = localStorage.getItem('currentUser');
-    if (storedUser) {
-      this.currentUser = JSON.parse(storedUser);
-      this.isAdmin = this.currentUser.role === 'admin';
-    }
-  }
-
   getInitialData() {
     this.activityService.getAllActivities().subscribe({
       next: (activities) => {
-        this.activities = activities;
+        this.activities = activities
       },
       error: (error) => {
-        console.error('Error', error);
+        console.error("Error", error)
       }
-    });
+    })
+    this.userActivityService.getAllUserActivities().subscribe({
+      next: (activities) => {
+        this.userActivities = activities
+      },
+      error: (error) => {
+        console.error("Error", error)
+      }
+    })
+  };
 
-    // Solo traemos actividades del usuario si NO es admin
-    if (!this.isAdmin) {
-      this.userActivityService.getAllUserActivities().subscribe({
-        next: (activities) => {
-          this.userActivities = activities;
-        },
-        error: (error) => {
-          console.error('Error', error);
-        }
-      });
-    }
-  }
 }
