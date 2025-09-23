@@ -1,0 +1,27 @@
+<app-sidebar></app-sidebar>
+
+<main class="main-content">
+  <!-- Sección de Gestión de Actividades -->
+  <section id="gestion-actividades">
+    <h2>Gestión de Actividades</h2>
+    
+    <div class="d-flex justify-content-end mb-3">
+      <a routerLink="/activity_form" class="btn-base-dash btn-crear">+ Nueva Actividad</a>
+    </div>
+
+    <div class="grid-actividades">
+      <article *ngFor="let activity of activities" class="actividad">
+        <img [src]="activity.image" [alt]="activity.name" class="actividad-img">
+        <h3>{{activity.name}}</h3>
+        <p>{{activity.description}}</p>
+
+        <div class="botones-actividad d-flex gap-2">
+          <a routerLink="/activity_form/{{activity.id}}" class="btn-base-dash btn-editar">Editar</a>
+          <button (click)="deleteActivity(activity.id)" class="btn-base-dash btn-eliminar">Eliminar</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+</main>

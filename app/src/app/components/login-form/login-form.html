@@ -1,6 +1,7 @@
 <div class="mt-3 mx-3 atras-home">
   <a routerLink="/"><i class="fa-solid fa-arrow-left"></i> Volver </a>
 </div>
+
 <div class="login-container">
   <div class="login-card">
     <h2 class="title">Bienvenido</h2>
@@ -41,6 +42,11 @@
           >
             Debe tener al menos 6 caracteres
           </p>
+        </div>
+
+        <!-- 🔹 Mensaje de error de login -->
+        <div *ngIf="errorMessage" class="error mt-2">
+          {{ errorMessage }}
         </div>
 
         <button type="submit" [disabled]="form.invalid">Ingresar</button>

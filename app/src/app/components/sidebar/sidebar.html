@@ -1,16 +1,27 @@
 <aside class="sidebar" role="complementary">
-<!-- El logo se ha añadido aquí con las clases de estilo que creamos en styles.css -->
-<div class="logo-container">
-<img src="assets/images/sis.png" alt="Logo de SISEP" class="sidebar-logo">
-</div>
-<nav aria-label="Menú principal">
-<ul>
-<!-- Se eliminaron los emojis de todos los enlaces -->
-<li><a routerLink="">Inicio</a></li>
-<li><a routerLink="/mi_cuenta" class="activo">Mi Cuenta</a></li>
-<li><a routerLink="/actividades">Cronograma</a></li>
-<li><a routerLink="">Cerrar Sesión</a></li>
-<li><a routerLink="/configuracion">Configuración</a></li>
-</ul>
-</nav>
+  <div class="logo-container">
+    <img src="assets/images/sis.png" alt="Logo de SISEP" class="sidebar-logo">
+  </div>
+
+  <nav aria-label="Menú principal">
+    <ul>
+      <!-- Opciones siempre visibles -->
+      <li><a routerLink="">Inicio</a></li>
+      <li><a (click)="cerrarSesion()">Cerrar Sesión</a></li>
+
+      <!-- Opciones para cliente -->
+      <ng-container *ngIf="role === 'cliente'">
+        <li><a routerLink="/mi_cuenta" class="activo">Mi Cuenta</a></li>
+        <li><a routerLink="/actividades">Cronograma</a></li>
+        <li><a routerLink="/configuracion">Configuración</a></li>
+      </ng-container>
+
+      <!-- Opciones para admin -->
+      <ng-container *ngIf="role === 'admin'">
+        <li><a routerLink="/admin_dashboard">Dashboard</a></li>
+        <li><a routerLink="/gestion_actividades">Gestión de Actividades</a></li>
+        <li><a routerLink="/equipos">Equipos</a></li>
+      </ng-container>
+    </ul>
+  </nav>
 </aside>
