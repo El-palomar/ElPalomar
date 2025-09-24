@@ -7,7 +7,7 @@
     <ul>
       <!-- Opciones siempre visibles -->
       <li><a routerLink="">Inicio</a></li>
-      <li><a (click)="cerrarSesion()">Cerrar Sesión</a></li>
+      
 
       <!-- Opciones para cliente -->
       <ng-container *ngIf="role === 'cliente'">
@@ -18,10 +18,12 @@
 
       <!-- Opciones para admin -->
       <ng-container *ngIf="role === 'admin'">
-        <li><a routerLink="/admin_dashboard">Dashboard</a></li>
+        <li><a routerLink="/admin_dashboard">Gestión de socios</a></li>
         <li><a routerLink="/gestion_actividades">Gestión de Actividades</a></li>
-        <li><a routerLink="/equipos">Equipos</a></li>
+        <li><a routerLink="/equipos">Gestión de Equipos</a></li>
       </ng-container>
+
+      <li><a (click)="cerrarSesion()">Cerrar Sesión</a></li>
     </ul>
   </nav>
 </aside>
