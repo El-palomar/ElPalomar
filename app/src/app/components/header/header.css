@@ -1,11 +1,24 @@
-nav{
-    height: 15vh;
+nav {
+  height: 15vh; /* navbar fijo */
 }
-.navbar-brand img{
-    height: 10vh;
-    width: 14rem;
-    object-fit: cover;
+
+.navbar-brand {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center; /* centra el logo */
+  height: 100%;        /* ahora sí ocupa todo el nav */
 }
+
+.navbar-brand img {
+  height: 150%;   /* ocupa todo el alto del navbar */
+  width: auto;    /* mantiene proporción */
+  object-fit: contain;
+  margin-top: 8px; /* lo baja un poquito */
+  margin-left: 15px;   
+}
+
+
 .container-fluid{
     height: 100%;
 }
@@ -37,16 +50,16 @@ nav{
     background-color: #1061b2a4;
 }
 
-@media screen and (max-width:991px){
-    .navbar-brand img{
-        height: 10vh;
-        object-fit: cover;
-    }
-    nav .container-fluid{
-      background-color: white;
-      height: auto;
-    }
-    #login-button{
-      margin-bottom: 1rem;
-    }
+@media screen and (max-width: 991px) {
+  nav {
+    height: 12vh; /* navbar un poco más compacto en móviles */
+  }
+
+  .navbar-brand img {
+    height: 150%;     /* que ocupe casi todo el nav */
+    max-height: none; /* desactiva el límite anterior */
+    width: auto;
+    margin-top: 0;   /* lo centramos bien */
+    margin-left: 15px; /* pequeño margen a la izquierda */
+  }
 }
