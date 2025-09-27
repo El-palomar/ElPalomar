@@ -154,8 +154,7 @@ p {
 }
 
 .btn-accion {
-  background-color: #3498db; /* mismo color que editar */
-  color: white;
+  background-color: #3498db; 
   border: none;
   border-radius: 5px;
   padding: 5px 12px;

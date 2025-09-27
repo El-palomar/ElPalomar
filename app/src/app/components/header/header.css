@@ -1,20 +1,20 @@
 nav {
-  height: 15vh; /* navbar fijo */
+  height: 13vh; 
 }
 
 .navbar-brand {
   padding: 0;
   margin: 0;
   display: flex;
-  align-items: center; /* centra el logo */
-  height: 100%;        /* ahora sí ocupa todo el nav */
+  align-items: center; 
+  height: 100%;        
 }
 
 .navbar-brand img {
-  height: 150%;   /* ocupa todo el alto del navbar */
-  width: auto;    /* mantiene proporción */
+  height: 160%;  
+  width: auto;   
   object-fit: contain;
-  margin-top: 8px; /* lo baja un poquito */
+  margin-top: 8px; 
   margin-left: 15px;   
 }
 
@@ -33,7 +33,7 @@ nav {
 #login-button{
     text-decoration: none;
     padding: 0.6rem 2rem;
-    background-color: var(--color-principal); /* Color de fondo del botón */
+    background-color: var(--color-principal); 
     border: 1px solid var(--color-principal);
     border-radius: 10px;
 }
@@ -42,7 +42,7 @@ nav {
     display: flex;
     width: 100%;
     height: 100%;
-    color: white; /* Color del texto del enlace en el botón */
+    color: white; 
     text-decoration: none;
 }
 
@@ -52,14 +52,14 @@ nav {
 
 @media screen and (max-width: 991px) {
   nav {
-    height: 12vh; /* navbar un poco más compacto en móviles */
+    height: 12vh; 
   }
 
   .navbar-brand img {
-    height: 150%;     /* que ocupe casi todo el nav */
-    max-height: none; /* desactiva el límite anterior */
+    height: 160%;     
+    max-height: none; 
     width: auto;
-    margin-top: 0;   /* lo centramos bien */
-    margin-left: 15px; /* pequeño margen a la izquierda */
+    margin-top: 8px;  
+    margin-left: 15px; 
   }
 }
