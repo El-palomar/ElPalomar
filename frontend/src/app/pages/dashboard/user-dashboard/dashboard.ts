@@ -3,7 +3,7 @@ import { Footer } from '@components/layout/footer/footer';
 import { RouterModule } from '@angular/router';
 import { Sidebar } from '@components/layout/sidebar/sidebar';
 import { ActivitiesService } from '@services/activities';
-import { CommonModule } from '@angular/common';
+
 import { UserService } from '@services/user';
 import { IActivity } from '@models/activity';
 import { IUserActivity } from '@models/user-activity';
@@ -11,7 +11,7 @@ import { IUserActivity } from '@models/user-activity';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [Sidebar, Footer, RouterModule, CommonModule],
+  imports: [Sidebar, Footer, RouterModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

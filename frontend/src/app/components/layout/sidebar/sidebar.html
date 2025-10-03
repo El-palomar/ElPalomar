@@ -10,18 +10,18 @@
 
 
       <!-- Opciones para cliente -->
-      <ng-container *ngIf="role === 'cliente'">
+      @if (role === 'cliente') {
         <li><a routerLink="/mi_cuenta" class="activo">Mi Cuenta</a></li>
         <li><a routerLink="/actividades">Cronograma</a></li>
         <li><a routerLink="/configuracion">Configuración</a></li>
-      </ng-container>
+      }
 
       <!-- Opciones para admin -->
-      <ng-container *ngIf="role === 'admin'">
+      @if (role === 'admin') {
         <li><a routerLink="/admin_dashboard">Gestión de socios</a></li>
         <li><a routerLink="/gestion_actividades">Gestión de Actividades</a></li>
         <li><a routerLink="/equipos">Gestión de Equipos</a></li>
-      </ng-container>
+      }
 
       <li><a (click)="cerrarSesion()">Cerrar Sesión</a></li>
     </ul>

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { QuienesSomosService } from "@services/quienes-somos"
 
 @Component({
     selector: 'app-quienes-somos-component',
     standalone: true,
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './quienes-somos-component.html',
     styleUrls: ['./quienes-somos-component.css'],
 })

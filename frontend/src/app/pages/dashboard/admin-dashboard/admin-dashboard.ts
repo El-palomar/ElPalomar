@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Sidebar } from '@components/layout/sidebar/sidebar';
 import { Footer } from '@components/layout/footer/footer';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { ActivitiesService } from '@services/activities';
 import { IActivity } from '@models/activity';
 
@@ -26,7 +26,7 @@ interface ITeam {
   standalone: true,
   templateUrl: './admin-dashboard.html',
   styleUrls: ['./admin-dashboard.css'],
-  imports: [Sidebar, Footer, RouterModule, CommonModule]
+  imports: [Sidebar, Footer, RouterModule]
 })
 export class AdminDashboard implements OnInit {
   activities: IActivity[] = [];

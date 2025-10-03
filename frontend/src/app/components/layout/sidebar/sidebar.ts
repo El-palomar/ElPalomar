@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { IUsuario } from '@services/usuarios';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterModule, CommonModule],  // Agregar CommonModule
+  imports: [RouterModule],  // Agregar CommonModule
   templateUrl: './sidebar.html',
   styleUrls: ['./sidebar.css']
 })
