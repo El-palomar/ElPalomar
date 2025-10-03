@@ -14,7 +14,7 @@ export interface IUsuario {
   providedIn: 'root'
 })
 export class UsuariosService {
-  private dataURL = '/assets/data/usuarios.json';
+  private dataURL = '/public/data/usuarios.json';
   private currentUser: IUsuario | null = null;
 
   constructor(private http: HttpClient) {}
