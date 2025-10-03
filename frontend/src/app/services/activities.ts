@@ -7,7 +7,7 @@ import { IActivity } from '../models/activity';
   providedIn: 'root'
 })
 export class ActivitiesService {
-  private dataURL = "/assets/data/activities.json" // Es la url donde se hace la peticion
+  private dataURL = "/public/data/activities.json" // Es la url donde se hace la peticion
 
   constructor(private http: HttpClient) { }
 
