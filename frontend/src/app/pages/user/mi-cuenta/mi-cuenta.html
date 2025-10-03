@@ -1,0 +1,30 @@
+<header>
+      <h1>Bienvenido!</h1>
+      <p class="subtitulo-header">Consultá tus datos y opciones de usuario</p>
+    </header>
+
+    <div class="volver-dashboard">
+  <a routerLink="/dashboard"><i class="fa-solid fa-arrow-left"></i> Volver </a>
+</div>
+
+
+<main class="container">
+    <div class="card-cuenta">
+        <h1>👤 Mi Cuenta</h1>
+
+        <section class="seccion">
+          <h2><i class="fa-solid fa-id-card"></i> Datos personales</h2>
+          <div class="botones">
+            <a routerLink="/mi_cuenta_editar" class="boton-link">Editar</a>
+            <button>Eliminar</button>
+          </div>
+        </section>
+
+        <section class="seccion"><h2><i class="fa-solid fa-certificate"></i> Membresía</h2></section>
+        <section class="seccion"><h2><i class="fa-solid fa-clock-rotate-left"></i> Historial</h2></section>
+        <section class="seccion"><h2><i class="fa-solid fa-shield-halved"></i> Seguridad</h2></section>
+        <section class="seccion"><h2><i class="fa-solid fa-circle-question"></i> Ayuda</h2></section>
+
+    </div>
+</main>
+<app-footer></app-footer>

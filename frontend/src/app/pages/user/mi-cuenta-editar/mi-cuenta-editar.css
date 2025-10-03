@@ -1,0 +1,143 @@
+/* ===== ESTILO GENERAL ===== */
+header {
+  text-align: center;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 20px 10px;
+}
+
+.subtitulo-header {
+  font-size: 1rem;
+  color: #e0f7f4;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.volver-dashboard {
+  margin: 20px;
+}
+
+.volver-dashboard a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volver-dashboard a:hover {
+  color: #1c3e5c;
+}
+
+/* ===== CARD ===== */
+.card-cuenta {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 20px solid #2c3e50;
+}
+
+.card-cuenta h1 {
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+.card-cuenta .subtitulo {
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ===== SECCIONES ===== */
+.seccion {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #868686ff;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.seccion h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2c3e50;
+}
+
+/* ===== INPUTS ===== */
+.texto-edicion {
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.texto-edicion:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ===== BOTONES ===== */
+.botones {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+.btn-aceptar,
+.btn-cancelar {
+  color: white;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-aceptar {
+  background-color: #22c55e;
+}
+
+.btn-aceptar:hover {
+  background-color: #16a34a;
+}
+
+.btn-cancelar {
+  background-color: #ef4444;
+}
+
+.btn-cancelar:hover {
+  background-color: #b91c1c;
+}

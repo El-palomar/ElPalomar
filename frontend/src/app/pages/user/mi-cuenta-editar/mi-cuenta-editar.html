@@ -1,0 +1,46 @@
+<header>
+      <h1>Bienvenido!</h1>
+      <p class="subtitulo-header">Aquí podras editar tus datos.</p>
+    </header>
+
+    <div class="volver-dashboard">
+      <a routerLink="/mi_cuenta"
+        ><i class="fa-solid fa-arrow-left"></i> Volver
+      </a>
+    </div>
+
+    <main class="container">
+      <div class="card-cuenta">
+        <h1>👤 Mi Cuenta</h1>
+
+        <section class="seccion">
+          <h2><i class="fa-solid fa-id-card"></i> Datos personales</h2>
+          <input
+            class="texto-edicion"
+            type="text"
+            placeholder="Escribe aquí..."
+          />
+        </section>
+
+        <section class="seccion">
+          <h2><i class="fa-solid fa-certificate"></i> Membresía</h2>
+          <p>Este campo no puede ser modificado.</p>
+        </section>
+        <section class="seccion">
+          <h2><i class="fa-solid fa-clock-rotate-left"></i> Historial</h2>
+          <p>Este campo no puede ser modificado.</p>
+        </section>
+        <section class="seccion">
+          <h2><i class="fa-solid fa-shield-halved"></i> Seguridad</h2>
+          <p>Este campo no puede ser modificado.</p>
+        </section>
+        <section class="seccion">
+          <h2><i class="fa-solid fa-circle-question"></i> Ayuda</h2>
+        </section>
+        <div class="botones">
+          <a routerLink="/mi_cuenta" class="btn-aceptar">Aceptar</a>
+          <button class="btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </main>
+<app-footer></app-footer>
