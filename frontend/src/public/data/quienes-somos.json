@@ -1,0 +1,31 @@
+{
+  "titulo": "¿Quiénes Somos?",
+  "descripcion": "Bienvenido a nuestro proyecto! Somos El Palomar, un grupo compuesto por 5 estudiantes del ISPC (Instituto Superior Politécnico Córdoba), actualmente estamos cursando la tecnicatura en Desarrollo de Software. A continuación, nuestras presentaciones:",
+  "equipo": [
+    {
+      "nombre": "Carlos Huallpa",
+      "rol": "Hola, soy Carlos Huallpa, soy biólogo con experiencia en investigación científica. A lo largo de mi carrera desarrollé un interés por optimizar la recolección y análisis de datos, así como por automatizar procesos, lo que me llevó a explorar el desarrollo de software. Actualmente estoy ampliando mis habilidades en bases de datos, web scraping y desarrollo web.",
+      "image": "/assets/images/paloma_carlos.png"
+    },
+    {
+      "nombre": "Marialis Aquino",
+      "rol": "Hola, soy Marialis Aquino y en esta etapa tengo el rol de Scrum Master por primera vez. Me gusta la metodología ágilque utilizamos para estructurar el proyecto y a desarrollar elpensamiento crítico colaborativo. Me entusiasma poder aplicar lo quevamos aprendiendo en un proyecto real.",
+      "image": "/assets/images/paloma_lis.png"
+    },
+    {
+      "nombre": "Ezequiel Gonzalez",
+      "rol": "Mi nombre es Ezequiel Gonzalez, tengo 25 años, soy de Cordoba, Capital. Actualmente me desempeño en el area de analisis de datos y estoy cursando la carrera de tecnico en desarrollo de software.",
+      "image": "/assets/images/paloma_ezequiel.png"
+    },
+    {
+      "nombre": "Fabrizio Avila",
+      "rol": "Hola, soy Fabrizio Avila, tengo 23 años y estoy desempeñando el rol de desarrollador. Este proyecto me está permitiendo poner en práctica todo lo que fui aprendiendo y estoy muy emocionado por seguir creciendo profesionalmente. Me gusta trabajar en equipo y enfrentar nuevos desafíos.",
+      "image": "/assets/images/paloma_fabrizio.png"
+    },
+    {
+      "nombre": "Ana Camila Almiron",
+      "rol": "Hola, soy Ana Camila Almiron, tengo 24 años y me desempeño como desarrolladora. Estoy muy entusiasmada con este proyecto, ya que me está brindando la oportunidad de seguir aprendiendo, perfeccionar mis habilidades y crecer junto a mi equipo.",
+      "image": "/assets/images/paloma_camila.png"
+    }
+  ]
+}

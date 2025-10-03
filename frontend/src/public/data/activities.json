@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "name": "Fútbol",
+        "descriptionHome": "Entrenamientos y partidos para aficionados y semi-profesionales. Aprende técnicas y tácticas en equipo",
+        "description": "Fútbol 11 para adultos y juveniles en cancha de césped",
+        "category": "deportes",
+        "image": "/assets/images/futbol.jpg",
+        "isActive": true,
+        "maxParticipants": 22,
+        "minAge": 16,
+        "price": 2500,
+        "instructor": "Carlos Mendez",
+        "equipment": [
+            "Botines",
+            "Canilleras",
+            "Pelota"
+        ],
+        "difficulty": "intermedio"
+    },
+    {
+        "id": 2,
+        "name": "Tenis",
+        "descriptionHome": "Entrenamientos y partidos para aficionados y semi-profesionales",
+        "description": "Clases de tenis individuales y grupales para todos los niveles",
+        "category": "deportes",
+        "image": "/assets/images/tenis.jpg",
+        "isActive": true,
+        "maxParticipants": 4,
+        "minAge": 8,
+        "price": 3500,
+        "instructor": "María González",
+        "equipment": [
+            "Raqueta",
+            "Pelotas"
+        ],
+        "difficulty": "todos"
+    },
+    {
+        "id": 3,
+        "name": "Natación",
+        "descriptionHome": "Clases de natación para todas las edades y niveles. Mejora tu técnica y disfruta de los beneficios del agua.",
+        "description": "Clases de natación en pileta olímpica climatizada",
+        "category": "deportes",
+        "image": "/assets/images/natacion.jpg",
+        "isActive": true,
+        "maxParticipants": 12,
+        "minAge": 5,
+        "price": 4000,
+        "instructor": "Ana López",
+        "equipment": [
+            "Antiparras",
+            "Gorra"
+        ],
+        "difficulty": "todos"
+    },
+    {
+        "id": 4,
+        "name": "Yoga",
+        "descriptionHome": "Conecta cuerpo y mente a través de nuestras clases de yoga. Mejora tu flexibilidad, fuerza y bienestar general",
+        "description": "Clases de yoga y meditación para relajación y bienestar",
+        "category": "bienestar",
+        "image": "/assets/images/yoga.jpg",
+        "isActive": true,
+        "maxParticipants": 15,
+        "minAge": 18,
+        "price": 2000,
+        "instructor": "Laura Martínez",
+        "equipment": [
+            "Mat",
+            "Ropa cómoda"
+        ],
+        "difficulty": "principiante"
+    },
+    {
+        "id": 5,
+        "name": "Básquet",
+        "descriptionHome": "Entrena con nuestro equipo de baloncesto. Desarrolla habilidades técnicas y tácticas en un ambiente competitivo.",
+        "description": "Básquetbol recreativo y competitivo en cancha cubierta",
+        "category": "deportes",
+        "image": "/assets/images/basket.jpg",
+        "isActive": true,
+        "maxParticipants": 10,
+        "minAge": 12,
+        "price": 2800,
+        "instructor": "Roberto Silva",
+        "equipment": [
+            "Zapatillas",
+            "Pelota"
+        ],
+        "difficulty": "intermedio"
+    },
+    {
+        "id": 6,
+        "name": "Pilates",
+        "descriptionHome": "Fortalece tu cuerpo y mejora tu postura con nuestras clases de pilates. Ejercicios enfocados en el control y la resistencia.",
+        "description": "Ejercicios de pilates para fortalecer el core y mejorar la postura",
+        "category": "bienestar",
+        "image": "/assets/images/pilates.jpg",
+        "isActive": true,
+        "maxParticipants": 12,
+        "minAge": 16,
+        "price": 2200,
+        "instructor": "Sofía Ruiz",
+        "equipment": [
+            "Mat",
+            "Banda elástica"
+        ],
+        "difficulty": "principiante"
+    }
+]
