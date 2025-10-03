@@ -1,10 +1,10 @@
 #backend/actividades/views.py
 from rest_framework import viewsets
-from .models import Actividades
-from .serializers import ActividadesSerializer
+from .models import Actividad
+from .serializers import ActividadSerializer
 
 # Create your views here.
-class ActividadesViewset (viewsets.ModelViewSet):
-    queryset = Actividades.objects.all()
-    serializer_class = ActividadesSerializer
+class ActividadViewSet (viewsets.ModelViewSet):
+    queryset = Actividad.objects.all()
+    serializer_class = ActividadSerializer
     

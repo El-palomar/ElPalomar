@@ -1,8 +1,8 @@
 #backend/actividades/serializers.py
 from rest_framework import serializers
-from .models import Actividades
+from .models import Actividad
 
-class ActividadesSerializer (serializers.ModelSerializer):
+class ActividadSerializer (serializers.ModelSerializer):
     class Meta:
-        model = Actividades
+        model = Actividad
         fields = '__all__'
