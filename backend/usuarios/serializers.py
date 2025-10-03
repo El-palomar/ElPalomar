@@ -9,14 +9,14 @@ class RegistroSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Usuario
-        fields = ["dni", "nombre", "apellido", "correo", "telefono", "sexo", "edad", "password"]
+        fields = ["dni", "nombre", "apellido", "email", "telefono", "sexo", "edad", "password"]
 
     def create(self, validated_data):
         usuario = Usuario.objects.create(
             dni=validated_data["dni"],
             nombre=validated_data["nombre"],
             apellido=validated_data["apellido"],
-            correo=validated_data["correo"],
+            email=validated_data["email"],
             telefono=validated_data.get("telefono"),
             sexo=validated_data["sexo"],
             edad=validated_data.get("edad"),
@@ -29,14 +29,12 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
-        # Añadir info extra al token
         token["nombre"] = user.nombre
         token["apellido"] = user.apellido
         token["tipo"] = user.tipo
         return token
 
-    # SimpleJWT espera "username" y "password",
-    # pero como tu modelo usa "correo", adaptamos la validación:
+
     def validate(self, attrs):
-        attrs["username"] = attrs.get("correo")  # reasigna correo como username
+        attrs["username"] = attrs.get("email")  
         return super().validate(attrs)
