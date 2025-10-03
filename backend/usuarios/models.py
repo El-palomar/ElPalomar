@@ -7,7 +7,7 @@ class Usuario(AbstractUser):
     dni = models.CharField(max_length=15, unique=True)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
-    correo = models.EmailField(unique=True)
+    email = models.EmailField(unique=True)
     telefono = models.CharField(max_length=20, blank=True, null=True)
     sexo = models.CharField(max_length=10, choices=[("M", "Masculino"), ("F", "Femenino")])
     edad = models.PositiveIntegerField(blank=True, null=True)
@@ -17,8 +17,8 @@ class Usuario(AbstractUser):
         default="usuario"
     )
 
-    USERNAME_FIELD = "correo"  # autenticación por correo
+    USERNAME_FIELD = "email"  # autenticación por correo
     REQUIRED_FIELDS = ["nombre", "apellido", "dni"]
 
     def __str__(self):
-        return f"{self.correo} - {self.nombre} {self.apellido}"
+        return f"{self.email} - {self.nombre} {self.apellido}"
