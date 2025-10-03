@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "usuarios",
     "actividades",
     "profesores",
+    "comisiones",
+    "registros",
     
 ]
 
