@@ -1,11 +1,10 @@
 <div class="login-container">
   <div class="login-card">
+    <h2 class="title">Registrate ahora</h2>
+    <p class="subtitle">Completá tus datos para crear tu cuenta</p>
     <div class="login-box">
-      <h2 class="title">Registrate ahora</h2>
-      <p class="subtitle">Completá tus datos para crear tu cuenta</p>
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
         <div class="input-group">
-            <h3>Datos de ingreso:</h3>
             <!-- EMAIL -->
             <label for="email">E-mail:</label>
             <input
@@ -51,13 +50,12 @@
                 @if (isInvalid('confirmarContrasena')) {
                   <div>
                     @if (form.get('confirmarContrasena')?.errors?.['required']) {
-                      <small style="color:red">La confirmación es obligatoria</small>
+                      <small style="color:red">Debés confirmar tu contraseña </small>
                     }
                   </div>
                 }
         </div>
         <div class="input-group">
-              <h3>Datos personales:</h3>
               <div class="form-row">
                 <!-- NOMBRE -->
                 <div class="form-field w-50">
@@ -134,7 +132,7 @@
               </div>
             }
 
-              <input type="submit" value="Registrarse" [disabled]="form.invalid" />
+              <button type="submit" [disabled]="form.invalid" > Registrarse </button>
               <div class="login-options d-flex justify-content-center align-center my-3">
                         <span> Ya tenés una cuenta? <a routerLink="/login" class="text-decoration-none">Inicia Sesion</a></span>
               </div>
