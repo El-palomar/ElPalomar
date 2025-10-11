@@ -7,11 +7,12 @@ import { ActivitiesService } from '@services/activities';
 import { UserService } from '@services/user';
 import { IActivity } from '@models/activity';
 import { IUserActivity } from '@models/user-activity';
+import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboard-welcome';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [Sidebar, Footer, RouterModule],
+  imports: [Sidebar, Footer, RouterModule, DashboardWelcome],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

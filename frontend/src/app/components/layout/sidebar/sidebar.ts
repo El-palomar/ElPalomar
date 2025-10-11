@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
+import { DashboardUserCard } from '@components/features/dashboard-user-card/dashboard-user-card';
 
 import { IUsuario } from '@services/usuarios';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterModule],  // Agregar CommonModule
+  imports: [RouterModule, DashboardUserCard],  // Agregar CommonModule
   templateUrl: './sidebar.html',
   styleUrls: ['./sidebar.css']
 })
