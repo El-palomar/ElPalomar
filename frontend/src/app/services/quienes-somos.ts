@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class QuienesSomosService {
-  private jsonURL = 'assets/data/quienes-somos.json';
+  private jsonURL = 'public/data/quienes-somos.json';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
     return this.http.get<any>(this.jsonURL);

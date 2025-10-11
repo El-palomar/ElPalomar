@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IQuienesSomos } from '@models/quienes-somos';
 
 import { QuienesSomosService } from "@services/quienes-somos"
 
@@ -10,12 +11,12 @@ import { QuienesSomosService } from "@services/quienes-somos"
     styleUrls: ['./quienes-somos-component.css'],
 })
 export class QuienesSomosComponent implements OnInit {
-    data: any;
+    data: IQuienesSomos = {} as IQuienesSomos;
 
     constructor(private quienesSomosService: QuienesSomosService) { }
 
     ngOnInit(): void {
-        this.quienesSomosService.getData().subscribe((res: any) => {
+        this.quienesSomosService.getData().subscribe((res: IQuienesSomos) => {
             this.data = res;
         });
     }
