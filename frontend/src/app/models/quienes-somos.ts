@@ -1,6 +1,11 @@
-export interface QuienesSomos {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
+export interface IQuienesSomos {
+  titulo: string,
+  descripcion: string,
+  equipo: IEquipo[]
+
+}
+export interface IEquipo {
+  nombre: string,
+  rol: string,
+  image: string
 }
