@@ -11,19 +11,20 @@
 
       <!-- Opciones para cliente -->
       @if (role === 'cliente') {
-        <li><a routerLink="/mi_cuenta" class="activo">Mi Cuenta</a></li>
-        <li><a routerLink="/actividades">Cronograma</a></li>
-        <li><a routerLink="/configuracion">Configuración</a></li>
+      <li><a routerLink="/mi_cuenta" class="activo">Mi Cuenta</a></li>
+      <li><a routerLink="/actividades">Cronograma</a></li>
+      <li><a routerLink="/configuracion">Configuración</a></li>
       }
 
       <!-- Opciones para admin -->
       @if (role === 'admin') {
-        <li><a routerLink="/admin_dashboard">Gestión de socios</a></li>
-        <li><a routerLink="/gestion_actividades">Gestión de Actividades</a></li>
-        <li><a routerLink="/equipos">Gestión de Equipos</a></li>
+      <li><a routerLink="/admin_dashboard">Gestión de socios</a></li>
+      <li><a routerLink="/gestion_actividades">Gestión de Actividades</a></li>
+      <li><a routerLink="/equipos">Gestión de Equipos</a></li>
       }
 
       <li><a (click)="cerrarSesion()">Cerrar Sesión</a></li>
     </ul>
   </nav>
+  <app-dashboard-user-card class="w-100"></app-dashboard-user-card>
 </aside>

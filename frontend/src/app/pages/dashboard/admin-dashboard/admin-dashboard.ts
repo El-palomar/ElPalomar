@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { ActivitiesService } from '@services/activities';
 import { IActivity } from '@models/activity';
+import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboard-welcome';
 
 interface IUser {
   id: number;
@@ -26,7 +27,7 @@ interface ITeam {
   standalone: true,
   templateUrl: './admin-dashboard.html',
   styleUrls: ['./admin-dashboard.css'],
-  imports: [Sidebar, Footer, RouterModule]
+  imports: [Sidebar, Footer, RouterModule, DashboardWelcome]
 })
 export class AdminDashboard implements OnInit {
   activities: IActivity[] = [];

@@ -1,0 +1,21 @@
+.dashboard-welcome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-welcome-text h1 {
+    font-weight: 900;
+}
+
+.dashboard-welcome-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.dashboard-welcome-date span {
+    font-weight: 900;
+}
