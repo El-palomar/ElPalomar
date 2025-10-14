@@ -1,32 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { DashboardUserCard } from '@components/features/dashboard-user-card/dashboard-user-card';
-
 import { IUsuario } from '@services/usuarios';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterModule, DashboardUserCard],  // Agregar CommonModule
+  imports: [RouterModule, DashboardUserCard],
   templateUrl: './sidebar.html',
-  styleUrls: ['./sidebar.css']
+  styleUrls: ['./sidebar.css'],
 })
 export class Sidebar implements OnInit {
-  role: 'admin' | 'cliente' | null = null;
+  tipo: 'admin' | 'usuario' | undefined = undefined;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    const usuarioActual = localStorage.getItem('usuarioActual');
+    const usuarioActual = localStorage.getItem('currentUser');
     if (usuarioActual) {
       const usuario: IUsuario = JSON.parse(usuarioActual);
-      this.role = usuario.role;
-      console.log('Sidebar cargado con role:', this.role);
+      this.tipo = usuario.tipo;
+      console.log('Sidebar cargado con tipo:', this.tipo);
+    }
+  }
+
+  scrollTo(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
   cerrarSesion(): void {
-    localStorage.removeItem('usuarioActual');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
     this.router.navigate(['/login']);
   }
 }
