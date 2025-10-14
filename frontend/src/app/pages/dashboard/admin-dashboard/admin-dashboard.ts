@@ -4,37 +4,28 @@ import { Footer } from '@components/layout/footer/footer';
 import { RouterModule } from '@angular/router';
 
 import { ActivitiesService } from '@services/activities';
+import { UsuariosService, IUsuario } from '@services/usuarios';
+import { TeamsService, ITeam } from '@services/teams';
 import { IActivity } from '@models/activity';
 import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboard-welcome';
-
-interface IUser {
-  id: number;
-  name: string;
-  email: string;
-  membership: string;
-  isActive: boolean;
-}
-
-interface ITeam {
-  id: number;
-  name: string;
-  activity: string;
-  members: IUser[];
-}
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
   templateUrl: './admin-dashboard.html',
   styleUrls: ['./admin-dashboard.css'],
-  imports: [Sidebar, Footer, RouterModule, DashboardWelcome]
+  imports: [Sidebar, Footer, RouterModule, DashboardWelcome],
 })
 export class AdminDashboard implements OnInit {
   activities: IActivity[] = [];
-  users: IUser[] = [];
+  users: IUsuario[] = [];
   teams: ITeam[] = [];
 
-  constructor(private activityService: ActivitiesService) { }
+  constructor(
+    private activityService: ActivitiesService,
+    private usuariosService: UsuariosService,
+    private teamsService: TeamsService
+  ) {}
 
   ngOnInit(): void {
     this.loadActivities();
@@ -45,48 +36,97 @@ export class AdminDashboard implements OnInit {
   // ===== Actividades =====
   loadActivities(): void {
     this.activityService.getAllActivities().subscribe({
-      next: (activities) => this.activities = activities,
-      error: (error) => console.error('Error cargando actividades', error)
+      next: (activities) => {
+        this.activities = activities;
+        console.log('Actividades cargadas:', activities);
+      },
+      error: (err) => console.error('Error cargando actividades', err),
     });
   }
 
   deleteActivity(id: number): void {
-    this.activities = this.activities.filter(a => a.id !== id);
-    console.log('Actividad eliminada:', id);
+    if (confirm('¿Estás seguro de eliminar esta actividad?')) {
+      this.activityService.deleteActivity(id).subscribe({
+        next: () => {
+          this.activities = this.activities.filter((a) => a.id !== id);
+          console.log('Actividad eliminada');
+        },
+        error: (err) => console.error('Error eliminando actividad', err),
+      });
+    }
   }
 
   toggleStatus(activity: IActivity): void {
-    activity.isActive = !activity.isActive;
-    console.log(`Actividad ${activity.id} ahora está ${activity.isActive ? 'Activa' : 'Inactiva'}`);
+    const newStatus = !activity.isActive;
+    this.activityService
+      .updateActivity(activity.id!, { isActive: newStatus })
+      .subscribe({
+        next: () => {
+          activity.isActive = newStatus;
+          console.log('Estado actualizado');
+        },
+        error: (err) => console.error('Error actualizando actividad', err),
+      });
   }
 
   // ===== Socios =====
   loadUsers(): void {
-    // Datos simulados
-    this.users = [
-      { id: 1, name: 'Carlos Pérez', email: 'carlos@mail.com', membership: 'Premium', isActive: true },
-      { id: 2, name: 'María Aquino', email: 'maria@mail.com', membership: 'Básica', isActive: false }
-    ];
+    this.usuariosService.getAllUsuarios().subscribe({
+      next: (users) => {
+        this.users = users;
+        console.log('Usuarios cargados:', users);
+      },
+      error: (err) => console.error('Error cargando usuarios', err),
+    });
   }
 
-  toggleUserStatus(user: IUser): void {
-    user.isActive = !user.isActive;
+  toggleUserStatus(user: IUsuario): void {
+    const newStatus = !user.is_active;
+    this.usuariosService.toggleUsuarioStatus(user.id!, newStatus).subscribe({
+      next: () => {
+        user.is_active = newStatus;
+        console.log('Estado de usuario actualizado');
+      },
+      error: (err) => console.error('Error actualizando usuario', err),
+    });
   }
 
   deleteUser(id: number): void {
-    this.users = this.users.filter(u => u.id !== id);
+    if (confirm('¿Estás seguro de eliminar este usuario?')) {
+      this.usuariosService.deleteUsuario(id).subscribe({
+        next: () => {
+          this.users = this.users.filter((u) => u.id !== id);
+          console.log('Usuario eliminado');
+        },
+        error: (err) => console.error('Error eliminando usuario', err),
+      });
+    }
   }
 
   // ===== Equipos =====
   loadTeams(): void {
-    // Datos simulados
-    this.teams = [
-      { id: 1, name: 'Equipo A', activity: 'Fútbol', members: [this.users[0]] },
-      { id: 2, name: 'Equipo B', activity: 'Natación', members: [this.users[1]] }
-    ];
+    this.teamsService.getAllTeams().subscribe({
+      next: (teams) => {
+        this.teams = teams;
+        console.log('Equipos cargados:', teams);
+      },
+      error: (err) => {
+        console.error('Error cargando equipos', err);
+        // Datos de ejemplo si no existe el endpoint
+        this.teams = [];
+      },
+    });
   }
 
   deleteTeam(id: number): void {
-    this.teams = this.teams.filter(t => t.id !== id);
+    if (confirm('¿Estás seguro de eliminar este equipo?')) {
+      this.teamsService.deleteTeam(id).subscribe({
+        next: () => {
+          this.teams = this.teams.filter((t) => t.id !== id);
+          console.log('Equipo eliminado');
+        },
+        error: (err) => console.error('Error eliminando equipo', err),
+      });
+    }
   }
 }
