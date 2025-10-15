@@ -3,10 +3,9 @@ import { Sidebar } from '@components/layout/sidebar/sidebar';
 import { Footer } from '@components/layout/footer/footer';
 import { RouterModule } from '@angular/router';
 
-import { ActivitiesService } from '@services/activities';
+import { ActividadesService, IActividad } from '@services/activities';
 import { UsuariosService, IUsuario } from '@services/usuarios';
 import { TeamsService, ITeam } from '@services/teams';
-import { IActivity } from '@models/activity';
 import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboard-welcome';
 
 @Component({
@@ -17,12 +16,12 @@ import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboa
   imports: [Sidebar, Footer, RouterModule, DashboardWelcome],
 })
 export class AdminDashboard implements OnInit {
-  activities: IActivity[] = [];
+  activities: IActividad[] = [];
   users: IUsuario[] = [];
   teams: ITeam[] = [];
 
   constructor(
-    private activityService: ActivitiesService,
+    private activityService: ActividadesService,
     private usuariosService: UsuariosService,
     private teamsService: TeamsService
   ) {}
@@ -35,48 +34,37 @@ export class AdminDashboard implements OnInit {
 
   // ===== Actividades =====
   loadActivities(): void {
-    this.activityService.getAllActivities().subscribe({
-      next: (activities) => {
+    this.activityService.getAllActividades().subscribe({
+      next: (activities: IActividad[]) => {
         this.activities = activities;
         console.log('Actividades cargadas:', activities);
       },
-      error: (err) => console.error('Error cargando actividades', err),
+      error: (err: any) => console.error('Error cargando actividades', err),
     });
   }
 
   deleteActivity(id: number): void {
     if (confirm('¿Estás seguro de eliminar esta actividad?')) {
-      this.activityService.deleteActivity(id).subscribe({
+      this.activityService.deleteActividad(id).subscribe({
         next: () => {
           this.activities = this.activities.filter((a) => a.id !== id);
           console.log('Actividad eliminada');
         },
-        error: (err) => console.error('Error eliminando actividad', err),
+        error: (err: any) => console.error('Error eliminando actividad', err),
       });
     }
   }
 
-  toggleStatus(activity: IActivity): void {
-    const newStatus = !activity.isActive;
-    this.activityService
-      .updateActivity(activity.id!, { isActive: newStatus })
-      .subscribe({
-        next: () => {
-          activity.isActive = newStatus;
-          console.log('Estado actualizado');
-        },
-        error: (err) => console.error('Error actualizando actividad', err),
-      });
-  }
+  // ✅ ELIMINADA toggleStatus porque tu modelo no tiene campo 'activo'
 
   // ===== Socios =====
   loadUsers(): void {
     this.usuariosService.getAllUsuarios().subscribe({
-      next: (users) => {
+      next: (users: IUsuario[]) => {
         this.users = users;
         console.log('Usuarios cargados:', users);
       },
-      error: (err) => console.error('Error cargando usuarios', err),
+      error: (err: any) => console.error('Error cargando usuarios', err),
     });
   }
 
@@ -87,7 +75,7 @@ export class AdminDashboard implements OnInit {
         user.is_active = newStatus;
         console.log('Estado de usuario actualizado');
       },
-      error: (err) => console.error('Error actualizando usuario', err),
+      error: (err: any) => console.error('Error actualizando usuario', err),
     });
   }
 
@@ -98,7 +86,7 @@ export class AdminDashboard implements OnInit {
           this.users = this.users.filter((u) => u.id !== id);
           console.log('Usuario eliminado');
         },
-        error: (err) => console.error('Error eliminando usuario', err),
+        error: (err: any) => console.error('Error eliminando usuario', err),
       });
     }
   }
@@ -106,13 +94,12 @@ export class AdminDashboard implements OnInit {
   // ===== Equipos =====
   loadTeams(): void {
     this.teamsService.getAllTeams().subscribe({
-      next: (teams) => {
+      next: (teams: ITeam[]) => {
         this.teams = teams;
         console.log('Equipos cargados:', teams);
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error cargando equipos', err);
-        // Datos de ejemplo si no existe el endpoint
         this.teams = [];
       },
     });
@@ -125,7 +112,7 @@ export class AdminDashboard implements OnInit {
           this.teams = this.teams.filter((t) => t.id !== id);
           console.log('Equipo eliminado');
         },
-        error: (err) => console.error('Error eliminando equipo', err),
+        error: (err: any) => console.error('Error eliminando equipo', err),
       });
     }
   }

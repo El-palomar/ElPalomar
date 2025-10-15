@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Footer } from '@components/layout/footer/footer';
 import { RouterModule } from '@angular/router';
 import { Sidebar } from '@components/layout/sidebar/sidebar';
-import { ActivitiesService } from '@services/activities';
+import { ActividadesService, IActividad } from '@services/activities';
 
 import { UserService } from '@services/user';
 import { IActivity } from '@models/activity';
@@ -14,33 +14,35 @@ import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboa
   standalone: true,
   imports: [Sidebar, Footer, RouterModule, DashboardWelcome],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnInit {
-  activities: IActivity[] = []
-  userActivities: IUserActivity[] = []
-  constructor(private activityService: ActivitiesService, private userActivityService: UserService) { }
+  activities: IActividad[] = [];
+  userActivities: IUserActivity[] = [];
+  constructor(
+    private activityService: ActividadesService,
+    private userActivityService: UserService
+  ) {}
 
   ngOnInit() {
-    this.getInitialData()
+    this.getInitialData();
   }
   getInitialData() {
-    this.activityService.getAllActivities().subscribe({
-      next: (activities) => {
-        this.activities = activities
+    this.activityService.getAllActividades().subscribe({
+      next: (activities: IActividad[]) => {
+        this.activities = activities;
       },
       error: (error) => {
-        console.error("Error", error)
-      }
-    })
+        console.error('Error', error);
+      },
+    });
     this.userActivityService.getAllUserActivities().subscribe({
       next: (activities) => {
-        this.userActivities = activities
+        this.userActivities = activities;
       },
       error: (error) => {
-        console.error("Error", error)
-      }
-    })
-  };
-
+        console.error('Error', error);
+      },
+    });
+  }
 }

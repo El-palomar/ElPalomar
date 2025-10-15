@@ -1,57 +1,37 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IActivity } from '../models/activity';
+
+export interface IActividad {
+  id?: number;
+  nombre: string;
+  descripcion?: string;
+}
 
 @Injectable({
   providedIn: 'root',
 })
-export class ActivitiesService {
+export class ActividadesService {
   private apiURL = 'http://127.0.0.1:8000/api/actividades/actividades/';
 
   constructor(private http: HttpClient) {}
 
-  /** Header con token JWT */
-  private getAuthHeaders(): HttpHeaders {
-    const token = localStorage.getItem('accessToken') || '';
-    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  getAllActividades(): Observable<IActividad[]> {
+    return this.http.get<IActividad[]>(this.apiURL);
   }
 
-  /** Obtener todas las actividades */
-  getAllActivities(): Observable<IActivity[]> {
-    return this.http.get<IActivity[]>(this.apiURL, {
-      headers: this.getAuthHeaders(),
-    });
+  createActividad(actividad: IActividad): Observable<IActividad> {
+    return this.http.post<IActividad>(this.apiURL, actividad);
   }
 
-  /** Obtener una actividad por ID */
-  getActivityById(id: number): Observable<IActivity> {
-    return this.http.get<IActivity>(`${this.apiURL}${id}/`, {
-      headers: this.getAuthHeaders(),
-    });
-  }
-
-  /** Crear actividad */
-  createActivity(activity: IActivity): Observable<IActivity> {
-    return this.http.post<IActivity>(this.apiURL, activity, {
-      headers: this.getAuthHeaders(),
-    });
-  }
-
-  /** Actualizar actividad */
-  updateActivity(
+  updateActividad(
     id: number,
-    activity: Partial<IActivity>
-  ): Observable<IActivity> {
-    return this.http.patch<IActivity>(`${this.apiURL}${id}/`, activity, {
-      headers: this.getAuthHeaders(),
-    });
+    actividad: Partial<IActividad>
+  ): Observable<IActividad> {
+    return this.http.patch<IActividad>(`${this.apiURL}${id}/`, actividad);
   }
 
-  /** Eliminar actividad */
-  deleteActivity(id: number): Observable<any> {
-    return this.http.delete(`${this.apiURL}${id}/`, {
-      headers: this.getAuthHeaders(),
-    });
+  deleteActividad(id: number): Observable<any> {
+    return this.http.delete(`${this.apiURL}${id}/`);
   }
 }
