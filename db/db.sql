@@ -1,42 +1,58 @@
-DROP DATABASE IF EXISTS `sisep`;
-
-CREATE DATABASE IF NOT EXISTS `sisep`
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_0900_ai_ci;
-USE `sisep`;
-
-CREATE TABLE deportes (
-    id_deporte INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) UNIQUE NOT NULL
-);
-
-CREATE TABLE horarios (
-    id_horario INT AUTO_INCREMENT PRIMARY KEY,
-    id_deporte INT NOT NULL,
-    cupo_max INT NOT NULL DEFAULT 20,
-    dia ENUM('Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo') NOT NULL,
-    hora_inicio TIME NOT NULL,
-    hora_fin TIME NOT NULL,
-    FOREIGN KEY (id_deporte) REFERENCES deportes(id_deporte)
-);
 
 CREATE TABLE usuarios (
-    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    dni VARCHAR(15) UNIQUE NOT NULL,
+    id SERIAL PRIMARY KEY,
+    dni VARCHAR(15) NOT NULL UNIQUE,
     nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
-    tel VARCHAR(20),
-    email VARCHAR(100) UNIQUE NOT NULL,
-    contraseña VARCHAR(255) NOT NULL,
-    sexo ENUM('M','F','Otro'),
-    edad INT,
-    tipo ENUM('socio','adm') DEFAULT 'socio'
+    email VARCHAR(254) NOT NULL UNIQUE,
+    telefono VARCHAR(20),
+    sexo VARCHAR(10) NOT NULL,
+    edad INTEGER,
+    tipo VARCHAR(20) NOT NULL DEFAULT 'usuario',
+    is_staff BOOLEAN NOT NULL DEFAULT FALSE,
+    is_superuser BOOLEAN NOT NULL DEFAULT FALSE,
+    password VARCHAR(128) NOT NULL,
+    last_login TIMESTAMP,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    date_joined TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE profesores (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    email VARCHAR(254),
+    telefono VARCHAR(50)
+);
+
+CREATE TABLE actividades (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    descripcion TEXT
+);
+
+CREATE TABLE comisiones (
+    id SERIAL PRIMARY KEY,
+    profesor_id INTEGER NOT NULL,
+    actividad_id INTEGER NOT NULL,
+    cupo INTEGER NOT NULL,
+    horario TIME NOT NULL,
+    duracion INTERVAL NOT NULL,
+    CONSTRAINT fk_profesor FOREIGN KEY (profesor_id)
+        REFERENCES profesores_profesor(id) ON DELETE CASCADE,
+    CONSTRAINT fk_actividad FOREIGN KEY (actividad_id)
+        REFERENCES actividades_actividad(id) ON DELETE CASCADE
 );
 
 CREATE TABLE registros (
-    id_registro INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
-    id_horario INT NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
-    FOREIGN KEY (id_horario) REFERENCES horarios(id_horario)
+    id SERIAL PRIMARY KEY,
+    usuario_id INTEGER NOT NULL,
+    comision_id INTEGER NOT NULL,
+    fecha_inscripcion DATE NOT NULL DEFAULT CURRENT_DATE,
+    CONSTRAINT fk_usuario FOREIGN KEY (usuario_id)
+        REFERENCES usuarios_usuario(id) ON DELETE CASCADE,
+    CONSTRAINT fk_comision FOREIGN KEY (comision_id)
+        REFERENCES comisiones_comision(id) ON DELETE CASCADE,
+    CONSTRAINT unique_usuario_comision UNIQUE (usuario_id, comision_id)
 );
+
