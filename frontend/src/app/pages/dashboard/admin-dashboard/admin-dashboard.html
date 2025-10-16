@@ -1,15 +1,14 @@
 <app-sidebar></app-sidebar>
 
 <main class="main-content">
-  <app-dashboard-welcome></app-dashboard-welcome>
+
 
   <!-- ===== GESTIÓN DE SOCIOS ===== -->
   <section id="gestion-socios" class="mb-5">
+    <app-dashboard-welcome></app-dashboard-welcome>
     <h2>Gestión de Socios</h2>
     <div class="d-flex justify-content-end mb-3">
-      <a routerLink="/user_form" class="btn-base-dash btn-crear"
-        >+ Nuevo Socio</a
-      >
+      <a routerLink="/user_form" class="btn-base-dash btn-crear">+ Nuevo Socio</a>
     </div>
 
     <div class="table-responsive">
@@ -39,24 +38,15 @@
             <td>{{ user.dni }}</td>
             <td>{{ user.tipo }}</td>
             <td>
-              <span
-                [class.activo]="user.is_active"
-                [class.inactivo]="!user.is_active"
-              >
+              <span [class.activo]="user.is_active" [class.inactivo]="!user.is_active">
                 {{ user.is_active ? "Activo" : "Inactivo" }}
               </span>
             </td>
             <td class="d-flex gap-2">
-              <button
-                (click)="toggleUserStatus(user)"
-                class="btn-base-dash btn-accion"
-              >
+              <button (click)="toggleUserStatus(user)" class="btn-base-dash btn-accion">
                 {{ user.is_active ? "Desactivar" : "Activar" }}
               </button>
-              <button
-                (click)="deleteUser(user.id!)"
-                class="btn-base-dash btn-eliminar"
-              >
+              <button (click)="deleteUser(user.id!)" class="btn-base-dash btn-eliminar">
                 Eliminar
               </button>
             </td>
@@ -65,27 +55,25 @@
         </tbody>
       </table>
     </div>
+    <section class="mt-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Gestión de Actividades</h2>
+        <button routerLink="/actividades" class="btn btn-primary">
+          + Nueva Actividad
+        </button>
+      </div>
+
+      <!-- Tu lista de actividades actual -->
+      @for (activity of activities; track activity.id) {
+      <div>
+        <h3>{{ activity.nombre }}</h3>
+        <p>{{ activity.descripcion }}</p>
+        <button (click)="deleteActivity(activity.id!)">Eliminar</button>
+      </div>
+      }
+    </section>
   </section>
 
-  <!-- ===== GESTIÓN DE ACTIVIDADES ===== -->
-  <!-- Gestión de Actividades -->
-  <section>
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2>Gestión de Actividades</h2>
-      <button routerLink="/actividades" class="btn btn-primary">
-        + Nueva Actividad
-      </button>
-    </div>
-
-    <!-- Tu lista de actividades actual -->
-    @for (activity of activities; track activity.id) {
-    <div>
-      <h3>{{ activity.nombre }}</h3>
-      <p>{{ activity.descripcion }}</p>
-      <button (click)="deleteActivity(activity.id!)">Eliminar</button>
-    </div>
-    }
-  </section>
 
   <!-- ===== GESTIÓN DE EQUIPOS ===== -->
   <!-- <section id="gestion-equipos">

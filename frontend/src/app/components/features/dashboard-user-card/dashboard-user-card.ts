@@ -13,7 +13,7 @@ export class DashboardUserCard {
     this.getCurrentUser()
   }
   getCurrentUser(): void {
-    const userString = localStorage.getItem("usuarioActual")
+    const userString = localStorage.getItem("currentUser")
     if (userString) {
       try {
         this.user = JSON.parse(userString)
