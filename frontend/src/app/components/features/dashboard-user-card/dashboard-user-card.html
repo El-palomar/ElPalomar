@@ -1,0 +1,15 @@
+<div class="user-card">
+    <div class="user-image">
+        <img src="../../../../public/images/user-blanco.png" alt="Imagen de Usuario">
+    </div>
+    <div class="user-text">
+        @if(user) {
+        <h6>{{user.nombre}}</h6>
+        <p>{{user.email}}</p>
+        }@else{
+        <h6>Usuario</h6>
+        <p>user@user.com</p>
+        }
+
+    </div>
+</div>

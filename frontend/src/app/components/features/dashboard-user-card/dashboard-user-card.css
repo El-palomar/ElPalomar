@@ -1,0 +1,32 @@
+.user-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-image img {
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.user-card {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .user-card {
+        justify-content: center;
+        align-items: center;
+    }
+}

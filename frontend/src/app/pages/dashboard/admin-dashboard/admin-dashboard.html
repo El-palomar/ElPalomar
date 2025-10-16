@@ -1,0 +1,116 @@
+<app-sidebar></app-sidebar>
+
+<main class="main-content">
+
+
+  <!-- ===== GESTIÓN DE SOCIOS ===== -->
+  <section id="gestion-socios" class="mb-5">
+    <app-dashboard-welcome></app-dashboard-welcome>
+    <h2>Gestión de Socios</h2>
+    <div class="d-flex justify-content-end mb-3">
+      <a routerLink="/user_form" class="btn-base-dash btn-crear">+ Nuevo Socio</a>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table-socios">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>DNI</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @if (users && users.length === 0) {
+          <tr>
+            <td colspan="7" class="text-center">No hay usuarios registrados</td>
+          </tr>
+          } @if (users && users.length > 0) { @for (user of users; track
+          user.id) {
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.nombre }} {{ user.apellido }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.dni }}</td>
+            <td>{{ user.tipo }}</td>
+            <td>
+              <span [class.activo]="user.is_active" [class.inactivo]="!user.is_active">
+                {{ user.is_active ? "Activo" : "Inactivo" }}
+              </span>
+            </td>
+            <td class="d-flex gap-2">
+              <button (click)="toggleUserStatus(user)" class="btn-base-dash btn-accion">
+                {{ user.is_active ? "Desactivar" : "Activar" }}
+              </button>
+              <button (click)="deleteUser(user.id!)" class="btn-base-dash btn-eliminar">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+          } }
+        </tbody>
+      </table>
+    </div>
+    <section class="mt-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Gestión de Actividades</h2>
+        <button routerLink="/actividades" class="btn btn-primary">
+          + Nueva Actividad
+        </button>
+      </div>
+
+      <!-- Tu lista de actividades actual -->
+      @for (activity of activities; track activity.id) {
+      <div>
+        <h3>{{ activity.nombre }}</h3>
+        <p>{{ activity.descripcion }}</p>
+        <button (click)="deleteActivity(activity.id!)">Eliminar</button>
+      </div>
+      }
+    </section>
+  </section>
+
+
+  <!-- ===== GESTIÓN DE EQUIPOS ===== -->
+  <!-- <section id="gestion-equipos">
+    <h2>Gestión de Equipos</h2>
+    <div class="d-flex justify-content-end mb-3">
+      <a routerLink="/team_form" class="btn-base-dash btn-crear"
+        >+ Nuevo Equipo</a
+      >
+    </div>
+
+    @if (!teams || teams.length === 0) {
+    <p class="text-center">No hay equipos registrados</p>
+    } @if (teams && teams.length > 0) {
+    <div class="grid-equipos">
+      @for (team of teams; track team.id) {
+      <article class="equipo">
+        <h3>{{ team.name }}</h3>
+        <p><strong>Actividad:</strong> {{ team.activity }}</p>
+        <p><strong>Integrantes:</strong> {{ team.members.length || 0 }}</p>
+        <div class="botones-equipo d-flex gap-2">
+          <a
+            routerLink="/team_form/{{ team.id }}"
+            class="btn-base-dash btn-editar"
+            >Editar</a
+          >
+          <button
+            (click)="deleteTeam(team.id!)"
+            class="btn-base-dash btn-eliminar"
+          >
+            Eliminar
+          </button>
+        </div>
+      </article>
+      }
+    </div>
+    }
+  </section> -->
+
+  <app-footer></app-footer>
+</main>

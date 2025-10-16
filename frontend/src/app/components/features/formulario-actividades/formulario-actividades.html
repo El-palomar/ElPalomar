@@ -1,0 +1,132 @@
+<div class="container mt-4">
+  <h2 class="fw-bold mb-4">Gestión de Actividades</h2>
+
+  <!-- Botón para mostrar/ocultar formulario -->
+  <div class="mb-4">
+    @if (!mostrarFormulario) {
+    <button (click)="mostrarFormulario = true" class="btn btn-primary">
+      + Nueva Actividad
+    </button>
+    }
+  </div>
+
+  <!-- Formulario -->
+  @if (mostrarFormulario) {
+  <div class="row justify-content-center mb-5">
+    <div class="col-lg-6">
+      <div class="card shadow">
+        <div class="card-header">
+          <h3 class="mb-0">
+            {{ isEditMode ? "Editar Deporte" : "Nuevo Deporte" }}
+          </h3>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="nombre" class="form-label"
+                >Nombre del Deporte *</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                formControlName="nombre"
+                placeholder="Ej: Fútbol, Básquet, Natación"
+              />
+              @if (isInvalid('nombre')) {
+              <small class="text-danger"
+                >El nombre es obligatorio (máximo 50 caracteres)</small
+              >
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="descripcion" class="form-label"
+                >Descripción (opcional)</label
+              >
+              <textarea
+                class="form-control"
+                id="descripcion"
+                formControlName="descripcion"
+                rows="4"
+                placeholder="Describe el deporte..."
+              ></textarea>
+            </div>
+
+            @if (errorMessage) {
+            <div class="alert alert-danger">{{ errorMessage }}</div>
+            }
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button
+                type="button"
+                (click)="cancelarEdicion()"
+                class="btn btn-secondary"
+              >
+                Cancelar
+              </button>
+              <button
+                type="submit"
+                [disabled]="form.invalid || loading"
+                class="btn btn-primary"
+              >
+                {{ isEditMode ? "Guardar cambios" : "Crear deporte" }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- Lista de Actividades -->
+  <div>
+    @if (loading) {
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+      <p class="mt-2">Cargando deportes...</p>
+    </div>
+    } @if (!loading && actividades.length === 0) {
+    <div class="alert alert-info text-center">
+      <p class="mb-0">No hay actividades registradas</p>
+    </div>
+    }
+
+    <div class="row g-4">
+      @for (actividad of actividades; track actividad.id) {
+      <div class="col-md-6 col-lg-4">
+        <div class="activity-card">
+          <div class="card-header">
+            <h5 class="mb-0">{{ actividad.nombre }}</h5>
+          </div>
+
+          <div class="card-body">
+            <p class="text-muted mb-3">
+              {{ actividad.descripcion || "Sin descripción" }}
+            </p>
+
+            <div class="d-flex gap-2 mt-auto">
+              <button
+                (click)="editarActividad(actividad)"
+                class="btn btn-sm btn-primary flex-fill"
+              >
+                Editar
+              </button>
+              <button
+                (click)="eliminarActividad(actividad.id!)"
+                class="btn btn-sm btn-outline-danger"
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
