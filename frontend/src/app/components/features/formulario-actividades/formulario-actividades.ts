@@ -7,6 +7,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ActividadesService, IActividad } from '@services/activities';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario-actividades',
@@ -69,12 +70,22 @@ export class FormularioActividadesComponent implements OnInit {
           .updateActividad(this.actividadEditando, actividad)
           .subscribe({
             next: () => {
-              alert('Deporte actualizado correctamente');
+              Swal.fire({
+                icon: 'success',
+                title: '¡Actualizado!',
+                text: 'Deporte actualizado correctamente',
+                confirmButtonText: 'Aceptar'
+              });
               this.cancelarEdicion();
               this.cargarActividades();
             },
             error: (error: any) => {
-              console.error('Error:', error);
+              Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error al actualizar el deporte',
+                confirmButtonText: 'Aceptar'
+              });
               this.errorMessage = 'Error al actualizar el deporte';
               this.loading = false;
             },
@@ -83,12 +94,22 @@ export class FormularioActividadesComponent implements OnInit {
         // Crear
         this.actividadesService.createActividad(actividad).subscribe({
           next: () => {
-            alert('Deporte creado correctamente');
+            Swal.fire({
+              icon: 'success',
+              title: '¡Creado!',
+              text: 'Deporte creado correctamente',
+              confirmButtonText: 'Aceptar'
+            });
             this.cancelarEdicion();
             this.cargarActividades();
           },
           error: (error: any) => {
-            console.error('Error:', error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Error al crear el deporte',
+              confirmButtonText: 'Aceptar'
+            });
             this.errorMessage = 'Error al crear el deporte';
             this.loading = false;
           },
@@ -120,17 +141,38 @@ export class FormularioActividadesComponent implements OnInit {
   }
 
   eliminarActividad(id: number) {
-    if (confirm('¿Estás seguro de eliminar este deporte?')) {
-      this.actividadesService.deleteActividad(id).subscribe({
-        next: () => {
-          alert('Deporte eliminado correctamente');
-          this.cargarActividades();
-        },
-        error: (error: any) => {
-          console.error('Error al eliminar:', error);
-          alert('Error al eliminar el deporte');
-        },
-      });
-    }
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¿Deseas eliminar este deporte?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.actividadesService.deleteActividad(id).subscribe({
+          next: () => {
+            Swal.fire({
+              icon: 'success',
+              title: '¡Eliminado!',
+              text: 'Deporte eliminado correctamente',
+              confirmButtonText: 'Aceptar'
+            });
+            this.cargarActividades();
+          },
+          error: (error: any) => {
+            console.error('Error al eliminar:', error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Error al eliminar el deporte',
+              confirmButtonText: 'Aceptar'
+            });
+          },
+        });
+      }
+    });
   }
 }

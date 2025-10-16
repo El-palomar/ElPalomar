@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { UsuariosService, IUsuario } from '@services/usuarios';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-form',
@@ -41,6 +42,12 @@ export class RegisterFormComponent {
     // Validar contraseñas coincidan
     if (this.form.value.contrasena !== this.form.value.confirmarContrasena) {
       this.errorMessage = 'Las contraseñas no coinciden';
+      Swal.fire({
+        icon: 'error',
+        title: 'Contraseñas no coinciden',
+        text: 'Las contraseñas ingresadas deben ser iguales',
+        confirmButtonText: 'Aceptar'
+      });
       return;
     }
 
@@ -68,12 +75,29 @@ export class RegisterFormComponent {
 
       console.log('📤 Enviando usuario:', nuevoUsuario);
 
+      Swal.fire({
+        title: 'Registrando usuario...',
+        text: 'Por favor espera',
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
+
       // ✅ Llamar al servicio de registro
       this.usuariosService.registro(nuevoUsuario).subscribe({
         next: (response) => {
           console.log('✅ Usuario registrado:', response);
-          alert('Registro exitoso ✅');
-          this.router.navigate(['/login']);
+          Swal.fire({
+            icon: 'success',
+            title: '¡Registro exitoso!',
+            text: 'Tu cuenta ha sido creada correctamente',
+            confirmButtonText: 'Ir al login',
+            timer: 2000,
+            timerProgressBar: true
+          }).then(() => {
+            this.router.navigate(['/login']);
+          });
         },
         error: (error) => {
           console.error('❌ Error en registro:', error);
@@ -91,6 +115,12 @@ export class RegisterFormComponent {
         },
       });
     } else {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Formulario incompleto',
+        text: 'Por favor completa todos los campos correctamente',
+        confirmButtonText: 'Aceptar'
+      });
       this.errorMessage = 'Por favor completa todos los campos correctamente';
     }
   }
