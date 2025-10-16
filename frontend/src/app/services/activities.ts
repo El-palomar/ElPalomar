@@ -11,27 +11,39 @@ export interface IActividad {
 @Injectable({
   providedIn: 'root',
 })
-export class ActividadesService {
-  private apiURL = 'http://127.0.0.1:8000/api/actividades/actividades/';
+export class ActivitiesService {
+  // ✅ URL del backend Django (ajustá si usan otra)
+  private apiURL = 'http://127.0.0.1:8000/api/actividades/';
 
   constructor(private http: HttpClient) {}
 
-  getAllActividades(): Observable<IActividad[]> {
-    return this.http.get<IActividad[]>(this.apiURL);
+  // Obtener todas las actividades
+  getAllActivities(): Observable<IActivity[]> {
+    return this.http.get<IActivity[]>(this.apiURL);
   }
 
-  createActividad(actividad: IActividad): Observable<IActividad> {
-    return this.http.post<IActividad>(this.apiURL, actividad);
+  // Obtener una actividad específica por ID
+  getActivity(id: number): Observable<IActivity> {
+    return this.http.get<IActivity>(`${this.apiURL}${id}/`);
   }
 
-  updateActividad(
-    id: number,
-    actividad: Partial<IActividad>
-  ): Observable<IActividad> {
-    return this.http.patch<IActividad>(`${this.apiURL}${id}/`, actividad);
+  // Crear nueva actividad
+  createActivity(activity: IActivity): Observable<IActivity> {
+    return this.http.post<IActivity>(this.apiURL, activity);
   }
 
-  deleteActividad(id: number): Observable<any> {
+  // Editar actividad completa
+  updateActivity(id: number, activity: IActivity): Observable<IActivity> {
+    return this.http.put<IActivity>(`${this.apiURL}${id}/`, activity);
+  }
+
+  // Editar solo algunos campos
+  patchActivity(id: number, data: Partial<IActivity>): Observable<IActivity> {
+    return this.http.patch<IActivity>(`${this.apiURL}${id}/`, data);
+  }
+
+  // Eliminar actividad
+  deleteActivity(id: number): Observable<any> {
     return this.http.delete(`${this.apiURL}${id}/`);
   }
 }
