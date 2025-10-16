@@ -1,10 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IActivity } from '../models/activity';
+
+export interface IActividad {
+  id?: number;
+  nombre: string;
+  descripcion?: string;
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ActivitiesService {
   // ✅ URL del backend Django (ajustá si usan otra)

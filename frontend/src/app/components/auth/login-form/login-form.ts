@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-
 import { RouterModule, Router } from '@angular/router';
 import { UsuariosService, IUsuario } from '@services/usuarios';
 
@@ -35,34 +34,37 @@ export class LoginFormComponent {
     if (this.form.valid) {
       const { email, password } = this.form.value;
 
-      this.usuariosService.getAllUsuarios().subscribe((usuarios: IUsuario[]) => {
-        // Buscamos el usuario que coincide con email y password
-        const usuario = usuarios.find(u => u.email === email && u.password === password);
+      // Validar que email y password no sean null
+      if (!email || !password) {
+        this.errorMessage = 'Email y contraseña son requeridos';
+        return;
+      }
 
-        if (usuario) {
-          console.log('Login correcto', usuario);
+      this.usuariosService.login(email, password).subscribe({
+        next: (response) => {
+          console.log('Login exitoso', response);
 
-          // ===============================
-          // GUARDAR EN LOCALSTORAGE
-          // ===============================
-          localStorage.setItem('usuarioActual', JSON.stringify(usuario));
+          const usuario: IUsuario = response.user;
+          const tokens = {
+            access: response.access,
+            refresh: response.refresh,
+          };
 
-          // ===============================
-          // REDIRIGIR SEGÚN ROL
-          // ===============================
-          if (usuario.role === 'admin') {
+          this.usuariosService.setCurrentUser(usuario, tokens);
+
+          if (usuario.tipo === 'admin') {
             this.router.navigate(['/admin_dashboard']);
           } else {
             this.router.navigate(['/dashboard']);
           }
-        } else {
-          // Mensaje de error si las credenciales son incorrectas
-          this.errorMessage = 'Credenciales incorrectas';
-        }
+        },
+        error: (error) => {
+          console.error('Error en login', error);
+          this.errorMessage = 'Email o contraseña incorrectos';
+        },
       });
     } else {
       this.form.markAllAsTouched();
     }
   }
 }
-

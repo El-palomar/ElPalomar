@@ -11,7 +11,7 @@ export interface IUsuario {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsuariosService {
   private dataURL = '/public/data/usuarios.json';

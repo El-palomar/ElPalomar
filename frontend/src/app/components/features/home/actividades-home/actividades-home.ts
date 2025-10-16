@@ -1,14 +1,14 @@
-
-import { Component, Input, OnInit } from '@angular/core';
-import { IActivity } from '@models/activity';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IActividad } from '@services/activities';
 
 @Component({
   selector: 'app-actividades-home',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './actividades-home.html',
-  styleUrl: './actividades-home.css'
+  styleUrls: ['./actividades-home.css'],
 })
 export class ActividadesHome {
-  @Input() activities: IActivity[] = []
-
+  @Input() activities: IActividad[] = [];
 }
