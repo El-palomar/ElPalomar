@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface IUsuario {
-  id: number;
+  id?: number;
   nombre: string;
+  apellido?: string;
   email: string;
   password?: string;
   tipo?: 'admin' | 'usuario';
