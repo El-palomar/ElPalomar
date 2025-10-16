@@ -6,42 +6,57 @@ export interface IUsuario {
   id: number;
   nombre: string;
   email: string;
-  password: string;
-  role: 'admin' | 'cliente';
+  password?: string;
+  tipo?: 'admin' | 'usuario';
+  dni?: string;
+  telefono?: string;
+  sexo?: string;
+  edad?: number;
+  is_active?: boolean;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsuariosService {
-  private dataURL = '/public/data/usuarios.json';
-  private currentUser: IUsuario | null = null;
+  private apiURL = 'http://127.0.0.1:8000/api/usuarios/usuarios/';
+  private loginURL = 'http://127.0.0.1:8000/api/usuarios/login/';
+  private registroURL = 'http://127.0.0.1:8000/api/usuarios/registro/';
 
   constructor(private http: HttpClient) {}
 
-  // Trae todos los usuarios desde el JSON
+  // ✅ Métodos de autenticación (aunque no los uses, para que no den error)
+  login(email: string, password: string): Observable<any> {
+    return this.http.post(this.loginURL, { email, password });
+  }
+
+  registro(user: IUsuario): Observable<IUsuario> {
+    return this.http.post<IUsuario>(this.registroURL, user);
+  }
+
+  setCurrentUser(user: IUsuario, tokens: any) {
+    // Método vacío para compatibilidad
+  }
+
   getAllUsuarios(): Observable<IUsuario[]> {
-    return this.http.get<IUsuario[]>(this.dataURL);
+    return this.http.get<IUsuario[]>(this.apiURL);
   }
 
-  // Setea el usuario que se logueó
-  setCurrentUser(user: IUsuario) {
-    this.currentUser = user;
-    localStorage.setItem('currentUser', JSON.stringify(user)); // Persistencia opcional
+  createUsuario(user: IUsuario): Observable<IUsuario> {
+    return this.http.post<IUsuario>(this.apiURL, user);
   }
 
-  // Devuelve el usuario logueado
-  getCurrentUser(): IUsuario | null {
-    if (!this.currentUser) {
-      const saved = localStorage.getItem('currentUser');
-      this.currentUser = saved ? JSON.parse(saved) : null;
-    }
-    return this.currentUser;
+  updateUsuario(id: number, user: Partial<IUsuario>): Observable<IUsuario> {
+    return this.http.patch<IUsuario>(`${this.apiURL}${id}/`, user);
   }
 
-  // Cierra sesión
-  logout(): void {
-    this.currentUser = null;
-    localStorage.removeItem('currentUser');
+  deleteUsuario(id: number): Observable<any> {
+    return this.http.delete(`${this.apiURL}${id}/`);
+  }
+
+  toggleUsuarioStatus(id: number, isActive: boolean): Observable<IUsuario> {
+    return this.http.patch<IUsuario>(`${this.apiURL}${id}/`, {
+      is_active: isActive,
+    });
   }
 }
