@@ -55,25 +55,39 @@
         </tbody>
       </table>
     </div>
-    <section class="mt-5">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>Gestión de Actividades</h2>
-        <button routerLink="/actividades" class="btn btn-primary">
-          + Nueva Actividad
-        </button>
-      </div>
 
-      <!-- Tu lista de actividades actual -->
-      @for (activity of activities; track activity.id) {
-      <div>
-        <h3>{{ activity.nombre }}</h3>
-        <p>{{ activity.descripcion }}</p>
-        <button (click)="deleteActivity(activity.id!)">Eliminar</button>
-      </div>
-      }
-    </section>
   </section>
 
+  <!-- ===== GESTIÓN DE ACTIVIDADES ===== -->
+  <section id="gestion-actividades" class="mb -5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2>Gestión de Actividades</h2>
+          <button routerLink="/actividades" class="btn btn-primary">
+            + Nueva Actividad
+          </button>
+        </div>
+
+        <!-- Lista de actividades actual -->
+        <div class="row g-4">
+          @for (activity of activities; track activity.id) {
+            <div class="col-md-6 col-lg-4">
+              <div class="activity-card">
+                <div class="card-header">
+                  <h3>{{ activity.nombre }}</h3>
+                </div>
+                <div class="card-body">
+                  <p>{{ activity.descripcion }}</p>
+                  <button (click)="deleteActivity(activity.id!)" class="btn-primary">Eliminar</button>
+                </div>
+
+              </div>
+            </div>
+          }
+
+        </div> 
+
+       
+  </section>
 
   <!-- ===== GESTIÓN DE EQUIPOS ===== -->
   <!-- <section id="gestion-equipos">
