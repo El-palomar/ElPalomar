@@ -1,0 +1,102 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="title">Registro de profesores</h2>
+    <p class="subtitle">Completá los datos para registrar un profesor</p>
+    <div class="login-box">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+        <div class="input-group">
+            <div class="form-row">
+            <!-- EMAIL -->
+           <div class="form-field w-50">
+            <label for="email">E-mail:</label>
+            <input
+                type="email"
+                id="email"
+                formControlName="email"
+                placeholder="usuario@cordoba.com"
+            />
+            @if (isInvalid('email') ) {
+            <p class="error">Email invalido</p>
+            }
+           </div>
+
+            <!-- TELÉFONO -->
+            <div class="form-field w-50">
+              <label for="telefono">Teléfono:</label>
+              <input
+                type="tel"
+                id="telefono"
+                formControlName="telefono"
+                placeholder="5411556677"
+              />
+              @if (isInvalid('telefono')) {
+              <div>
+                <small style="color: red">
+                  El teléfono debe tener solo números (7-15 dígitos)
+                </small>
+              </div>
+              }
+            </div>
+            </div>
+
+        </div>
+        <div class="input-group">
+          <div class="form-row">
+            <!-- NOMBRE -->
+            <div class="form-field w-50">
+              <label for="nombre">Nombre:</label>
+              <input
+                type="text"
+                id="nombre"
+                formControlName="nombre"
+                required
+              />
+              @if (isInvalid ('nombre')) {
+              <div>
+                <small style="color: red">El nombre es obligatorio</small>
+              </div>
+              }
+            </div>
+
+            <!-- APELLIDO -->
+            <div class="form-field w-50">
+              <label for="apellido">Apellido:</label>
+              <input
+                type="text"
+                id="apellido"
+                formControlName="apellido"
+                required
+              />
+              @if (isInvalid('apellido')) {
+              <div>
+                <small style="color: red">El apellido es obligatorio</small>
+              </div>
+              }
+            </div>
+          </div>
+
+        </div>
+        @if (errorMessage) {
+        <div class="error mt-2">
+          {{ errorMessage }}
+        </div>
+        }
+
+        <button type="submit" [disabled]="form.invalid">
+            {{ isEditMode ? 'Actualizar Profesor' : 'Registrar Profesor' }}
+        </button>
+        <div
+          class="login-options d-flex justify-content-center align-center my-3"
+        >
+          <span>
+            Ya te cansaste???
+            <a routerLink="/admin_dashboard" class="text-decoration-none"
+              >Volver al Dashboard</a
+            ></span
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

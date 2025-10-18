@@ -9,6 +9,8 @@ import { MiCuentaEditar } from './pages/user/mi-cuenta-editar/mi-cuenta-editar';
 import { ActivityForm } from './pages/general/activity-form/activity-form';
 import { FormularioActividadesComponent } from './components/features/formulario-actividades/formulario-actividades';
 import { AdminDashboard } from './pages/dashboard/admin-dashboard/admin-dashboard';
+import { ListaProfesoresComponent } from '@components/features/lista-profesores/lista-profesores';
+import { FormularioProfesoresComponent } from '@components/features/formulario-profesores/formulario-profesores';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -21,4 +23,7 @@ export const routes: Routes = [
   { path: 'actividades', component: FormularioActividadesComponent },
   { path: 'activity_form', component: ActivityForm },
   { path: 'admin_dashboard', component: AdminDashboard },
+  { path: 'admin/profesores', component: ListaProfesoresComponent },
+  { path: 'admin/profesores/new', component: FormularioProfesoresComponent }, 
+  { path: 'admin/profesores/edit/:id', component: FormularioProfesoresComponent },
 ];

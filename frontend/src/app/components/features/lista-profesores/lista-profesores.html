@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Gestión de Profesores</h2>
+    <button class="btn btn-primary" (click)="nuevoProfesor()">
+        +Nuevo Profesor
+    </button>
+</div>
+<div class="table-responsive">
+    <table class="table-profesores">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (profesores && profesores.length === 0) {
+                <tr>
+                <td colspan="6" class="text-center">No hay profesores registrados</td>
+                </tr>
+            }@if (profesores && profesores.length > 0) {
+                @for (profesor of profesores; track profesor.id) {
+                    <tr>
+                        <td>{{profesor.id}}</td>
+                        <td>{{profesor.nombre}}</td>
+                        <td>{{profesor.apellido}}</td>
+                        <td>{{profesor.email}}</td>
+                        <td>{{profesor.telefono || '-' }}</td>
+                        <td class="d-flex gap-2">
+                            <button (click)="editarProfesor(profesor.id!)" class="btn-base-dash btn-editar">Editar</button>
+                            <button (click)="deleteProfesor(profesor.id!)" class="btn-base-dash btn-eliminar">Eliminar</button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
