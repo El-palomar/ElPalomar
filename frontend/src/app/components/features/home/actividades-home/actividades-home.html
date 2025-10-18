@@ -24,6 +24,7 @@
       @for (activity of activities; track activity; let i = $index) {
       <div class="carousel-item" [class.active]="i === 0">
         <!-- <img [src]="activity.image" class="d-block w-100" [alt]="'Imagen de actividad: ' + activity.name"> -->
+        <img [src]="'public/images/' + activity.nombre.toLowerCase() +'.jpg'" (error)="onImageError($event)" class="d-block w-100" [alt]="'Imagen de actividad: ' + activity.nombre">
         <div class="gradient-overlay"></div>
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ activity.nombre }}</h5>
