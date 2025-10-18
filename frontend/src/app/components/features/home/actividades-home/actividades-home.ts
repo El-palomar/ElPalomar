@@ -13,6 +13,6 @@ export class ActividadesHome {
   @Input() activities: IActividad[] = [];
   onImageError(event: Event) {
   (event.target as HTMLImageElement).src = 'public/images/default.jpg';
-}
+  }
 }
 
