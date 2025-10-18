@@ -8,13 +8,14 @@ import { UsuariosService, IUsuario } from '@services/usuarios';
 import { TeamsService, ITeam } from '@services/teams';
 import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboard-welcome';
 import Swal from 'sweetalert2';
+import { ListaProfesoresComponent } from '@components/features/lista-profesores/lista-profesores';
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
   templateUrl: './admin-dashboard.html',
   styleUrls: ['./admin-dashboard.css'],
-  imports: [Sidebar, Footer, RouterModule, DashboardWelcome],
+  imports: [Sidebar, Footer, RouterModule, DashboardWelcome, ListaProfesoresComponent],
 })
 export class AdminDashboard implements OnInit {
   activities: IActividad[] = [];
