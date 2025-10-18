@@ -45,4 +45,8 @@ export class Dashboard implements OnInit {
       },
     });
   }
+  /* Este evento asigna una imagen por defecto en caso que no se encuentre*/
+  onImageError(event: Event) {
+  (event.target as HTMLImageElement).src = 'public/images/default.jpg';
+  }
 }

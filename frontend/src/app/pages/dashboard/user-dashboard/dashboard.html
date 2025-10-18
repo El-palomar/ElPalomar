@@ -14,11 +14,7 @@
     <div class="grid-actividades">
       @for (activity of activities; track activity; let i = $index) {
       <article class="actividad">
-        <!-- <img
-          [src]="activity.image"
-          [alt]="activity.name"
-          class="actividad-img"
-        /> -->
+        <img [src]="'public/images/'+ activity.nombre.toLowerCase() +'.jpg'" (error)="onImageError($event)" [alt]="activity.nombre" class="actividad-img"/>
         <h3>{{ activity.nombre }}</h3>
         <p>{{ activity.descripcion || "Sin descripción" }}</p>
         <!-- Botón con clase base para estilos -->
