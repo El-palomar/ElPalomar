@@ -58,7 +58,7 @@ export class LoginFormComponent {
         next: (response) => {
           console.log('Login exitoso', response);
 
-          const usuario: IUsuario = response.user;
+          const usuario: IUsuario = response;
           const tokens = {
             access: response.access,
             refresh: response.refresh,

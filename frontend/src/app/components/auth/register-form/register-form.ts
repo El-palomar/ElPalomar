@@ -52,14 +52,6 @@ export class RegisterFormComponent {
     }
 
     if (this.form.valid) {
-      // ✅ Calcular edad desde fecha de nacimiento
-      const fechaNacimiento = new Date(this.form.value.fecha!);
-      const hoy = new Date();
-      let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
-      const mes = hoy.getMonth() - fechaNacimiento.getMonth();
-      if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
-        edad--;
-      }
 
       // ✅ Preparar objeto usuario para el backend (usando operador ! para asegurar que no son null)
       const nuevoUsuario: IUsuario = {
@@ -69,7 +61,7 @@ export class RegisterFormComponent {
         apellido: this.form.value.apellido!,
         dni: this.form.value.dni!,
         sexo: this.form.value.sexo!,
-        edad: edad,
+        fecha_nacimiento: this.form.value.fecha || undefined,
         telefono: this.form.value.telefono || '',
       };
 

@@ -12,7 +12,7 @@ export interface IUsuario {
   dni?: string;
   telefono?: string;
   sexo?: string;
-  edad?: number;
+  fecha_nacimiento?: string;
   is_active?: boolean;
 }
 
