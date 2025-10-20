@@ -8,6 +8,7 @@ export interface IProfesor{
   apellido: string;
   email?: string;
   telefono?: string;
+  descripcion?: string;
 }
 @Injectable({
   providedIn: 'root'

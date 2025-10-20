@@ -1,0 +1,50 @@
+#profesores-disponibles {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.grid-profesores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.mis-profesores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.botones-actividad {
+  display: flex;
+  gap: 0.5rem;
+}
+
+h2 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .grid-profesores {
+    grid-template-columns: 1fr;
+  }
+}
