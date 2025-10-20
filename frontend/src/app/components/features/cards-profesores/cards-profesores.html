@@ -1,0 +1,16 @@
+<section id="profesores-disponibles">
+    <h2 id="titulo-actividades-disponibles">Profesores Disponibles</h2>
+    <div class="grid-profesores">
+      @for (profesor of profesores; track profesor; let i = $index) {
+      <article class="profesor">
+        <img [src]="'public/images/'+ profesor.nombre.toLowerCase() +'.jpg'" (error)="onImageError($event)" [alt]="profesor.nombre" class="actividad-img"/>
+        <h3>{{ profesor.nombre }} {{profesor.apellido}}</h3>
+        <p>{{ profesor.descripcion || "Sin descripción" }}</p>
+        <!-- Botón con clase base para estilos -->
+        <a routerLink="/profesores_cards" class="btn-base-dash btn-contactar"
+          >Contactar</a
+        >
+      </article>
+      }
+    </div>
+</section>

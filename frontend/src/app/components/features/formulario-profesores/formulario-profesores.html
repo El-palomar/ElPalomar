@@ -4,42 +4,7 @@
     <p class="subtitle">Completá los datos para registrar un profesor</p>
     <div class="login-box">
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
-        <div class="input-group">
-            <div class="form-row">
-            <!-- EMAIL -->
-           <div class="form-field w-50">
-            <label for="email">E-mail:</label>
-            <input
-                type="email"
-                id="email"
-                formControlName="email"
-                placeholder="usuario@cordoba.com"
-            />
-            @if (isInvalid('email') ) {
-            <p class="error">Email invalido</p>
-            }
-           </div>
-
-            <!-- TELÉFONO -->
-            <div class="form-field w-50">
-              <label for="telefono">Teléfono:</label>
-              <input
-                type="tel"
-                id="telefono"
-                formControlName="telefono"
-                placeholder="5411556677"
-              />
-              @if (isInvalid('telefono')) {
-              <div>
-                <small style="color: red">
-                  El teléfono debe tener solo números (7-15 dígitos)
-                </small>
-              </div>
-              }
-            </div>
-            </div>
-
-        </div>
+        <!-- CAMPOS OBLIGATORIOS -->
         <div class="input-group">
           <div class="form-row">
             <!-- NOMBRE -->
@@ -76,6 +41,60 @@
           </div>
 
         </div>
+        <!-- CAMPOS OPCIONALES -->
+        <div class="input-group">
+            <div class="form-row">
+            <!-- EMAIL -->
+           <div class="form-field w-50">
+            <label for="email">E-mail:</label>
+            <input
+                type="email"
+                id="email"
+                formControlName="email"
+                placeholder="usuario@cordoba.com"
+            />
+            @if (isInvalid('email') ) {
+            <p class="error">Email invalido</p>
+            }
+           </div>
+
+            <!-- TELÉFONO -->
+            <div class="form-field w-50">
+              <label for="telefono">Teléfono:</label>
+              <input
+                type="tel"
+                id="telefono"
+                formControlName="telefono"
+                placeholder="5411556677"
+              />
+              @if (isInvalid('telefono')) {
+              <div>
+                <small style="color: red">
+                  El teléfono debe tener solo números (7-15 dígitos)
+                </small>
+              </div>
+              }
+            </div>
+            </div>
+
+        </div>   
+
+        <div class="input-group">
+            <div class="form-row">
+                <!-- DESCRIPCION -->
+                <div class="form-field w-100">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea
+                        class="form-control"
+                        id="descripcion"
+                        formControlName="descripcion"
+                        rows="4"
+                        placeholder="Escribe un texto de presentación. Contanos sobre tus hobbies y que deportes preferís o practicas."
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MENSAJE DE ERROR -->     
         @if (errorMessage) {
         <div class="error mt-2">
           {{ errorMessage }}
@@ -89,7 +108,7 @@
           class="login-options d-flex justify-content-center align-center my-3"
         >
           <span>
-            Ya te cansaste???
+            Ya terminaste?
             <a routerLink="/admin_dashboard" class="text-decoration-none"
               >Volver al Dashboard</a
             ></span

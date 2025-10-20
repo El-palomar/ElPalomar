@@ -8,11 +8,12 @@ import { UserService } from '@services/user';
 import { IActivity } from '@models/activity';
 import { IUserActivity } from '@models/user-activity';
 import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboard-welcome';
+import { CardsProfesores } from "@components/features/cards-profesores/cards-profesores";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [Sidebar, Footer, RouterModule, DashboardWelcome],
+  imports: [Sidebar, Footer, RouterModule, DashboardWelcome, CardsProfesores],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
