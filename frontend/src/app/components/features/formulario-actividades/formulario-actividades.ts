@@ -74,7 +74,7 @@ export class FormularioActividadesComponent implements OnInit {
                 icon: 'success',
                 title: '¡Actualizado!',
                 text: 'Deporte actualizado correctamente',
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
               });
               this.cancelarEdicion();
               this.cargarActividades();
@@ -84,7 +84,7 @@ export class FormularioActividadesComponent implements OnInit {
                 icon: 'error',
                 title: 'Error',
                 text: 'Error al actualizar el deporte',
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
               });
               this.errorMessage = 'Error al actualizar el deporte';
               this.loading = false;
@@ -98,7 +98,7 @@ export class FormularioActividadesComponent implements OnInit {
               icon: 'success',
               title: '¡Creado!',
               text: 'Deporte creado correctamente',
-              confirmButtonText: 'Aceptar'
+              confirmButtonText: 'Aceptar',
             });
             this.cancelarEdicion();
             this.cargarActividades();
@@ -108,7 +108,7 @@ export class FormularioActividadesComponent implements OnInit {
               icon: 'error',
               title: 'Error',
               text: 'Error al crear el deporte',
-              confirmButtonText: 'Aceptar'
+              confirmButtonText: 'Aceptar',
             });
             this.errorMessage = 'Error al crear el deporte';
             this.loading = false;
@@ -149,8 +149,8 @@ export class FormularioActividadesComponent implements OnInit {
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
       confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
+      cancelButtonText: 'Cancelar',
+    }).then((result: any) => {
       if (result.isConfirmed) {
         this.actividadesService.deleteActividad(id).subscribe({
           next: () => {
@@ -158,7 +158,7 @@ export class FormularioActividadesComponent implements OnInit {
               icon: 'success',
               title: '¡Eliminado!',
               text: 'Deporte eliminado correctamente',
-              confirmButtonText: 'Aceptar'
+              confirmButtonText: 'Aceptar',
             });
             this.cargarActividades();
           },
@@ -168,7 +168,7 @@ export class FormularioActividadesComponent implements OnInit {
               icon: 'error',
               title: 'Error',
               text: 'Error al eliminar el deporte',
-              confirmButtonText: 'Aceptar'
+              confirmButtonText: 'Aceptar',
             });
           },
         });

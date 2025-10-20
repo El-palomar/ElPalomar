@@ -15,7 +15,13 @@ import { ListaProfesoresComponent } from '@components/features/lista-profesores/
   standalone: true,
   templateUrl: './admin-dashboard.html',
   styleUrls: ['./admin-dashboard.css'],
-  imports: [Sidebar, Footer, RouterModule, DashboardWelcome, ListaProfesoresComponent],
+  imports: [
+    Sidebar,
+    Footer,
+    RouterModule,
+    DashboardWelcome,
+    ListaProfesoresComponent,
+  ],
 })
 export class AdminDashboard implements OnInit {
   activities: IActividad[] = [];
@@ -26,7 +32,7 @@ export class AdminDashboard implements OnInit {
     private activityService: ActividadesService,
     private usuariosService: UsuariosService,
     private teamsService: TeamsService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loadActivities();
@@ -41,12 +47,13 @@ export class AdminDashboard implements OnInit {
         this.activities = activities;
         console.log('Actividades cargadas:', activities);
       },
-      error: (err: any) => Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'No se pudieron cargar las actividades',
-        confirmButtonText: 'Aceptar'
-      })
+      error: (err: any) =>
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'No se pudieron cargar las actividades',
+          confirmButtonText: 'Aceptar',
+        }),
     });
   }
 
@@ -59,8 +66,8 @@ export class AdminDashboard implements OnInit {
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
       confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
+      cancelButtonText: 'Cancelar',
+    }).then((result: any) => {
       if (result.isConfirmed) {
         this.activityService.deleteActividad(id).subscribe({
           next: () => {
@@ -71,7 +78,7 @@ export class AdminDashboard implements OnInit {
               text: 'Actividad eliminada correctamente',
               confirmButtonText: 'Aceptar',
               timer: 2000,
-              timerProgressBar: true
+              timerProgressBar: true,
             });
           },
           error: (err: any) => {
@@ -80,7 +87,7 @@ export class AdminDashboard implements OnInit {
               icon: 'error',
               title: 'Error',
               text: 'No se pudo eliminar la actividad',
-              confirmButtonText: 'Aceptar'
+              confirmButtonText: 'Aceptar',
             });
           },
         });
@@ -98,14 +105,14 @@ export class AdminDashboard implements OnInit {
         console.log('Usuarios cargados:', users);
       },
       error: (err: any) => {
-        console.error('Error cargando usuarios', err)
+        console.error('Error cargando usuarios', err);
         Swal.fire({
           icon: 'error',
           title: 'Error',
           text: 'No se pudieron cargar los usuarios',
-          confirmButtonText: 'Aceptar'
+          confirmButtonText: 'Aceptar',
         });
-      }
+      },
     });
   }
 
@@ -121,35 +128,38 @@ export class AdminDashboard implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#6c757d',
       confirmButtonText: 'Sí, confirmar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
+      cancelButtonText: 'Cancelar',
+    }).then((result: any) => {
       if (result.isConfirmed) {
-        this.usuariosService.toggleUsuarioStatus(user.id!, newStatus).subscribe({
-          next: () => {
-            user.is_active = newStatus;
-            Swal.fire({
-              icon: 'success',
-              title: '¡Actualizado!',
-              text: `Usuario ${accion === 'activar' ? 'activado' : 'desactivado'} correctamente`,
-              confirmButtonText: 'Aceptar',
-              timer: 2000,
-              timerProgressBar: true
-            });
-          },
-          error: (err: any) => {
-            console.error('Error actualizando usuario', err);
-            Swal.fire({
-              icon: 'error',
-              title: 'Error',
-              text: 'No se pudo actualizar el estado del usuario',
-              confirmButtonText: 'Aceptar'
-            });
-          },
-        });
+        this.usuariosService
+          .toggleUsuarioStatus(user.id!, newStatus)
+          .subscribe({
+            next: () => {
+              user.is_active = newStatus;
+              Swal.fire({
+                icon: 'success',
+                title: '¡Actualizado!',
+                text: `Usuario ${
+                  accion === 'activar' ? 'activado' : 'desactivado'
+                } correctamente`,
+                confirmButtonText: 'Aceptar',
+                timer: 2000,
+                timerProgressBar: true,
+              });
+            },
+            error: (err: any) => {
+              console.error('Error actualizando usuario', err);
+              Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se pudo actualizar el estado del usuario',
+                confirmButtonText: 'Aceptar',
+              });
+            },
+          });
       }
     });
   }
-
 
   deleteUser(id: number): void {
     Swal.fire({
@@ -160,8 +170,8 @@ export class AdminDashboard implements OnInit {
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
       confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
+      cancelButtonText: 'Cancelar',
+    }).then((result: any) => {
       if (result.isConfirmed) {
         this.usuariosService.deleteUsuario(id).subscribe({
           next: () => {
@@ -172,7 +182,7 @@ export class AdminDashboard implements OnInit {
               text: 'Usuario eliminado correctamente',
               confirmButtonText: 'Aceptar',
               timer: 2000,
-              timerProgressBar: true
+              timerProgressBar: true,
             });
           },
           error: (err: any) => {
@@ -181,7 +191,7 @@ export class AdminDashboard implements OnInit {
               icon: 'error',
               title: 'Error',
               text: 'No se pudo eliminar el usuario',
-              confirmButtonText: 'Aceptar'
+              confirmButtonText: 'Aceptar',
             });
           },
         });
@@ -203,7 +213,7 @@ export class AdminDashboard implements OnInit {
           icon: 'error',
           title: 'Error',
           text: 'No se pudieron cargar los equipos',
-          confirmButtonText: 'Aceptar'
+          confirmButtonText: 'Aceptar',
         });
       },
     });
@@ -218,8 +228,8 @@ export class AdminDashboard implements OnInit {
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
       confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
+      cancelButtonText: 'Cancelar',
+    }).then((result: any) => {
       if (result.isConfirmed) {
         this.teamsService.deleteTeam(id).subscribe({
           next: () => {
@@ -230,7 +240,7 @@ export class AdminDashboard implements OnInit {
               text: 'Equipo eliminado correctamente',
               confirmButtonText: 'Aceptar',
               timer: 2000,
-              timerProgressBar: true
+              timerProgressBar: true,
             });
           },
           error: (err: any) => {
@@ -239,7 +249,7 @@ export class AdminDashboard implements OnInit {
               icon: 'error',
               title: 'Error',
               text: 'No se pudo eliminar el equipo',
-              confirmButtonText: 'Aceptar'
+              confirmButtonText: 'Aceptar',
             });
           },
         });
