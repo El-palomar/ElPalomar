@@ -8,11 +8,12 @@ import {
 } from '@angular/forms';
 import { ActividadesService, IActividad } from '@services/activities';
 import Swal from 'sweetalert2';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-actividades',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './formulario-actividades.html',
   styleUrls: ['./formulario-actividades.css'],
 })

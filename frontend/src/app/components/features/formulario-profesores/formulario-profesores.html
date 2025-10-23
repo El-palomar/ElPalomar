@@ -1,3 +1,6 @@
+<div class="m-3 atras-home">
+  <a routerLink="/admin_dashboard"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+</div>
 <div class="login-container">
   <div class="login-card">
     <h2 class="title">Registro de profesores</h2>
@@ -10,12 +13,7 @@
             <!-- NOMBRE -->
             <div class="form-field w-50">
               <label for="nombre">Nombre:</label>
-              <input
-                type="text"
-                id="nombre"
-                formControlName="nombre"
-                required
-              />
+              <input type="text" id="nombre" formControlName="nombre" required />
               @if (isInvalid ('nombre')) {
               <div>
                 <small style="color: red">El nombre es obligatorio</small>
@@ -26,12 +24,7 @@
             <!-- APELLIDO -->
             <div class="form-field w-50">
               <label for="apellido">Apellido:</label>
-              <input
-                type="text"
-                id="apellido"
-                formControlName="apellido"
-                required
-              />
+              <input type="text" id="apellido" formControlName="apellido" required />
               @if (isInvalid('apellido')) {
               <div>
                 <small style="color: red">El apellido es obligatorio</small>
@@ -43,30 +36,20 @@
         </div>
         <!-- CAMPOS OPCIONALES -->
         <div class="input-group">
-            <div class="form-row">
+          <div class="form-row">
             <!-- EMAIL -->
-           <div class="form-field w-50">
-            <label for="email">E-mail:</label>
-            <input
-                type="email"
-                id="email"
-                formControlName="email"
-                placeholder="usuario@cordoba.com"
-            />
-            @if (isInvalid('email') ) {
-            <p class="error">Email invalido</p>
-            }
-           </div>
+            <div class="form-field w-50">
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" formControlName="email" placeholder="usuario@cordoba.com" />
+              @if (isInvalid('email') ) {
+              <p class="error">Email invalido</p>
+              }
+            </div>
 
             <!-- TELÉFONO -->
             <div class="form-field w-50">
               <label for="telefono">Teléfono:</label>
-              <input
-                type="tel"
-                id="telefono"
-                formControlName="telefono"
-                placeholder="5411556677"
-              />
+              <input type="tel" id="telefono" formControlName="telefono" placeholder="5411556677" />
               @if (isInvalid('telefono')) {
               <div>
                 <small style="color: red">
@@ -75,26 +58,21 @@
               </div>
               }
             </div>
-            </div>
+          </div>
 
-        </div>   
+        </div>
 
         <div class="input-group">
-            <div class="form-row">
-                <!-- DESCRIPCION -->
-                <div class="form-field w-100">
-                    <label for="descripcion">Descripción:</label>
-                    <textarea
-                        class="form-control"
-                        id="descripcion"
-                        formControlName="descripcion"
-                        rows="4"
-                        placeholder="Escribe un texto de presentación. Contanos sobre tus hobbies y que deportes preferís o practicas."
-                    ></textarea>
-                </div>
+          <div class="form-row">
+            <!-- DESCRIPCION -->
+            <div class="form-field w-100">
+              <label for="descripcion">Descripción:</label>
+              <textarea class="form-control" id="descripcion" formControlName="descripcion" rows="4"
+                placeholder="Escribe un texto de presentación. Contanos sobre tus hobbies y que deportes preferís o practicas."></textarea>
             </div>
+          </div>
         </div>
-        <!-- MENSAJE DE ERROR -->     
+        <!-- MENSAJE DE ERROR -->
         @if (errorMessage) {
         <div class="error mt-2">
           {{ errorMessage }}
@@ -102,20 +80,14 @@
         }
 
         <button type="submit" [disabled]="form.invalid">
-            {{ isEditMode ? 'Actualizar Profesor' : 'Registrar Profesor' }}
+          {{ isEditMode ? 'Actualizar Profesor' : 'Registrar Profesor' }}
         </button>
-        <div
-          class="login-options d-flex justify-content-center align-center my-3"
-        >
+        <div class="login-options d-flex justify-content-center align-center my-3">
           <span>
             Ya terminaste?
-            <a routerLink="/admin_dashboard" class="text-decoration-none"
-              >Volver al Dashboard</a
-            ></span
-          >
+            <a routerLink="/admin_dashboard" class="text-decoration-none">Volver al Dashboard</a></span>
         </div>
       </form>
     </div>
   </div>
 </div>
-

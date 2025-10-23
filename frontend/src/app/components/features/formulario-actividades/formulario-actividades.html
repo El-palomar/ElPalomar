@@ -1,4 +1,7 @@
 <div class="container mt-4">
+  <div class="m-3 atras-home">
+    <a routerLink="/admin_dashboard"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+  </div>
   <h2 class="fw-bold mb-4">Gestión de Actividades</h2>
 
   <!-- Botón para mostrar/ocultar formulario -->
@@ -24,34 +27,18 @@
         <div class="card-body">
           <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="mb-3">
-              <label for="nombre" class="form-label"
-                >Nombre del Deporte *</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="nombre"
-                formControlName="nombre"
-                placeholder="Ej: Fútbol, Básquet, Natación"
-              />
+              <label for="nombre" class="form-label">Nombre del Deporte *</label>
+              <input type="text" class="form-control" id="nombre" formControlName="nombre"
+                placeholder="Ej: Fútbol, Básquet, Natación" />
               @if (isInvalid('nombre')) {
-              <small class="text-danger"
-                >El nombre es obligatorio (máximo 50 caracteres)</small
-              >
+              <small class="text-danger">El nombre es obligatorio (máximo 50 caracteres)</small>
               }
             </div>
 
             <div class="mb-3">
-              <label for="descripcion" class="form-label"
-                >Descripción (opcional)</label
-              >
-              <textarea
-                class="form-control"
-                id="descripcion"
-                formControlName="descripcion"
-                rows="4"
-                placeholder="Describe el deporte..."
-              ></textarea>
+              <label for="descripcion" class="form-label">Descripción (opcional)</label>
+              <textarea class="form-control" id="descripcion" formControlName="descripcion" rows="4"
+                placeholder="Describe el deporte..."></textarea>
             </div>
 
             @if (errorMessage) {
@@ -59,18 +46,10 @@
             }
 
             <div class="d-flex gap-2 justify-content-end">
-              <button
-                type="button"
-                (click)="cancelarEdicion()"
-                class="btn btn-secondary"
-              >
+              <button type="button" (click)="cancelarEdicion()" class="btn btn-secondary">
                 Cancelar
               </button>
-              <button
-                type="submit"
-                [disabled]="form.invalid || loading"
-                class="btn btn-primary"
-              >
+              <button type="submit" [disabled]="form.invalid || loading" class="btn btn-primary">
                 {{ isEditMode ? "Guardar cambios" : "Crear deporte" }}
               </button>
             </div>
@@ -110,16 +89,10 @@
             </p>
 
             <div class="d-flex gap-2 mt-auto">
-              <button
-                (click)="editarActividad(actividad)"
-                class="btn btn-sm btn-primary flex-fill"
-              >
+              <button (click)="editarActividad(actividad)" class="btn btn-sm btn-primary flex-fill">
                 Editar
               </button>
-              <button
-                (click)="eliminarActividad(actividad.id!)"
-                class="btn btn-sm btn-outline-danger"
-              >
+              <button (click)="eliminarActividad(actividad.id!)" class="btn btn-sm btn-outline-danger">
                 Eliminar
               </button>
             </div>
