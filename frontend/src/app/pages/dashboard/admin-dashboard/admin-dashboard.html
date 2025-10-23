@@ -60,75 +60,37 @@
 
   <!-- ===== GESTIÓN DE ACTIVIDADES ===== -->
   <section id="gestion-actividades" class="mb -5">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2>Gestión de Actividades</h2>
-          <button routerLink="/actividades" class="btn btn-primary">
-            + Nueva Actividad
-          </button>
-        </div>
-
-        <!-- Lista de actividades actual -->
-        <div class="row g-4">
-          @for (activity of activities; track activity.id) {
-            <div class="col-md-6 col-lg-4">
-              <div class="activity-card">
-                <div class="card-header">
-                  <h3>{{ activity.nombre }}</h3>
-                </div>
-                <div class="card-body">
-                  <p>{{ activity.descripcion }}</p>
-                  <button (click)="deleteActivity(activity.id!)" class="btn-primary">Eliminar</button>
-                </div>
-
-              </div>
-            </div>
-          }
-
-        </div> 
-
-       
-  </section>
-
-  <!-- ===== GESTIÓN DE PROFESORES ===== -->
-   <section id = "gestion-profesores" class="mb-5">
-      <app-lista-profesores></app-lista-profesores>
-   </section>
-  <!-- ===== GESTIÓN DE EQUIPOS ===== -->
-  <!-- <section id="gestion-equipos">
-    <h2>Gestión de Equipos</h2>
-    <div class="d-flex justify-content-end mb-3">
-      <a routerLink="/team_form" class="btn-base-dash btn-crear"
-        >+ Nuevo Equipo</a
-      >
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Gestión de Actividades</h2>
+      <button routerLink="/actividades" class="btn btn-primary">
+        + Nueva Actividad
+      </button>
     </div>
 
-    @if (!teams || teams.length === 0) {
-    <p class="text-center">No hay equipos registrados</p>
-    } @if (teams && teams.length > 0) {
-    <div class="grid-equipos">
-      @for (team of teams; track team.id) {
-      <article class="equipo">
-        <h3>{{ team.name }}</h3>
-        <p><strong>Actividad:</strong> {{ team.activity }}</p>
-        <p><strong>Integrantes:</strong> {{ team.members.length || 0 }}</p>
-        <div class="botones-equipo d-flex gap-2">
-          <a
-            routerLink="/team_form/{{ team.id }}"
-            class="btn-base-dash btn-editar"
-            >Editar</a
-          >
-          <button
-            (click)="deleteTeam(team.id!)"
-            class="btn-base-dash btn-eliminar"
-          >
-            Eliminar
-          </button>
+    <!-- Lista de actividades actual -->
+    <div class="row g-4">
+      @for (activity of activities; track activity.id) {
+      <div class="col-md-6 col-lg-4">
+        <div class="activity-card">
+          <div class="card-header">
+            <h3>{{ activity.nombre }}</h3>
+          </div>
+          <div class="card-body">
+            <p>{{ activity.descripcion }}</p>
+            <button (click)="deleteActivity(activity.id!)" class="btn btn-danger">Eliminar</button>
+          </div>
+
         </div>
-      </article>
+      </div>
       }
+
     </div>
-    }
-  </section> -->
+
+
+  </section>
+  <section id="gestion-profesores" class="mb-5">
+    <app-lista-profesores></app-lista-profesores>
+  </section>
 
   <app-footer></app-footer>
 </main>
