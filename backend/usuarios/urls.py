@@ -11,8 +11,7 @@ router.register(r'usuarios', UsuarioViewSet, basename='usuarios')
 urlpatterns = [
     # Registro y login
     path("registro/", RegistroView.as_view(), name="registro"),
-    path("login/", LoginView.as_view(), name="token_obtain_pair"),
-    path("refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("login/", LoginView.as_view(), name="login"),
     
     # Endpoints CRUD de usuarios
     path("", include(router.urls)),

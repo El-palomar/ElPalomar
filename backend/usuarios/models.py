@@ -35,7 +35,7 @@ class Usuario(AbstractUser):
     email = models.EmailField(unique=True)
     telefono = models.CharField(max_length=20, blank=True, null=True)
     sexo = models.CharField(max_length=10, choices=[("M", "Masculino"), ("F", "Femenino")])
-    edad = models.PositiveIntegerField(blank=True, null=True)
+    fecha_nacimiento = models.DateField(blank=True, null=True)
     tipo = models.CharField(
         max_length=20,
         choices=[("admin", "Admin"), ("usuario", "Usuario")],
