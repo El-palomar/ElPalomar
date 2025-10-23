@@ -13,14 +13,13 @@ import { IUsuario } from '@services/usuarios';
 export class Sidebar implements OnInit {
   tipo: 'admin' | 'usuario' | undefined = undefined;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     const usuarioActual = localStorage.getItem('currentUser');
     if (usuarioActual) {
       const usuario: IUsuario = JSON.parse(usuarioActual);
       this.tipo = usuario.tipo;
-      console.log('Sidebar cargado con tipo:', this.tipo);
     }
   }
 
