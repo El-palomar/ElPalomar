@@ -30,7 +30,8 @@ export class FormularioProfesoresComponent implements OnInit {
       nombre: ['',Validators.required],
       apellido: ['',Validators.required],
       email: ['',[ Validators.email]],
-      telefono: ['']
+      telefono: [''],
+      descripcion: [''],
     })
   }
 
