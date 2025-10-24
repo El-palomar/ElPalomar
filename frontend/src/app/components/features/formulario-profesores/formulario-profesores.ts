@@ -25,81 +25,65 @@ export class FormularioProfesoresComponent implements OnInit {
     private profesoresService: ProfesoresService,
     private route: ActivatedRoute,
     private router: Router
-  ){
+  ) {
     this.form = this.fb.group({
-      nombre: ['',Validators.required],
-      apellido: ['',Validators.required],
-      email: ['',[ Validators.email]],
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      email: ['', [Validators.email]],
       telefono: [''],
       descripcion: [''],
     })
   }
 
-    isInvalid(controlName: string): boolean {
+  isInvalid(controlName: string): boolean {
     const control = this.form.get(controlName);
     return !!(control && control.invalid && (control.dirty || control.touched));
   }
 
   ngOnInit(): void {
     this.profesorId = Number(this.route.snapshot.paramMap.get('id'));
-    if(this.profesorId) {
+    if (this.profesorId) {
       this.isEditMode = true
       this.loading = true
       this.profesoresService.getProfesor(this.profesorId).subscribe({
-      next: (data) => {
-              this.form.patchValue(data);
-              this.loading = false;
-            },
-      error: (error: any) => {
-        console.error('Error al cargar profesor:', error);
-        this.errorMessage = 'Error al cargar profesor';
-        this.loading = false;
-      }
+        next: (data) => {
+          this.form.patchValue(data);
+          this.loading = false;
+        },
+        error: (error: any) => {
+          console.error('Error al cargar profesor:', error);
+          this.errorMessage = 'Error al cargar profesor';
+          this.loading = false;
+        }
       })
     }
   }
 
-    onSubmit() {
-      if (this.form.valid) {
-        this.loading = true;
-        const profesor: IProfesor = this.form.value;
-  
-        if (this.profesorId) {
-          // Actualizar
-          this.profesoresService
-            .updateProfesor(this.profesorId, profesor)
-            .subscribe({
-              next: () => {
-                this.loading = false;
-                Swal.fire({
-                  icon: 'success',
-                  title: '¡Actualizado!',
-                  text: 'Profesor actualizado correctamente',
-                  confirmButtonText: 'Aceptar'
-                });
-                this.cancelarEdicion();
-                this.router.navigate(['/admin_dashboard']);
-              },
-              error: (error: any) => {
-                Swal.fire({
-                  icon: 'error',
-                  title: 'Error',
-                  text: 'Error al actualizar el profesor',
-                  confirmButtonText: 'Aceptar'
-                });
-                this.errorMessage = 'Error al actualizar el profesor';
-                this.loading = false;
-              },
-            });
-        } else {
-          // Crear
-          this.profesoresService.createProfesor(profesor).subscribe({
+  onSubmit() {
+    if (this.form.valid) {
+      this.loading = true;
+      const profesor: IProfesor = this.form.value;
+
+      Swal.fire({
+        title: this.profesorId ? 'Actualizando profesor...' : 'Creando profesor...',
+        text: 'Por favor espera',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
+
+      if (this.profesorId) {
+        this.profesoresService
+          .updateProfesor(this.profesorId, profesor)
+          .subscribe({
             next: () => {
               this.loading = false;
               Swal.fire({
                 icon: 'success',
-                title: '¡Creado!',
-                text: 'Profesor creado correctamente',
+                title: '¡Actualizado!',
+                text: 'Profesor actualizado correctamente',
                 confirmButtonText: 'Aceptar'
               });
               this.cancelarEdicion();
@@ -109,20 +93,44 @@ export class FormularioProfesoresComponent implements OnInit {
               Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'Error al crear el profesor',
+                text: 'Error al actualizar el profesor',
                 confirmButtonText: 'Aceptar'
               });
-              this.errorMessage = 'Error al crear el profesor';
+              this.errorMessage = 'Error al actualizar el profesor';
               this.loading = false;
             },
           });
-        }
       } else {
-        this.errorMessage = 'Por favor completa los campos obligatorios';
+        this.profesoresService.createProfesor(profesor).subscribe({
+          next: () => {
+            this.loading = false;
+            Swal.fire({
+              icon: 'success',
+              title: '¡Creado!',
+              text: 'Profesor creado correctamente',
+              confirmButtonText: 'Aceptar'
+            });
+            this.cancelarEdicion();
+            this.router.navigate(['/admin_dashboard']);
+          },
+          error: (error: any) => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Error al crear el profesor',
+              confirmButtonText: 'Aceptar'
+            });
+            this.errorMessage = 'Error al crear el profesor';
+            this.loading = false;
+          },
+        });
       }
+    } else {
+      this.errorMessage = 'Por favor completa los campos obligatorios';
     }
+  }
 
-    cancelarEdicion() {
+  cancelarEdicion() {
     this.isEditMode = false;
     this.form.reset();
     this.errorMessage = null;

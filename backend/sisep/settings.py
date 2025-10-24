@@ -81,9 +81,13 @@ WSGI_APPLICATION = "sisep.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '12345678elpalomar.',
+        'HOST': 'db.nvhnhidjrcruzwzkpphn.supabase.co',
+        'PORT': '5432',
     }
 }
 
