@@ -45,7 +45,6 @@ export class AdminDashboard implements OnInit {
     this.activityService.getAllActividades().subscribe({
       next: (activities: IActividad[]) => {
         this.activities = activities;
-        console.log('Actividades cargadas:', activities);
       },
       error: (err: any) =>
         Swal.fire({
@@ -102,7 +101,6 @@ export class AdminDashboard implements OnInit {
     this.usuariosService.getAllUsuarios().subscribe({
       next: (users: IUsuario[]) => {
         this.users = users;
-        console.log('Usuarios cargados:', users);
       },
       error: (err: any) => {
         console.error('Error cargando usuarios', err);
@@ -204,7 +202,6 @@ export class AdminDashboard implements OnInit {
     this.teamsService.getAllTeams().subscribe({
       next: (teams: ITeam[]) => {
         this.teams = teams;
-        console.log('Equipos cargados:', teams);
       },
       error: (err: any) => {
         console.error('Error cargando equipos', err);

@@ -56,7 +56,6 @@ export class LoginFormComponent {
 
       this.usuariosService.login(email, password).subscribe({
         next: (response) => {
-          console.log('Login exitoso', response);
 
           const usuario: IUsuario = response;
           const tokens = {

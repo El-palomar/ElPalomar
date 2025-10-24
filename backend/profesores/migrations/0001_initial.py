@@ -19,6 +19,20 @@ class Migration(migrations.Migration):
                 ('apellido', models.CharField(max_length=50)),
                 ('email', models.EmailField(blank=True, max_length=254, null=True)),
                 ('telefono', models.CharField(blank=True, max_length=50, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nombre", models.CharField(max_length=50)),
+                ("apellido", models.CharField(max_length=50)),
+                ("email", models.EmailField(blank=True, max_length=254, null=True)),
+                ("telefono", models.CharField(blank=True, max_length=50, null=True)),
+                ("descripcion", models.TextField(blank=True, null=True)),
             ],
         ),
     ]

@@ -39,7 +39,6 @@ export class RegisterFormComponent {
   }
 
   onSubmit() {
-    // Validar contraseñas coincidan
     if (this.form.value.contrasena !== this.form.value.confirmarContrasena) {
       this.errorMessage = 'Las contraseñas no coinciden';
       Swal.fire({
@@ -52,8 +51,6 @@ export class RegisterFormComponent {
     }
 
     if (this.form.valid) {
-
-      // ✅ Preparar objeto usuario para el backend (usando operador ! para asegurar que no son null)
       const nuevoUsuario: IUsuario = {
         email: this.form.value.email!,
         password: this.form.value.contrasena!,
@@ -64,9 +61,6 @@ export class RegisterFormComponent {
         fecha_nacimiento: this.form.value.fecha || undefined,
         telefono: this.form.value.telefono || '',
       };
-
-      console.log('📤 Enviando usuario:', nuevoUsuario);
-
       Swal.fire({
         title: 'Registrando usuario...',
         text: 'Por favor espera',
@@ -75,11 +69,8 @@ export class RegisterFormComponent {
           Swal.showLoading();
         }
       });
-
-      // ✅ Llamar al servicio de registro
       this.usuariosService.registro(nuevoUsuario).subscribe({
         next: (response) => {
-          console.log('✅ Usuario registrado:', response);
           Swal.fire({
             icon: 'success',
             title: '¡Registro exitoso!',
@@ -92,19 +83,20 @@ export class RegisterFormComponent {
           });
         },
         error: (error) => {
-          console.error('❌ Error en registro:', error);
-
-          // Mostrar errores específicos del backend
+          Swal.close()
           if (error.error) {
             const errores = Object.entries(error.error)
-              .map(([key, value]) => `${key}: ${value}`)
-              .join(', ');
+              .map(([key, value]) => {
+                if (typeof value === 'string' && value.includes('.,')) {
+                  const mensajes = value.split('.,').map(msg => msg.trim()).join('\n• ');
+                  return `${key}:\n• ${mensajes}`;
+                }
+                return `${key}: ${value}`;
+              })
+              .join('\n\n');
             this.errorMessage = errores;
-          } else {
-            this.errorMessage =
-              'Error al registrar usuario. Intenta nuevamente.';
           }
-        },
+        }
       });
     } else {
       Swal.fire({
