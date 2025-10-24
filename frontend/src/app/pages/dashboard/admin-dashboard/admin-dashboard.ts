@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Sidebar } from '@components/layout/sidebar/sidebar';
 import { Footer } from '@components/layout/footer/footer';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { ActividadesService, IActividad } from '@services/activities';
 import { UsuariosService, IUsuario } from '@services/usuarios';
@@ -9,6 +10,7 @@ import { TeamsService, ITeam } from '@services/teams';
 import { DashboardWelcome } from '@components/features/dashboard-welcome/dashboard-welcome';
 import Swal from 'sweetalert2';
 import { ListaProfesoresComponent } from '@components/features/lista-profesores/lista-profesores';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -21,12 +23,14 @@ import { ListaProfesoresComponent } from '@components/features/lista-profesores/
     RouterModule,
     DashboardWelcome,
     ListaProfesoresComponent,
+    CommonModule,
   ],
 })
 export class AdminDashboard implements OnInit {
   activities: IActividad[] = [];
   users: IUsuario[] = [];
   teams: ITeam[] = [];
+  isLoading: boolean = true;
 
   constructor(
     private activityService: ActividadesService,
@@ -35,9 +39,34 @@ export class AdminDashboard implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadActivities();
-    this.loadUsers();
-    this.loadTeams();
+    this.loadAllData();
+  }
+
+  loadAllData(): void {
+    this.isLoading = true;
+
+    forkJoin({
+      activities: this.activityService.getAllActividades(),
+      users: this.usuariosService.getAllUsuarios(),
+      teams: this.teamsService.getAllTeams(),
+    }).subscribe({
+      next: (results) => {
+        this.activities = results.activities;
+        this.users = results.users;
+        this.teams = results.teams;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error('Error cargando datos:', err);
+        this.isLoading = false;
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Hubo un problema al cargar los datos. Por favor, recarga la página.',
+          confirmButtonText: 'Aceptar',
+        });
+      },
+    });
   }
 
   // ===== Actividades =====
@@ -93,8 +122,6 @@ export class AdminDashboard implements OnInit {
       }
     });
   }
-
-  // ✅ ELIMINADA toggleStatus porque tu modelo no tiene campo 'activo'
 
   // ===== Socios =====
   loadUsers(): void {

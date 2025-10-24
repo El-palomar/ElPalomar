@@ -1,3 +1,37 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 section {
   margin-bottom: 40px;
 }
@@ -59,7 +93,7 @@ p {
 }
 
 .card-header {
-  background:  #2c3e50;
+  background: #2c3e50;
   color: white;
   padding: 1.5rem;
   font-weight: 600;
@@ -79,7 +113,7 @@ p {
   .grid-actividades {
     grid-template-columns: 1fr;
   }
-} 
+}
 
 /* ===== GESTIÓN DE SOCIOS ===== */
 #gestion-socios,
@@ -94,7 +128,8 @@ p {
   margin-top: 15px;
 }
 
-.table-socios th, .table-socios td {
+.table-socios th,
+.table-socios td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
@@ -188,7 +223,7 @@ p {
 }
 
 .btn-accion {
-  background-color: #3498db; 
+  background-color: #3498db;
   border: none;
   border-radius: 5px;
   padding: 5px 12px;
@@ -198,7 +233,7 @@ p {
 .btn-accion:hover {
   opacity: 0.85;
 }
- 
+
 /* responsive */
 @media (max-width: 768px) {
   .grid-equipos {
