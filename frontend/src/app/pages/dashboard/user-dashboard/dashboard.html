@@ -1,36 +1,28 @@
-<!-- Encabezado -->
-
-<!-- Menú lateral -->
 <app-sidebar></app-sidebar>
-<!-- Contenido principal con la clase 'main-content' para evitar que lo tape el sidebar -->
-<main class="main-content">
-  <!-- Sección de Actividades Disponibles -->
-  <section
-    id="actividades-disponibles"
-    aria-labelledby="titulo-actividades-disponibles"
-  >
+<div *ngIf="isLoading" class="loading-container">
+  <div class="spinner"></div>
+  <p>Cargando actividades...</p>
+</div>
+<main *ngIf="!isLoading" class="main-content">
+  <section id="actividades-disponibles" aria-labelledby="titulo-actividades-disponibles">
     <app-dashboard-welcome></app-dashboard-welcome>
     <h2 id="titulo-actividades-disponibles">Actividades Disponibles</h2>
     <div class="grid-actividades">
       @for (activity of activities; track activity; let i = $index) {
       <article class="actividad">
-        <img [src]="'public/images/'+ activity.nombre.toLowerCase() +'.jpg'" (error)="onImageError($event)" [alt]="activity.nombre" class="actividad-img"/>
+        <img [src]="'public/images/'+ activity.nombre.toLowerCase() +'.jpg'" (error)="onImageError($event)"
+          [alt]="activity.nombre" class="actividad-img" />
         <h3>{{ activity.nombre }}</h3>
         <p>{{ activity.descripcion || "Sin descripción" }}</p>
         <!-- Botón con clase base para estilos -->
-        <a routerLink="/activity_form" class="btn-base-dash btn-inscribirse"
-          >Inscribirse</a
-        >
+        <a class="btn-base-dash btn-inscribirse">Inscribirse</a>
       </article>
       }
     </div>
   </section>
 
   <!-- Sección de Actividades Inscritas -->
-  <section
-    id="actividades-inscritas"
-    aria-labelledby="titulo-actividades-inscritas"
-  >
+  <section id="actividades-inscritas" aria-labelledby="titulo-actividades-inscritas">
     <h2 id="titulo-actividades-inscritas">Mis Actividades Inscritas</h2>
 
     @for (activity of userActivities; track activity; let i = $index) {
@@ -50,12 +42,8 @@
       </div>
       <div class="botones-actividad d-flex gap-2">
         <!-- Botones con clase base para estilos -->
-        <a routerLink="/activity_form" class="btn-base-dash btn-editar"
-          >Editar</a
-        >
-        <a routerLink="/notificacion" class="btn-base-dash btn-cancelar"
-          >Cancelar</a
-        >
+        <a routerLink="/activity_form" class="btn-base-dash btn-editar">Editar</a>
+        <a routerLink="/notificacion" class="btn-base-dash btn-cancelar">Cancelar</a>
       </div>
     </article>
     }
